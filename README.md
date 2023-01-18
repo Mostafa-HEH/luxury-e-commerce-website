@@ -11,6 +11,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Receive designs as PSD.
 - Start buildig with HTML5, CSS3(SCSS) and Javascript.
 - Apply Sass architecture structure.
+- Add Normalize css.
 - Start with Home v1 page.
 
 #### Skills:
@@ -35,4 +36,5 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 
 #### Sources:
 
-- [Sass architecture structure](https://www.example.com)
+- [Sass architecture structure](https://gist.github.com/AdamMarsden/7b85e8d5bdb5bef969a0)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
