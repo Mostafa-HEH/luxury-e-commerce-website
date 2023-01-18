@@ -1,0 +1,40 @@
+// colors
+$color-primary: #ffa290;
+$color-secondary: #333333;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-1: #111111;
+$color-gray-2: #222222;
+$color-gray-3: #666666;
+$color-gray-4: #999999;
+$color-gray-5: #aaaaaa;
+$color-gray-6: #cccccc;
+$color-gray-7: #e5e5e5;
+$color-gray-8: #eaeaea;
+$color-gray-9: #f2f2f2;
+$color-gray-10: #f5f5f5;
+
+// borders
+$border-primary-1: 1px solid $color-primary;
+$border-primary-2: 2px solid $color-primary;
+$border-secondary-1: 1px solid $color-secondary;
+$border-secondary-2: 2px solid $color-secondary;
+$border-white-1: 1px solid $color-white;
+$border-white-2: 2px solid $color-white;
+$border-gray-7: 1px solid #e5e5e5;
+$border-gray-10: 1px solid #eaeaea;
+$border-white-80-2: 2px solid rgba(255, 255, 255, 0.8);
+$border-white-30-1: 1px solid rgba(255, 255, 255, 0.3);
+$border-white-23-1: 1px solid rgba(255, 255, 255, 0.23);
+$border-white-15-1: 1px solid rgba(255, 255, 255, 0.15);
+$border-gray-3-80-2: 2px solid rgba(102, 102, 102, 0.8);
+
+// Text shadows
+$text-shadow-black: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+// Box shadows
+$shadow-111: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+$shadow-035: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+$shadow-003: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+$shadow-013: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+$shadow-010: 0px 1px 0px 0px rgba(229, 229, 229, 1);

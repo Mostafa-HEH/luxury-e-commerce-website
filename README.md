@@ -12,6 +12,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Start buildig with HTML5, CSS3(SCSS) and Javascript.
 - Apply Sass architecture structure.
 - Add Normalize css.
+- Add Sass variables.
 - Start with Home v1 page.
 
 #### Skills:
