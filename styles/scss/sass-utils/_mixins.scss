@@ -1,0 +1,17 @@
+// Page max width
+@mixin grid-1170 {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+}
+
+// Flex display
+@mixin flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-c {
+  display: flex;
+  flex-direction: column;
+}
