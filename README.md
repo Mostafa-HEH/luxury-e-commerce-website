@@ -15,7 +15,8 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Add Sass variables.
 - Add Sass Mixins.
 - Add Sass Functions.
-- Add Google fonts.
+- Add Fonts - Google fonts.
+- Add Icons - Font Awesome.
 - Start with Home v1 page.
 
 #### Skills:
