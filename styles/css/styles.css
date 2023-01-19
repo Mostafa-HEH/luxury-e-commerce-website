@@ -400,8 +400,94 @@ li {
   transform: translateY(0);
 }
 
+.action {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.action i {
+  font-size: 28px;
+}
+.action.white {
+  color: #ffffff;
+  transition: color 150ms;
+  transition: background-color 150ms;
+}
+.action.white:hover {
+  color: #333333;
+  background-color: #ffffff;
+}
+.action.action-primary.white {
+  color: #333333;
+  background-color: #ffffff;
+}
+.action.action-primary.white::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.action.action-primary.black {
+  background-color: #333333;
+  color: #ffffff;
+}
+.action.action-primary.black::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.action.action-primary.black.icon {
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  width: fit-content;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.action.action-primary.black.icon i {
+  font-size: 24px;
+}
+.action.action-secondary.white {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+.action.action-secondary.white::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.action.action-secondary.black {
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #333333;
+}
+.action.action-secondary.black::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.action::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(50px);
+  transition: transform 150ms;
+}
+.action:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.action:hover::after {
+  transform: translateY(0);
+}
+
 .components-page {
-  background-color: whitesmoke;
+  background-color: #8f8f8f;
   padding: 64px;
   min-height: 100vh;
   display: flex;
@@ -425,6 +511,9 @@ li {
   gap: 8px;
 }
 .components-page .component.buttons .component__types {
+  flex-direction: row;
+}
+.components-page .component.actions .component__types {
   flex-direction: row;
 }
 
