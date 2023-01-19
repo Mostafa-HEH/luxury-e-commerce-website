@@ -1,0 +1,9 @@
+// Change px to rem
+@function px-rem($px) {
+  @return ($px * 0.0625) + rem;
+}
+
+// Change PSD letter spacing (va) to px
+@function va-px($va) {
+  @return calc(calc($va * 16) / 1000) + px;
+}
