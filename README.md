@@ -17,7 +17,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Add Sass Functions.
 - Add Fonts - Google fonts.
 - Add Icons - Font Awesome.
-- Start with Home v1 page.
+- Build components.
 
 #### Skills:
 
@@ -38,8 +38,12 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Adobe Photoshop
 - Editor: VS Code
 - Browser: Google Chrome
+- Font: Google fonts
+- Icons: Font Awesome
 
 #### Sources:
 
 - [Sass architecture structure](https://gist.github.com/AdamMarsden/7b85e8d5bdb5bef969a0)
 - [Normalize.css](https://necolas.github.io/normalize.css/)
+- [Google Fonts](https://fontawesome.com/)
+- [Font Awesome](https://fonts.google.com/)

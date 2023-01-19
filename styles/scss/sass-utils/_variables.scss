@@ -38,3 +38,24 @@ $shadow-035: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
 $shadow-003: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 $shadow-013: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
 $shadow-010: 0px 1px 0px 0px rgba(229, 229, 229, 1);
+
+// Fonts
+$lato: "Lato", sans-serif;
+$play: "Playfair Display", serif;
+$open: "Open Sans", sans-serif;
+
+// Font weight
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$black: 900;
+
+// letter spacing
+$space-1: va-px(200);
+
+// Transition speed
+$speed-1: 150ms;

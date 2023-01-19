@@ -309,4 +309,123 @@ template {
   display: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 50px;
+  display: block;
+  width: fit-content;
+  max-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.btn.btn-primary.white {
+  color: #333333;
+  background-color: #ffffff;
+}
+.btn.btn-primary.white::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.btn.btn-primary.black {
+  background-color: #333333;
+  color: #ffffff;
+}
+.btn.btn-primary.black::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn.btn-primary.black.icon {
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+}
+.btn.btn-primary.black.icon i {
+  font-size: 24px;
+}
+.btn.btn-secondary.white {
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+}
+.btn.btn-secondary.white::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.btn.btn-secondary.black {
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #333333;
+}
+.btn.btn-secondary.black::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(50px);
+  transition: transform 150ms;
+}
+.btn:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.btn:hover::after {
+  transform: translateY(0);
+}
+
+.components-page {
+  background-color: whitesmoke;
+  padding: 64px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.components-page .component {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.components-page .component__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.components-page .component__types {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.components-page .component.buttons .component__types {
+  flex-direction: row;
+}
+
 /*# sourceMappingURL=styles.css.map */

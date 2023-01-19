@@ -1,0 +1,30 @@
+.components-page {
+  background-color: whitesmoke;
+  padding: 64px;
+  min-height: 100vh;
+  @include flex-c;
+  gap: 80px;
+
+  & .component {
+    @include flex-c;
+    gap: 24px;
+
+    &__title {
+      font-family: $play;
+      font-weight: $bold;
+      font-size: px-rem(24);
+      text-transform: uppercase;
+    }
+
+    &__types {
+      @include flex-c;
+      gap: 8px;
+    }
+
+    &.buttons {
+      & .component__types {
+        flex-direction: row;
+      }
+    }
+  }
+}

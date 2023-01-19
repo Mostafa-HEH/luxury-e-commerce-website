@@ -1,0 +1,88 @@
+.btn {
+  font-family: $lato;
+  font-weight: $black;
+  font-size: px-rem(14);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 50px;
+  display: block;
+  width: fit-content;
+  max-height: 50px;
+  @include flex-r;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &.btn-primary {
+    &.white {
+      color: $color-secondary;
+      background-color: $color-white;
+
+      &::after {
+        background-color: rgba(51, 51, 51, 0.1);
+      }
+    }
+
+    &.black {
+      background-color: $color-secondary;
+      color: $color-white;
+
+      &::after {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &.icon {
+        line-height: 24px;
+        @include flex-r;
+        gap: 11px;
+
+        & i {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &.btn-secondary {
+    &.white {
+      color: $color-white;
+      background-color: transparent;
+      border: $border-gray-7;
+
+      &::after {
+        background-color: rgba(51, 51, 51, 0.1);
+      }
+    }
+
+    &.black {
+      background-color: transparent;
+      color: $color-secondary;
+      border: $border-secondary-1;
+
+      &::after {
+        background-color: rgba(51, 51, 51, 0.1);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50px);
+    transition: transform $speed-1;
+  }
+
+  &:hover {
+    box-shadow: $shadow-013;
+
+    &::after {
+      transform: translateY(0);
+    }
+  }
+}
