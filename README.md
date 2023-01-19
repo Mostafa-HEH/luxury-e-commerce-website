@@ -13,6 +13,9 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Apply Sass architecture structure.
 - Add Normalize css.
 - Add Sass variables.
+- Add Sass Mixins.
+- Add Sass Functions.
+- Add Google fonts.
 - Start with Home v1 page.
 
 #### Skills:
