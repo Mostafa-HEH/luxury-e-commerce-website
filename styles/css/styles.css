@@ -425,7 +425,7 @@ li {
 }
 .action.white:hover {
   color: #333333;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .action.action-primary.white {
   color: #333333;
@@ -484,6 +484,23 @@ li {
 }
 .action:hover::after {
   transform: translateY(0);
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 1.875rem;
+  line-height: 19px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  text-decoration: unset;
+  color: #ffa290;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  display: block;
+  border: 2px solid #ffa290;
+  width: fit-content;
 }
 
 .components-page {

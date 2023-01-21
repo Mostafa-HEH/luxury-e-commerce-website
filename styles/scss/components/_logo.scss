@@ -1,0 +1,16 @@
+.logo {
+  font-family: $play;
+  font-weight: $black;
+  font-size: px-rem(30);
+  line-height: 19px;
+  letter-spacing: va-px(200);
+  text-transform: uppercase;
+  text-decoration: unset;
+  color: $color-primary;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  display: block;
+  border: $border-primary-2;
+  width: fit-content;
+}
