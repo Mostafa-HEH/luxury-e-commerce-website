@@ -1,5 +1,5 @@
 .components-page {
-  background-color: #8f8f8f;
+  background-color: #d5d5d5;
   padding: 64px;
   min-height: 100vh;
   @include flex-c;
@@ -30,6 +30,13 @@
     &.actions {
       & .component__types {
         flex-direction: row;
+      }
+    }
+
+    &.icons {
+      & .component__types {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
     }
   }

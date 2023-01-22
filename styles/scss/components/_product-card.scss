@@ -1,0 +1,313 @@
+.product-card {
+  @include flex-c;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+  position: relative;
+
+  &__image {
+    background-color: $color-gray-9;
+    width: 270px;
+    height: 324px;
+    border: $border-gray-7;
+    position: relative;
+    overflow: hidden;
+
+    & .navigation {
+      position: absolute;
+      bottom: -50px;
+      @include flex-r;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      gap: 14px;
+      transition: bottom $speed-1;
+
+      &__link {
+        cursor: pointer;
+        position: relative;
+
+        & i {
+          font-size: 24px;
+          color: $color-white;
+          transition: color $speed-1;
+
+          &.fa-retweet {
+            transform: rotate(90deg);
+          }
+        }
+
+        &:hover {
+          & i {
+            color: $color-primary;
+          }
+
+          &::before {
+            content: "test";
+            position: absolute;
+            top: -32px;
+            left: 0;
+            color: $color-secondary;
+            background-color: $color-white;
+            border: $border-secondary-1;
+            padding: 4px;
+            width: fit-content;
+            text-transform: uppercase;
+            font-family: $lato;
+            font-weight: $black;
+            font-size: px-rem(12);
+            white-space: nowrap;
+          }
+        }
+
+        &:nth-child(1):hover {
+          &::before {
+            content: "quick view";
+          }
+        }
+
+        &:nth-child(2):hover {
+          &::before {
+            content: "cart";
+          }
+        }
+
+        &:nth-child(3):hover {
+          &::before {
+            content: "compare";
+          }
+        }
+
+        &:nth-child(4):hover {
+          &::before {
+            content: "wishlist";
+          }
+        }
+      }
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex-r;
+    gap: 2px;
+
+    & .tag {
+      background-color: $color-white;
+      padding: 10px;
+      border: $border-secondary-1;
+      font-family: $lato;
+      font-weight: $black;
+      font-size: px-rem(13);
+      line-height: 22px;
+      text-transform: uppercase;
+      color: $color-secondary;
+    }
+  }
+
+  &__content {
+    @include flex-c;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    & .name {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(13);
+      line-height: 16px;
+      color: $color-secondary;
+      text-transform: uppercase;
+      text-decoration: unset;
+    }
+
+    & .price {
+      @include flex-r;
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 16px;
+      text-transform: uppercase;
+      gap: 2px;
+
+      &__before {
+        color: $color-gray-4;
+        text-decoration: line-through;
+      }
+
+      &__after {
+        color: $color-gray-3;
+      }
+    }
+
+    & .rate {
+      @include flex-r;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      margin-top: -5px;
+      margin-bottom: 2px;
+
+      & i {
+        font-size: 11.5px;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &:hover {
+    .product-card__image {
+      border: $border-primary-1;
+
+      & .navigation {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.product-card-list {
+  @include flex-r;
+  position: relative;
+  gap: 29px;
+
+  &__image {
+    background-color: $color-gray-9;
+    width: 270px;
+    height: 324px;
+    border: $border-gray-7;
+  }
+
+  &__tags {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex-r;
+    gap: 2px;
+
+    & .tag {
+      background-color: $color-white;
+      padding: 10px;
+      border: $border-secondary-1;
+      font-family: $lato;
+      font-weight: $black;
+      font-size: px-rem(13);
+      line-height: 22px;
+      text-transform: uppercase;
+      color: $color-secondary;
+    }
+  }
+
+  &__content {
+    @include flex-c;
+
+    & .name {
+      font-family: $lato;
+      font-weight: $black;
+      font-size: px-rem(25);
+      line-height: 16px;
+      color: $color-secondary;
+      text-transform: uppercase;
+      text-decoration: unset;
+      margin-top: 11px;
+      margin-bottom: 23px;
+    }
+
+    & .rate {
+      @include flex-r;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 19px;
+
+      &__stars {
+        @include flex-r;
+        gap: 2px;
+
+        & i {
+          font-size: 11.5px;
+          color: $color-primary;
+        }
+      }
+
+      &__details {
+        font-family: $lato;
+        font-weight: $black;
+        font-size: px-rem(12);
+        line-height: 16px;
+        color: $color-gray-3;
+        text-transform: uppercase;
+        text-decoration: unset;
+        @include flex-r;
+        align-items: center;
+        gap: 4px;
+
+        & .seprator {
+          display: inline-block;
+          height: 11px;
+          width: 2px;
+          background-color: $color-gray-3;
+        }
+
+        & span:not(.seprator) {
+          cursor: pointer;
+
+          &:hover {
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+
+    & .price {
+      @include flex-r;
+      font-family: $lato;
+      font-weight: $black;
+      font-size: px-rem(18);
+      line-height: 16px;
+      text-transform: uppercase;
+      gap: 2px;
+      margin-bottom: 38px;
+
+      &__before {
+        color: $color-gray-4;
+        text-decoration: line-through;
+      }
+
+      &__after {
+        color: $color-secondary;
+      }
+    }
+
+    & .description {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 24px;
+      color: $color-gray-3;
+      max-width: 568px;
+      margin-bottom: 38px;
+    }
+
+    & .navigation {
+      @include flex-r;
+      gap: 10px;
+
+      &
+        .action.action-secondary.black:not(
+          .action.action-secondary.black.icon
+        ) {
+        border-color: $color-gray-7;
+        color: $color-gray-5;
+
+        &:nth-child(2) i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
