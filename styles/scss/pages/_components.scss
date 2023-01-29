@@ -1,6 +1,6 @@
 .components-page {
-  background-color: #d5d5d5;
-  padding: 64px;
+  background-color: $color-secondary;
+  // padding: 64px;
   min-height: 100vh;
   @include flex-c;
   gap: 80px;
@@ -38,6 +38,10 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
+    }
+
+    &.navbar {
+      margin-bottom: 100vh;
     }
   }
 }

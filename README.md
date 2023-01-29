@@ -18,6 +18,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Add Fonts - Google fonts.
 - Add Icons - Font Awesome. _\*Some icons may not the same because its paid one._
 - Build components.
+- Build Layouts.
 
 #### Skills:
 
