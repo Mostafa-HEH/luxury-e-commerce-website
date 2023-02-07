@@ -1,0 +1,22 @@
+{
+  "name": "luxury",
+  "version": "1.0.0",
+  "description": "_I will record the process of creating this project._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mostafa-HEH/luxury-e-commerce-website.git"
+  },
+  "author": "Mostafa Hassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mostafa-HEH/luxury-e-commerce-website/issues"
+  },
+  "homepage": "https://github.com/Mostafa-HEH/luxury-e-commerce-website#readme",
+  "devDependencies": {
+    "pug": "^3.0.2"
+  }
+}

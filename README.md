@@ -19,13 +19,14 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Add Icons - Font Awesome. _\*Some icons may not the same because its paid one._
 - Build components.
 - Build Layouts.
+- Convert HTML to Pug for more organize, clean, and reusable code.
 
 #### Skills:
 
 - PSD ( Adobe Photoshop )
 - Git
 - Github
-- HTML
+- HTML (Pug)
 - CSS
 - Sass (Scss)
 - Javascript
