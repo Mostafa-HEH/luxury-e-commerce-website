@@ -324,8 +324,35 @@ html(lang='en')
                                             a(href="#").btn.btn-primary.black Checkout
                             li.actions__action
                                 i.fa-light.fa-magnifying-glass
-                            li.actions__action
-                                i.fa-light.fa-bars            
+                            li.actions__action 
+                                i.fa-light.fa-bars#activeRightSidebar
+                                .sidebar.sidebar-right#rightSidebar
+                                    span.opacity
+                                    aside.aside
+                                        i.fa-solid.fa-xmark.aside__close#closeRightSidebar
+                                        ul.aside__links 
+                                            li.link: a(href="#") My Account
+                                            li.link: a(href="#") My Wishlist
+                                            li.link: a(href="#") My Cart
+                                            li.link: a(href="#") Check out
+                                            li.link: a(href="#") Campain
+                                            li.link: a(href="#") Blogs
+                                            li.link: a(href="#") Log in
+                                            li.link: a(href="#") Sign up
+                                        footer.aside__footer
+                                            .controler
+                                                label
+                                                    | Language
+                                                    select(name="language")
+                                                        option(value="en") English
+                                                        option(value="ar") Arabic
+                                                label
+                                                    | Currency
+                                                    select(name="currency")
+                                                        option(value="usd") USD
+                                                        option(value="egp") EGP
+                                            hr
+                                            .copyright Copyright &copy; 2015 Designed by #[a(href="#", target="_blank").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-ten.vercel.app/works.html", target="_blank").author Mostafa Neamatalla]. All rights reserved.
                     nav.navbar.navbar__v1.navbar__v1--active
                         a(href="#").logo Luxury
                         ul.links
@@ -491,7 +518,34 @@ html(lang='en')
                     nav.navbar.navbar__v3
                         ul.actions
                             li.actions__action
-                                i.fa-light.fa-bars
+                                i.fa-light.fa-bars#activeLeftSidebar
+                                .sidebar.sidebar-left#leftSidebar
+                                    span.opacity
+                                    aside.aside
+                                        i.fa-solid.fa-xmark.aside__close#closeLeftSidebar
+                                        ul.aside__links 
+                                            li.link: a(href="#") My Account
+                                            li.link: a(href="#") My Wishlist
+                                            li.link: a(href="#") My Cart
+                                            li.link: a(href="#") Check out
+                                            li.link: a(href="#") Campain
+                                            li.link: a(href="#") Blogs
+                                            li.link: a(href="#") Log in
+                                            li.link: a(href="#") Sign up
+                                        footer.aside__footer
+                                            .controler
+                                                label
+                                                    | Language
+                                                    select(name="language")
+                                                        option(value="en") English
+                                                        option(value="ar") Arabic
+                                                label
+                                                    | Currency
+                                                    select(name="currency")
+                                                        option(value="usd") USD
+                                                        option(value="egp") EGP
+                                            hr
+                                            .copyright Copyright &copy; 2015 Designed by #[a(href="#", target="_blank").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-ten.vercel.app/works.html", target="_blank").author Mostafa Neamatalla]. All rights reserved.
                             a(href="#").logo Luxury
                             li.actions__action.cart
                                 a(href="#")
@@ -808,4 +862,4 @@ html(lang='en')
                                 a(href="#") Accessories
                             li.links__link
                                 a(href="#") Blogs
-                        
+        script(src="scripts/js/sidebar.js") 

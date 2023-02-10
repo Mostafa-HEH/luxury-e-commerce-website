@@ -1,0 +1,184 @@
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  cursor: auto;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+
+  & .aside {
+    @include flex-c;
+    gap: 64px;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: $color-white;
+    max-width: 320px;
+    width: 100%;
+    padding: 27px 40px 59px 40px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__close {
+      position: absolute;
+      top: 26px;
+      color: $color-gray-6;
+      font-size: 28px;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: $text-shadow-black;
+      }
+    }
+
+    &__links {
+      @include flex-c;
+      gap: 22px;
+      margin-top: 86px;
+
+      & .link {
+        @include flex-r;
+        gap: 21px;
+        align-items: center;
+        cursor: pointer;
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(13);
+        line-height: 22px;
+        text-transform: uppercase;
+        color: $color-secondary;
+        list-style: none;
+
+        &::before {
+          content: "";
+          height: 1px;
+          width: 10px;
+          background-color: $color-gray-4;
+        }
+
+        & a {
+          color: inherit;
+          text-decoration: unset;
+        }
+      }
+    }
+
+    &__footer {
+      @include flex-c;
+      gap: 26px;
+
+      & .controler {
+        @include flex-c;
+        gap: 23px;
+        margin-bottom: 8px;
+
+        & label {
+          @include flex-r;
+          align-items: center;
+          gap: 21px;
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(12);
+          line-height: 22px;
+          text-transform: uppercase;
+          color: $color-gray-3;
+
+          & select {
+            font-family: $lato;
+            font-weight: $regular;
+            font-size: px-rem(12);
+            line-height: 22px;
+            color: $color-secondary;
+            text-transform: uppercase;
+            height: 29px;
+            width: 95px;
+            border: $border-gray-7;
+            padding-left: 12px;
+          }
+        }
+      }
+
+      & hr {
+        width: 100%;
+        height: 1px;
+        background-color: #e6e6e6;
+        border: unset;
+      }
+
+      & .copyright {
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(13);
+        line-height: 22px;
+        color: $color-gray-3;
+
+        & .author {
+          color: $color-secondary;
+          text-decoration: unset;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &-right {
+    transform: translateX(100%);
+    transition: transform $speed-1;
+
+    & .aside {
+      right: 0;
+
+      &__close {
+        right: 27px;
+      }
+    }
+
+    &--active {
+      transform: translateX(0);
+      animation: bg 1s forwards;
+
+      @keyframes bg {
+        0% {
+          background-color: rgba(0, 0, 0, 0);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  &-left {
+    transform: translateX(-100%);
+    transition: transform $speed-1;
+
+    & .aside {
+      left: 0;
+
+      &__close {
+        left: 27px;
+      }
+    }
+
+    &--active {
+      transform: translateX(0);
+      animation: bg 1s forwards;
+
+      @keyframes bg {
+        0% {
+          background-color: rgba(0, 0, 0, 0);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}

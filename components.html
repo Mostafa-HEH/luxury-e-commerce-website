@@ -214,7 +214,40 @@
                 </div>
               </li>
               <li class="actions__action"><i class="fa-light fa-magnifying-glass"></i></li>
-              <li class="actions__action"><i class="fa-light fa-bars">           </i></li>
+              <li class="actions__action"> <i class="fa-light fa-bars" id="activeRightSidebar"></i>
+                <div class="sidebar sidebar-right" id="rightSidebar"><span class="opacity"></span>
+                  <aside class="aside"><i class="fa-solid fa-xmark aside__close" id="closeRightSidebar"></i>
+                    <ul class="aside__links"> 
+                      <li class="link"><a href="#">My Account</a></li>
+                      <li class="link"><a href="#">My Wishlist</a></li>
+                      <li class="link"><a href="#">My Cart</a></li>
+                      <li class="link"><a href="#">Check out</a></li>
+                      <li class="link"><a href="#">Campain</a></li>
+                      <li class="link"><a href="#">Blogs</a></li>
+                      <li class="link"><a href="#">Log in</a></li>
+                      <li class="link"><a href="#">Sign up</a></li>
+                    </ul>
+                    <footer class="aside__footer">
+                      <div class="controler">
+                        <label>Language
+                          <select name="language">
+                            <option value="en">English</option>
+                            <option value="ar">Arabic</option>
+                          </select>
+                        </label>
+                        <label>Currency
+                          <select name="currency">
+                            <option value="usd">USD</option>
+                            <option value="egp">EGP</option>
+                          </select>
+                        </label>
+                      </div>
+                      <hr>
+                      <div class="copyright">Copyright &copy; 2015 Designed by <a class="author" href="#" target="_blank">AuThemes</a> Coded by <a class="author" href="https://mostafa-portfolio-ten.vercel.app/works.html" target="_blank">Mostafa Neamatalla</a>. All rights reserved.</div>
+                    </footer>
+                  </aside>
+                </div>
+              </li>
             </ul>
           </nav>
           <nav class="navbar navbar__v1 navbar__v1--active"><a class="logo" href="#">Luxury</a>
@@ -356,7 +389,40 @@
           </nav>
           <nav class="navbar navbar__v3">
             <ul class="actions">
-              <li class="actions__action"><i class="fa-light fa-bars"></i></li><a class="logo" href="#">Luxury</a>
+              <li class="actions__action"><i class="fa-light fa-bars" id="activeLeftSidebar"></i>
+                <div class="sidebar sidebar-left" id="leftSidebar"><span class="opacity"></span>
+                  <aside class="aside"><i class="fa-solid fa-xmark aside__close" id="closeLeftSidebar"></i>
+                    <ul class="aside__links"> 
+                      <li class="link"><a href="#">My Account</a></li>
+                      <li class="link"><a href="#">My Wishlist</a></li>
+                      <li class="link"><a href="#">My Cart</a></li>
+                      <li class="link"><a href="#">Check out</a></li>
+                      <li class="link"><a href="#">Campain</a></li>
+                      <li class="link"><a href="#">Blogs</a></li>
+                      <li class="link"><a href="#">Log in</a></li>
+                      <li class="link"><a href="#">Sign up</a></li>
+                    </ul>
+                    <footer class="aside__footer">
+                      <div class="controler">
+                        <label>Language
+                          <select name="language">
+                            <option value="en">English</option>
+                            <option value="ar">Arabic</option>
+                          </select>
+                        </label>
+                        <label>Currency
+                          <select name="currency">
+                            <option value="usd">USD</option>
+                            <option value="egp">EGP</option>
+                          </select>
+                        </label>
+                      </div>
+                      <hr>
+                      <div class="copyright">Copyright &copy; 2015 Designed by <a class="author" href="#" target="_blank">AuThemes</a> Coded by <a class="author" href="https://mostafa-portfolio-ten.vercel.app/works.html" target="_blank">Mostafa Neamatalla</a>. All rights reserved.</div>
+                    </footer>
+                  </aside>
+                </div>
+              </li><a class="logo" href="#">Luxury</a>
               <li class="actions__action cart"><a href="#"><i class="fa-light fa-bag-shopping"></i><span class="cart-number">1</span></a>
                 <div class="mega-menu fullwidth">
                   <div class="mega-menu__products">
@@ -629,5 +695,6 @@
         </div>
       </div>
     </div>
+    <script src="scripts/js/sidebar.js"> </script>
   </body>
 </html>
