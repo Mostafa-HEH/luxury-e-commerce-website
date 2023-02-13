@@ -26,13 +26,13 @@ const hideSidebar = (direction) => {
 
 // --- Left Sidebar ------------------------------------------------------------
 // Show right sidebar
-activeRightSidebar.addEventListener("click", () => displaySidebar("right"));
+activeRightSidebar?.addEventListener("click", () => displaySidebar("right"));
 
 // Hide right sidebar
-closeRightSidebar.addEventListener("click", () => hideSidebar("right"));
+closeRightSidebar?.addEventListener("click", () => hideSidebar("right"));
 
 // Hide right sidebar by click outside
-rightSidebar.addEventListener("click", (e) => {
+rightSidebar?.addEventListener("click", (e) => {
   if (e.target.classList.contains("sidebar"))
     rightSidebar.classList.remove("sidebar-right--active");
 });
@@ -40,13 +40,13 @@ rightSidebar.addEventListener("click", (e) => {
 
 // --- Right Sidebar -----------------------------------------------------------
 // Show left sidebar
-activeLeftSidebar.addEventListener("click", () => displaySidebar("left"));
+activeLeftSidebar?.addEventListener("click", () => displaySidebar("left"));
 
 // Hide left sidebar
-closeLeftSidebar.addEventListener("click", () => hideSidebar("left"));
+closeLeftSidebar?.addEventListener("click", () => hideSidebar("left"));
 
 // Hide left sidebar by click outside
-leftSidebar.addEventListener("click", (e) => {
+leftSidebar?.addEventListener("click", (e) => {
   if (e.target.classList.contains("sidebar"))
     leftSidebar.classList.remove("sidebar-left--active");
 });

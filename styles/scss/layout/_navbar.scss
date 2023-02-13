@@ -1,5 +1,6 @@
 .navbar {
   position: relative;
+  z-index: 1994;
 
   & .links {
     @media screen and (max-width: 960px) {
