@@ -1819,5 +1819,22 @@ li {
   font-weight: 900;
   margin-left: 6px;
 }
+.home-v1 .new-products-section {
+  padding-bottom: 73px;
+}
+.home-v1 .new-products-section .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.home-v1 .new-products-section .products-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 38px 30px;
+}
 
 /*# sourceMappingURL=styles.css.map */

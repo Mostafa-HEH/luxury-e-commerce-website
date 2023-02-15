@@ -149,4 +149,20 @@
       }
     }
   }
+
+  & .new-products-section {
+    padding-bottom: 73px;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      gap: 50px;
+    }
+
+    & .products-container {
+      @include flex-r;
+      flex-wrap: wrap;
+      gap: 38px 30px;
+    }
+  }
 }
