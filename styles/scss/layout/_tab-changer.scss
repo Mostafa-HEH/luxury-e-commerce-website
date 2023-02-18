@@ -1,0 +1,50 @@
+.tabs-changer {
+  @include flex-r;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+
+  &__tab {
+    font-family: $play;
+    font-weight: $bold;
+    font-size: px-rem(25);
+    line-height: 30px;
+    letter-spacing: va-px(200);
+    text-transform: uppercase;
+    cursor: pointer;
+    color: $color-gray-5;
+    transition: color $speed-1;
+    @include flex-r;
+    align-items: center;
+    gap: 20px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+
+    &--active,
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &::after {
+      content: "";
+      color: $color-gray-5;
+      width: 3px;
+      height: 12px;
+      background-color: $color-gray-6;
+      transform: rotate(28deg);
+
+      &:hover {
+        color: $color-gray-5;
+      }
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &.bordered {
+    border-bottom: $border-gray-7;
+  }
+}
