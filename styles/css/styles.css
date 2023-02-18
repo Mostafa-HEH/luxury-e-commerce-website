@@ -573,6 +573,11 @@ li {
   gap: 21px;
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .product-card {
+    width: 100%;
+  }
+}
 .product-card__image {
   background-color: #f2f2f2;
   width: 270px;
@@ -580,6 +585,11 @@ li {
   border: 1px solid #e5e5e5;
   position: relative;
   overflow: hidden;
+}
+@media screen and (max-width: 500px) {
+  .product-card__image {
+    width: 100%;
+  }
 }
 .product-card__image .navigation {
   position: absolute;
@@ -834,6 +844,32 @@ li {
 }
 .product-card-list__content .navigation .action.action-secondary.black:not(.action.action-secondary.black.icon):nth-child(2) i {
   transform: rotate(90deg);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+}
+.bullets .bullet {
+  width: 12px;
+  height: 12px;
+  display: block;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.bullets.white .bullet {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+.bullets.white .bullet--active {
+  background-color: #ffffff;
+}
+.bullets.gray-3 .bullet {
+  border: 2px solid rgba(102, 102, 102, 0.8);
+}
+.bullets.gray-3 .bullet--active {
+  background-color: #666666;
 }
 
 .sidebar {
@@ -1615,24 +1651,9 @@ li {
     display: none;
   }
 }
-.hero-section .slides__bullets {
+.hero-section .slides .bullets {
   position: absolute;
   bottom: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 9px;
-}
-.hero-section .slides__bullets .bullet {
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  width: 12px;
-  height: 12px;
-  display: block;
-  transform: rotate(45deg);
-  cursor: pointer;
-}
-.hero-section .slides__bullets .bullet--active {
-  background-color: #ffffff;
 }
 
 .components-page {
@@ -1668,10 +1689,6 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.components-page .component.navbar {
-  margin-bottom: 100vh;
-}
-
 .home-v1 .navbar__v1 {
   position: absolute;
   top: 0;
@@ -1821,6 +1838,8 @@ li {
 }
 .home-v1 .new-products-section {
   padding-bottom: 73px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .home-v1 .new-products-section .wrapper {
   max-width: 1170px;
@@ -1833,8 +1852,111 @@ li {
 .home-v1 .new-products-section .products-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 38px 30px;
+}
+.home-v1 .offers-section {
+  min-height: 612px;
+  height: 100%;
+  background: rgb(224, 224, 224);
+  background: linear-gradient(90deg, rgb(224, 224, 224) 0%, rgb(242, 242, 242) 100%);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.home-v1 .offers-section .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .home-v1 .offers-section .wrapper {
+    justify-content: center;
+  }
+}
+.home-v1 .offers-section__slides {
+  margin-right: 164px;
+}
+@media screen and (max-width: 800px) {
+  .home-v1 .offers-section__slides {
+    margin-right: 0;
+  }
+}
+.home-v1 .offers-section__slides .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  text-align: center;
+}
+.home-v1 .offers-section__slides .slide--active {
+  display: flex;
+}
+.home-v1 .offers-section__slides .slide--active::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  animation: flashing 900ms forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes flashing {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+.home-v1 .offers-section__slides .slide * {
+  position: relative;
+  z-index: 1;
+}
+.home-v1 .offers-section__slides .slide__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+.home-v1 .offers-section__slides .slide__head {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 43px;
+  letter-spacing: 3.2px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.home-v1 .offers-section__slides .slide__desciption {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #666666;
+  text-transform: capitalize;
+  margin-bottom: 48px;
+  margin-top: 31px;
+}
+.home-v1 .offers-section__slides .slide__desciption strong {
+  font-weight: 900;
+}
+.home-v1 .offers-section__slides .bullets {
+  justify-content: center;
+  margin-top: 92px;
+  position: relative;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=styles.css.map */

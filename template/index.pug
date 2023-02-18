@@ -225,7 +225,7 @@ html(lang='en')
                         i.fa-solid.fa-caret-left
                     span.action.action-secondary.white#heroSlideRightControler
                         i.fa-solid.fa-caret-right
-                .slides__bullets
+                .bullets.white
                     span(data-id='0').bullet
                     span(data-id='1').bullet.bullet--active
                     span(data-id='2').bullet
@@ -452,3 +452,28 @@ html(lang='en')
                             .price
                                 .price__before $239.00
                                 .price__after $189.00
+        section.offers-section
+            .wrapper 
+                .offers-section__slides 
+                    .slide
+                        .img-container.slide__img
+                            img(src="https://images.unsplash.com/photo-1676523738163-55bc3451bfda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                        h4.slide__head Slide One
+                        p.slide__desciption Slide One Description
+                        a(href="#").btn.btn-primary.black Shop now
+                    .slide.slide--active
+                        .img-container.slide__img
+                            img(src="https://images.unsplash.com/photo-1676534967649-de5853869036?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                        h4.slide__head Deal of the day
+                        p.slide__desciption Clothing & Sccessories Sale Up To #[strong 50%] Off
+                        a(href="#").btn.btn-primary.black Shop now
+                    .slide
+                        .img-container.slide__img
+                            img(src="https://images.unsplash.com/photo-1676554436967-3b923dd87c3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2MHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                        h4.slide__head Slide Three
+                        p.slide__desciption Slide Three Description
+                        a(href="#").btn.btn-primary.black Shop now
+                    .bullets.gray-3
+                        span(data-id='0').bullet
+                        span(data-id='1').bullet.bullet--active
+                        span(data-id='2').bullet

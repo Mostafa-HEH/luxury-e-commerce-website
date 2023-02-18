@@ -153,25 +153,9 @@
       }
     }
 
-    &__bullets {
+    & .bullets {
       position: absolute;
       bottom: 40px;
-      @include flex-r;
-      align-items: center;
-      gap: 9px;
-
-      & .bullet {
-        border: $border-white-80-2;
-        width: 12px;
-        height: 12px;
-        display: block;
-        transform: rotate(45deg);
-        cursor: pointer;
-
-        &--active {
-          background-color: $color-white;
-        }
-      }
     }
   }
 }

@@ -1,3 +1,7 @@
+// ==((This script contains Slides for))==
+// - Hero section slides for Home v1, Home v2, Home v3
+// - Offers section slides for Home v1
+
 // *****************************
 // **** Hero section slides ****
 // *****************************
@@ -12,7 +16,7 @@ const heroSlideRightControler = document.getElementById(
 
 // Bullet Selectors
 const heroSlidesBullet = document.querySelectorAll(
-  ".hero-section .slides .slides__bullets .bullet"
+  ".hero-section .slides .bullets .bullet"
 );
 
 // Slides Selectors
@@ -112,3 +116,45 @@ document.addEventListener("touchend", (e) => {
   touchendX = e.changedTouches[0].screenX;
   checkDirection();
 });
+
+// *******************************
+// **** Offers section slides ****
+// *******************************
+
+// Bullet Selectors
+const offersSlidesBullet = document.querySelectorAll(
+  ".offers-section .offers-section__slides .bullets .bullet"
+);
+
+// Slides Selectors
+const offersSlides = document.querySelectorAll(
+  ".offers-section .offers-section__slides .slide"
+);
+
+let offersCurrentSlide = 2;
+
+// change slide
+const changeOffersSlide = (slideNum) => {
+  offersCurrentSlide = slideNum;
+
+  // remove last active bullet
+  offersSlidesBullet.forEach((bullet) =>
+    bullet.classList.remove("bullet--active")
+  );
+
+  // active current active bullet
+  offersSlidesBullet[offersCurrentSlide].classList.add("bullet--active");
+
+  // remove last active slide
+  offersSlides.forEach((slide) => slide.classList.remove("slide--active"));
+
+  // add current active slide
+  offersSlides[offersCurrentSlide].classList.add("slide--active");
+};
+
+// Change slides by clicking bullets
+offersSlidesBullet.forEach((bullet) =>
+  bullet.addEventListener("click", (e) =>
+    changeOffersSlide(parseInt(e.target.dataset.id))
+  )
+);

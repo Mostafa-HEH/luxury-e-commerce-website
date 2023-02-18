@@ -1,0 +1,33 @@
+.bullets {
+  @include flex-r;
+  align-items: center;
+  gap: 9px;
+
+  & .bullet {
+    width: 12px;
+    height: 12px;
+    display: block;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  &.white {
+    & .bullet {
+      border: $border-white-80-2;
+
+      &--active {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  &.gray-3 {
+    & .bullet {
+      border: $border-gray-3-80-2;
+
+      &--active {
+        background-color: $color-gray-3;
+      }
+    }
+  }
+}
