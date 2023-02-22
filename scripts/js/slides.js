@@ -158,3 +158,24 @@ offersSlidesBullet.forEach((bullet) =>
     changeOffersSlide(parseInt(e.target.dataset.id))
   )
 );
+
+// *******************************
+// ****** Tab Slides Cards *******
+// *******************************
+
+// Tab Slides Sellector
+const slideCards = document.querySelector(".tab-slides .slide-cards");
+
+// cotrollers sellector
+const slideCardsLeft = document.querySelector(".tab-slides #leftControler");
+const slideCardsRight = document.querySelector(".tab-slides #rightControler");
+
+const cardWidth = 300;
+
+slideCardsLeft.addEventListener("click", () => {
+  slideCards.scrollLeft += cardWidth;
+});
+
+slideCardsRight.addEventListener("click", () => {
+  slideCards.scrollLeft -= cardWidth;
+});

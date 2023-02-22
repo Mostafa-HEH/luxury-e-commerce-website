@@ -2004,5 +2004,81 @@ li {
   position: relative;
   z-index: 1;
 }
+.home-v1 .top-products-section {
+  padding-top: 40px;
+  padding-bottom: 67px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.home-v1 .top-products-section .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.home-v1 .top-products-section .tabs-changer {
+  margin-right: 65px;
+  margin-left: 65px;
+  width: unset;
+}
+@media screen and (max-width: 500px) {
+  .home-v1 .top-products-section .tabs-changer {
+    margin-right: unset;
+    margin-left: unset;
+  }
+}
+@media screen and (max-width: 500px) {
+  .home-v1 .top-products-section .tabs-changer__tab {
+    font-size: 1.25rem;
+  }
+}
+.home-v1 .top-products-section .tab-slides {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.home-v1 .top-products-section .tab-slides .slide-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 1170px;
+  width: 100%;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+  transition: all 150ms;
+  scroll-behavior: smooth;
+}
+.home-v1 .top-products-section .tab-slides .slide-cards::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+@media screen and (max-width: 500px) {
+  .home-v1 .top-products-section .tab-slides .slide-cards .product-card {
+    width: 270px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .home-v1 .top-products-section .tab-slides .slide-cards .product-card__image {
+    width: 270px;
+  }
+}
+.home-v1 .top-products-section .tab-slides .action {
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 500px) {
+  .home-v1 .top-products-section .tab-slides .action {
+    display: none;
+  }
+}
+.home-v1 .top-products-section .tab-slides .action.action-secondary.black {
+  border-color: #e5e5e5;
+}
 
 /*# sourceMappingURL=styles.css.map */
