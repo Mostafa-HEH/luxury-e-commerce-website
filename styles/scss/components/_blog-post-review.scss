@@ -1,0 +1,129 @@
+.blog-post-review {
+  background-color: $color-white;
+
+  // constance layouts
+  &__img {
+    background-color: $color-secondary;
+  }
+
+  &__content {
+    @include flex-c;
+
+    & .title {
+      font-family: $play;
+      font-weight: $bold;
+      letter-spacing: $space-1;
+      text-transform: uppercase;
+    }
+
+    & .preview {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 24px;
+      color: $color-gray-3;
+    }
+
+    & .details {
+      @include flex-r;
+      align-items: center;
+      gap: 38px;
+
+      &__data {
+        @include flex-r;
+        align-items: center;
+        gap: 8px;
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(13);
+        line-height: 20px;
+        color: $color-gray-4;
+        text-transform: uppercase;
+
+        & a {
+          color: inherit;
+          text-decoration: none;
+          transition: text-decoration $speed-1;
+        }
+
+        &.read-more {
+          & a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // different layouts
+  &.grid {
+    @include flex-c;
+
+    & .blog-post-review {
+      &__img {
+        height: 320px;
+        width: 100%;
+      }
+
+      &__content {
+        padding: 25px 31px 27px;
+        border: $border-gray-10;
+
+        & .title {
+          font-size: px-rem(20);
+          line-height: 22px;
+          color: $color-gray-2;
+        }
+
+        & .preview {
+          margin-top: 29px;
+          margin-bottom: 35px;
+        }
+
+        & .details {
+          @include flex-r;
+          align-items: center;
+          gap: 38px;
+
+          &__data {
+            &.read-more {
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.list {
+    @include flex-r;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+    height: 585px;
+
+    & .blog-post-review {
+      &__img {
+        height: 100%;
+        width: 50%;
+      }
+
+      &__content {
+        & .title {
+          font-size: px-rem(30);
+          line-height: 36px;
+          color: $color-secondary;
+        }
+
+        & .details:not(.details.details__data.read-more) {
+          margin-top: 28px;
+          margin-bottom: 30px;
+        }
+
+        & .preview {
+          margin-bottom: 37px;
+        }
+      }
+    }
+  }
+}

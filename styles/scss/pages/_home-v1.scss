@@ -371,4 +371,10 @@
       }
     }
   }
+
+  & .from-blogs-section {
+    & .wrapper {
+      @include grid-1170;
+    }
+  }
 }
