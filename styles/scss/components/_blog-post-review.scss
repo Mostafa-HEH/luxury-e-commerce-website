@@ -58,6 +58,7 @@
   // different layouts
   &.grid {
     @include flex-c;
+    min-width: 570px;
 
     & .blog-post-review {
       &__img {

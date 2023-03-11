@@ -373,8 +373,34 @@
   }
 
   & .from-blogs-section {
+    @include flex-c;
+    gap: 50px;
+    margin-bottom: 81px;
+
     & .wrapper {
       @include grid-1170;
+    }
+
+    & .slides {
+      @include flex-r;
+      align-items: center;
+      gap: 15px;
+      max-width: 1300px;
+      width: 100%;
+      margin: auto;
+
+      & .posts {
+        @include flex-r;
+        align-items: flex-start;
+        gap: 30px;
+        overflow: hidden;
+        width: 1170px;
+      }
+
+      & .action {
+        position: relative;
+        bottom: 90px;
+      }
     }
   }
 }

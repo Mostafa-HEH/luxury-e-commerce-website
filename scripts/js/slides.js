@@ -179,3 +179,16 @@ slideCardsLeft.addEventListener("click", () => {
 slideCardsRight.addEventListener("click", () => {
   slideCards.scrollLeft -= cardWidth;
 });
+
+// *******************************
+// ***** From Blogs Slides *******
+// *******************************
+const blogsSlidesPosts = document.querySelector(
+  ".from-blogs-section .slides .posts"
+);
+
+fetch("http://localhost:3000/posts")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });

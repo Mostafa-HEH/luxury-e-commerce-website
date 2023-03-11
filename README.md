@@ -6,6 +6,13 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 
 ---
 
+#### How to run the dummy server:
+
+- First you need to install json server package.<br/>
+  `npm install -g json-server`
+- Run the server.<br/>
+  `json-server --watch .\api\data.json`
+
 #### Work process:
 
 - Receive designs as PSD.
@@ -20,6 +27,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Build components.
 - Build Layouts.
 - Convert HTML to Pug for more organize, clean, and reusable code.
+- Create dummy Json data.
 
 #### Skills:
 
@@ -30,6 +38,8 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - CSS
 - Sass (Scss)
 - Javascript
+- JSON
+- json-server
 
 #### Other skills:
 
