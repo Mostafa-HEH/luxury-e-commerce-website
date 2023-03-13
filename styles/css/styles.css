@@ -2210,8 +2210,13 @@ li {
   flex-direction: row;
   align-items: flex-start;
   gap: 30px;
-  overflow: hidden;
+  overflow-x: scroll;
   width: 1170px;
+  transition: all 150ms;
+  scroll-behavior: smooth;
+}
+.home-v1 .from-blogs-section .slides .posts::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 .home-v1 .from-blogs-section .slides .action {
   position: relative;

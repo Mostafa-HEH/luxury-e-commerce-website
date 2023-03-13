@@ -186,9 +186,84 @@ slideCardsRight.addEventListener("click", () => {
 const blogsSlidesPosts = document.querySelector(
   ".from-blogs-section .slides .posts"
 );
+const blogsSlidesPostsLeft = document.querySelector(
+  ".from-blogs-section .slides #leftControler"
+);
+const blogsSlidesPostsRight = document.querySelector(
+  ".from-blogs-section .slides #rightControler"
+);
 
+const monthShortNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+// Get posts
 fetch("http://localhost:3000/posts")
   .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
+  .then(async (posts) => {
+    const postsLength = posts.length;
+    let postsHTML = "";
+
+    for (let i = postsLength - 1; i >= postsLength - 5; i--) {
+      let { id, title, short_description, date, image } = posts[i];
+      let postCommentsLength = 0;
+
+      // Date handle
+      let monthFromDate = monthShortNames[new Date(date).getMonth()];
+      let dayFromDate = new Date(date).getDate();
+      let yearFromDate = new Date(date).getFullYear();
+
+      // Fetch comments
+      await fetch("http://localhost:3000/comments")
+        .then((res) => res.json())
+        .then((comments) => {
+          comments.forEach((comment) => {
+            if (comment.postid == id) postCommentsLength++;
+          });
+        });
+
+      postsHTML += `
+      <div class="blog-post-review grid">
+        <div class="img-container blog-post-review__img">
+          <img src="${image}" alt="${title}"/>
+        </div>
+        <div class="blog-post-review__content">
+          <h3 class="title">${title}</h3>
+          <p class="preview">${short_description}</p>
+          <div class="details">
+            <div class="details__data"><i class="fa-regular fa-calendar-days"></i><span>${monthFromDate}  ${dayFromDate}, ${yearFromDate}</span></div>
+            <div class="details__data"><i class="fa-light fa-comment"></i><span>${postCommentsLength}</span></div>
+            <div class="details__data read-more"><i class="fa-solid fa-caret-right"></i><a href="#">Read More</a></div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    blogsSlidesPosts.innerHTML = postsHTML;
   });
+
+let scrollPostRange = 596;
+
+// Change slides
+blogsSlidesPostsRight.addEventListener("click", () => {
+  blogsSlidesPosts.scrollLeft += scrollPostRange;
+});
+
+blogsSlidesPostsLeft.addEventListener("click", () => {
+  if (blogsSlidesPosts.scrollLeft <= scrollPostRange + scrollPostRange / 2) {
+    blogsSlidesPosts.scrollLeft = 0;
+  } else {
+    blogsSlidesPosts.scrollLeft -= scrollPostRange;
+  }
+});
