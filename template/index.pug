@@ -457,19 +457,19 @@ html(lang='en')
                 .offers-section__slides 
                     .slide
                         .img-container.slide__img
-                            img(src="https://images.unsplash.com/photo-1676523738163-55bc3451bfda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                            // img(src="#", alt="Slide One")
                         h4.slide__head Slide One
                         p.slide__desciption Slide One Description
                         a(href="#").btn.btn-primary.black Shop now
                     .slide.slide--active
                         .img-container.slide__img
-                            img(src="https://images.unsplash.com/photo-1676534967649-de5853869036?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                            // img(src="#", alt="Deal of the day")
                         h4.slide__head Deal of the day
                         p.slide__desciption Clothing & Sccessories Sale Up To #[strong 50%] Off
                         a(href="#").btn.btn-primary.black Shop now
                     .slide
                         .img-container.slide__img
-                            img(src="https://images.unsplash.com/photo-1676554436967-3b923dd87c3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2MHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60", alt="alt")
+                            // img(src="#", alt="Slide Three")
                         h4.slide__head Slide Three
                         p.slide__desciption Slide Three Description
                         a(href="#").btn.btn-primary.black Shop now
@@ -730,49 +730,4 @@ html(lang='en')
                                     a(href="#") Read More
                 span.action.action-secondary.black#rightControler
                     i.fa-solid.fa-caret-right
-        footer.footer 
-            main
-                .wrapper
-                    .group
-                        a(href="/").logo Luxury
-                        .description 
-                            p The best eCommerce fashion theme  vehicula pulvinar laoreet. Cras lacus elit, tempor volutpat tortor. Aliquam erat volutpat. Sed eu mi turpis. Vivamus eget eleifend ante. 
-                            p Luxury eCommerce fashion theme  consectetur ipsum consequat
-                    .group
-                        h6.group__title About
-                        ul.group__links 
-                            li.link: a(href="#") Our Blogs
-                            li.link: a(href="#") About Us
-                            li.link: a(href="#") Our Story
-                            li.link: a(href="#") Term & Conditions
-                            li.link: a(href="#") Privacy Policy
-                            li.link: a(href="#") Sites Map
-                    .group
-                        h6.group__title Help
-                        ul.group__links 
-                            li.link: a(href="#") Chat
-                            li.link: a(href="#") FAQs
-                            li.link: a(href="#") Shipping
-                            li.link: a(href="#") Returns
-                            li.link: a(href="#") Order Status
-                            li.link: a(href="#") Contact Us
-                    .group
-                        h6.group__title Newsletter
-                        .actions
-                            .newsletter
-                                input(type="text", placeholder="Enter email address").input
-                                a.btn.btn-primary.black ok
-                            .social-links 
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-instagram
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-facebook-f
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-twitter
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-pinterest-p
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-behance
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-youtube
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-vimeo-v
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-amazon
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-apple
-                                a(href="#").action.action-primary.white: i.fa-brands.fa-android
-            .copyrights
-                .wrapper
-                    div Copyright © 2023 Designed by #[a(href="#").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-mostafa-heh.vercel.app/", target="_blank").author Mostafa Neamatalla]. All rights reserved.
+        include includes/footer.pug

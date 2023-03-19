@@ -1,0 +1,31 @@
+.home-v2 {
+  & nav.navbar.navbar__v1.navbar__v2 {
+    border-bottom: unset;
+
+    &.top-part {
+      position: absolute;
+      width: 100%;
+
+      & .actions {
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+    }
+
+    &.links-part {
+      box-shadow: $shadow-003;
+
+      & .links {
+        &__link {
+          color: $color-secondary;
+        }
+      }
+
+      & .actions {
+        &__action {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}
