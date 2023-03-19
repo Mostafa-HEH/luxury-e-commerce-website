@@ -1,0 +1,179 @@
+footer.footer {
+  @include flex-c;
+
+  & .wrapper {
+    @include grid-1170;
+  }
+
+  & main {
+    background-color: $color-gray-10;
+    padding: 75px 25px 88px;
+
+    & .wrapper {
+      @include flex-r;
+      justify-content: space-between;
+
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    & .group {
+      @media screen and (max-width: 800px) {
+        @include flex-c;
+        align-items: center;
+        gap: 16px;
+      }
+
+      &__title {
+        font-family: $play;
+        font-weight: $bold;
+        font-size: px-rem(25);
+        line-height: 36px;
+        color: $color-secondary;
+        letter-spacing: va-px(200);
+        margin-bottom: 38px;
+
+        @media screen and (max-width: 800px) {
+          margin-bottom: unset;
+        }
+      }
+
+      &__links {
+        @include flex-c;
+        gap: 19px;
+
+        @media screen and (max-width: 800px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px 16px;
+        }
+
+        & .link {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(15);
+          color: $color-gray-3;
+          list-style: none;
+          width: fit-content;
+
+          & a {
+            color: inherit;
+            text-decoration: inherit;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      & .logo {
+        margin-bottom: 31px;
+
+        @media screen and (max-width: 800px) {
+          margin-bottom: unset;
+        }
+      }
+
+      & .description {
+        @include flex-c;
+        gap: 22px;
+        max-width: 236px;
+
+        @media screen and (max-width: 800px) {
+          gap: 12px;
+          align-items: center;
+          text-align: center;
+          max-width: unset;
+          width: 100%;
+        }
+
+        & p {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(15);
+          line-height: 24px;
+          color: $color-gray-3;
+        }
+      }
+
+      & .actions {
+        @include flex-c;
+        gap: 32px;
+        max-width: 258px;
+        @media screen and (max-width: 800px) {
+          gap: 16px;
+        }
+
+        @media screen and (max-width: 400px) {
+          max-width: unset;
+          width: 100%;
+        }
+
+        & .newsletter {
+          @include flex-r;
+
+          & .input {
+            padding-left: 19px;
+            padding-right: 19px;
+            width: calc(100% - 50px);
+          }
+
+          & .btn {
+            height: 50px;
+            width: 50px;
+            padding: 0;
+            @include flex-r;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        & .social-links {
+          @include flex-r;
+          flex-wrap: wrap;
+          gap: 2px;
+          @media screen and (max-width: 800px) {
+            justify-content: center;
+          }
+
+          & a {
+            text-decoration: unset;
+            border: $border-gray-7;
+            color: $color-gray-3;
+
+            & i {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .copyrights {
+    font-family: $lato;
+    font-weight: $regular;
+    font-size: px-rem(13);
+    line-height: 24px;
+    color: $color-gray-3;
+    background-color: $color-white;
+    padding: 34px 25px;
+
+    @media screen and (max-width: 600px) {
+      text-align: center;
+    }
+
+    & .author {
+      color: $color-secondary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
