@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -2545,6 +2546,66 @@ footer.footer .copyrights .author:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 47px 30px;
+}
+.home-v2 .testimonials {
+  background-color: #333333;
+  padding: 87px 25px;
+}
+.home-v2 .testimonials .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v2 .testimonials .section-heading {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.home-v2 .testimonials .comment {
+  max-width: 588px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 37px;
+  margin-bottom: 58px;
+  gap: 55px;
+}
+.home-v2 .testimonials .comment__content {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #e5e5e5;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.home-v2 .testimonials .comment__content::before {
+  content: "“";
+  font-size: 4.5rem;
+  margin-top: 16px;
+  margin-right: 4px;
+}
+.home-v2 .testimonials .comment__author {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #ffa290;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  gap: 4px;
+}
+.home-v2 .testimonials .comment__author::before, .home-v2 .testimonials .comment__author::after {
+  content: "-";
 }
 
 /*# sourceMappingURL=styles.css.map */

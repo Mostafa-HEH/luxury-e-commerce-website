@@ -127,4 +127,67 @@
       gap: 47px 30px;
     }
   }
+
+  & .testimonials {
+    background-color: $color-secondary;
+    padding: 87px 25px;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      align-items: center;
+    }
+
+    & .section-heading {
+      color: $color-white;
+      border-color: $color-white;
+    }
+
+    & .comment {
+      max-width: 588px;
+      width: 100%;
+      @include flex-c;
+      align-items: center;
+      margin-top: 37px;
+      margin-bottom: 58px;
+      gap: 55px;
+
+      &__content {
+        font-family: $lato;
+        font-style: italic;
+        font-weight: $bold;
+        font-size: px-rem(15);
+        line-height: 24px;
+        color: $color-gray-7;
+        text-align: center;
+        @include flex-r;
+        align-items: flex-start;
+
+        &::before {
+          content: "“";
+          font-size: px-rem(72);
+          margin-top: 16px;
+          margin-right: 4px;
+        }
+      }
+
+      &__author {
+        font-family: $lato;
+        font-style: italic;
+        font-weight: $bold;
+        font-size: px-rem(15);
+        line-height: 24px;
+        color: $color-primary;
+        text-align: center;
+        @include flex-r;
+        text-transform: uppercase;
+        gap: 4px;
+
+        &::before,
+        &::after {
+          content: "-";
+        }
+      }
+    }
+  }
 }
