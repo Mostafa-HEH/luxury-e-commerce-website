@@ -2519,5 +2519,32 @@ footer.footer .copyrights .author:hover {
   width: 100%;
   height: 100%;
 }
+.home-v2 .featured-products {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.home-v2 .featured-products .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+}
+.home-v2 .featured-products .tabs-changer {
+  margin-top: 51px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.home-v2 .featured-products .tabs-changer__tab {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.home-v2 .featured-products .products {
+  margin-top: 50px;
+  margin-bottom: 87px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 47px 30px;
+}
 
 /*# sourceMappingURL=styles.css.map */
