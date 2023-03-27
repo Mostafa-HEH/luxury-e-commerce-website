@@ -2742,4 +2742,12 @@ footer.footer .copyrights .author:hover {
   border: 1px solid #e5e5e5;
 }
 
+.home-v3 .navbar__v3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
