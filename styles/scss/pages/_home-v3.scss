@@ -108,4 +108,28 @@
       }
     }
   }
+
+  & .featured-products {
+    padding: 0 25px 77px;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      align-items: center;
+    }
+
+    & .tabs-changer {
+      margin-top: 44px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    & .products {
+      @include flex-r;
+      flex-wrap: wrap;
+      gap: 47px 30px;
+      justify-content: center;
+    }
+  }
 }

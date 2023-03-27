@@ -2850,5 +2850,29 @@ footer.footer .copyrights .author:hover {
   font-weight: 300;
   line-height: 36px;
 }
+.home-v3 .featured-products {
+  padding: 0 25px 77px;
+}
+.home-v3 .featured-products .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v3 .featured-products .tabs-changer {
+  margin-top: 44px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.home-v3 .featured-products .products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 47px 30px;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=styles.css.map */
