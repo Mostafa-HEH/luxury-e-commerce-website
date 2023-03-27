@@ -239,4 +239,61 @@
       }
     }
   }
+
+  & .from-instagram {
+    @include flex-c;
+    gap: 43px;
+    padding: 0 25px 80px;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      gap: 43px;
+      position: relative;
+      @media screen and (max-width: 1300px) {
+        width: 82%;
+      }
+    }
+
+    & .insta-posts {
+      @include flex-r;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+
+      & .post {
+        height: 270px;
+        max-width: 270px;
+        width: 100%;
+        background-color: $color-secondary;
+      }
+    }
+
+    & .controlers {
+      @include flex-r;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      top: 54%;
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      & .action-secondary {
+        border: $border-gray-7;
+      }
+
+      & .action {
+        &:first-child {
+          margin-left: -65px;
+        }
+
+        &:last-child {
+          margin-right: -65px;
+        }
+      }
+    }
+  }
 }
