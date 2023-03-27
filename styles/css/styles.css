@@ -2660,5 +2660,48 @@ footer.footer .copyrights .author:hover {
 .home-v2 .new-products .controlers .action:last-child {
   margin-right: -65px;
 }
+.home-v2 .logo-brands {
+  padding: 87px 25px 83px;
+  background-color: #333333;
+}
+.home-v2 .logo-brands .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v2 .logo-brands .section-heading {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.home-v2 .logo-brands .brief {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 18px;
+  color: #cccccc;
+  margin-top: 34px;
+  margin-bottom: 52px;
+  text-align: center;
+}
+.home-v2 .logo-brands .logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.home-v2 .logo-brands .logos__logo {
+  width: 170px;
+  height: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -247,4 +247,48 @@
       }
     }
   }
+
+  & .logo-brands {
+    padding: 87px 25px 83px;
+    background-color: $color-secondary;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      align-items: center;
+    }
+
+    & .section-heading {
+      color: $color-white;
+      border-color: $color-white;
+    }
+
+    & .brief {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 18px;
+      color: $color-gray-6;
+      margin-top: 34px;
+      margin-bottom: 52px;
+      text-align: center;
+    }
+
+    & .logos {
+      @include flex-r;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      &__logo {
+        width: 170px;
+        height: 80px;
+        border: $border-white-30-1;
+        @include flex-r;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
 }
