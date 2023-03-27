@@ -190,4 +190,61 @@
       }
     }
   }
+
+  & .new-products {
+    padding: 80px 25px 87px;
+
+    & .wrapper {
+      @include grid-1170;
+      @include flex-c;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      @media screen and (max-width: 1300px) {
+        width: 82%;
+      }
+    }
+
+    & .products {
+      @include flex-r;
+      gap: 30px;
+      overflow: hidden;
+      width: 100%;
+
+      & .product-card {
+        &__image {
+          @media screen and (max-width: 500px) {
+            width: 270px;
+          }
+        }
+      }
+    }
+
+    & .controlers {
+      @include flex-r;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      & .action-secondary {
+        border: $border-gray-7;
+      }
+
+      & .action {
+        &:first-child {
+          margin-left: -65px;
+        }
+
+        &:last-child {
+          margin-right: -65px;
+        }
+      }
+    }
+  }
 }

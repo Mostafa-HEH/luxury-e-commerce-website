@@ -2607,5 +2607,58 @@ footer.footer .copyrights .author:hover {
 .home-v2 .testimonials .comment__author::before, .home-v2 .testimonials .comment__author::after {
   content: "-";
 }
+.home-v2 .new-products {
+  padding: 80px 25px 87px;
+}
+.home-v2 .new-products .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+@media screen and (max-width: 1300px) {
+  .home-v2 .new-products .wrapper {
+    width: 82%;
+  }
+}
+.home-v2 .new-products .products {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .home-v2 .new-products .products .product-card__image {
+    width: 270px;
+  }
+}
+.home-v2 .new-products .controlers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+@media screen and (max-width: 600px) {
+  .home-v2 .new-products .controlers {
+    display: none;
+  }
+}
+.home-v2 .new-products .controlers .action-secondary {
+  border: 1px solid #e5e5e5;
+}
+.home-v2 .new-products .controlers .action:first-child {
+  margin-left: -65px;
+}
+.home-v2 .new-products .controlers .action:last-child {
+  margin-right: -65px;
+}
 
 /*# sourceMappingURL=styles.css.map */
