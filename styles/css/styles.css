@@ -2874,5 +2874,69 @@ footer.footer .copyrights .author:hover {
   gap: 47px 30px;
   justify-content: center;
 }
+.home-v3 .testimonials {
+  background-color: #333333;
+  padding: 87px 25px;
+}
+.home-v3 .testimonials .wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v3 .testimonials .section-heading {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.home-v3 .testimonials .section-heading::after {
+  background-color: #333333;
+}
+.home-v3 .testimonials .comment {
+  max-width: 588px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 37px;
+  margin-bottom: 58px;
+  gap: 55px;
+}
+.home-v3 .testimonials .comment__content {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #e5e5e5;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.home-v3 .testimonials .comment__content::before {
+  content: "“";
+  font-size: 4.5rem;
+  margin-top: 16px;
+  margin-right: 4px;
+}
+.home-v3 .testimonials .comment__author {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #ffa290;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  gap: 4px;
+  letter-spacing: 3.2px;
+}
+.home-v3 .testimonials .comment__author::before, .home-v3 .testimonials .comment__author::after {
+  content: "-";
+}
 
 /*# sourceMappingURL=styles.css.map */
