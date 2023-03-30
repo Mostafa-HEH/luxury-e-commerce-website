@@ -1,0 +1,52 @@
+.page-header {
+  @include flex-c;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 68px 25px;
+  background-color: #f7f7f7;
+  box-shadow: $shadow-010;
+
+  &__tags {
+    @include flex-r;
+    align-items: center;
+
+    & .tag {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(12);
+      letter-spacing: va-px(100);
+      color: $color-secondary;
+      text-transform: uppercase;
+
+      & a {
+        color: inherit;
+        text-decoration: unset;
+      }
+
+      &:hover a {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: "/";
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
+  }
+
+  &__title {
+    font-family: $play;
+    font-weight: $black;
+    font-size: px-rem(30);
+    line-height: 36px;
+    letter-spacing: $space-1;
+    color: $color-gray-3;
+    text-transform: uppercase;
+  }
+}
