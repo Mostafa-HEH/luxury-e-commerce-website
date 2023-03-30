@@ -1,0 +1,25 @@
+.category-grid {
+  & .wrapper {
+    padding: 81px 25px 80px;
+    @include grid-1170;
+    @include flex-r;
+    gap: 30px;
+  }
+
+  & .display-sidebar {
+    @include flex-c;
+    gap: 30px;
+    width: 270px;
+
+    & .show-item {
+      width: 100%;
+      @include flex-c;
+      gap: 44px;
+    }
+  }
+
+  & .products {
+    @include flex-c;
+    gap: 30px;
+  }
+}
