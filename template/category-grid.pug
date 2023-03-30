@@ -1,0 +1,209 @@
+doctype
+html(lang='en')
+
+    head
+        //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
+        include includes/head.pug
+
+                //- Slides Script
+        script(src="scripts/js/slides.js", defer) 
+
+        title Category Grid
+
+    body.category-grid
+        nav.navbar.navbar__v1.navbar__v1--active
+                        a(href="#").logo Luxury
+                        ul.links
+                            li.links__link
+                                a(href="#") Home
+                            li.links__link
+                                a(href="#") Women
+                                .mega-menu.fullwidth
+                                    .wrapper
+                                        .mega-menu__links
+                                            ul.group
+                                                li.group__item.group__item__title Dresses
+                                                li.group__item: a(href="#") Short Dress
+                                                li.group__item: a(href="#") long Dress
+                                                li.group__item: a(href="#") Printed Dress
+                                                li.group__item: a(href="#") SKIRTS
+                                            ul.group
+                                                li.group__item.group__item__title Clothing
+                                                li.group__item: a(href="#") Jackets
+                                                li.group__item: a(href="#") Blazers
+                                                li.group__item: a(href="#") Shirts
+                                                li.group__item: a(href="#") Jeans
+                                            ul.group
+                                                li.group__item.group__item__title Shoes
+                                                li.group__item: a(href="#") Boots
+                                                li.group__item: a(href="#") Ankle Boots
+                                                li.group__item: a(href="#") Sneakers
+                                                li.group__item: a(href="#") Sandals
+                                            ul.group
+                                                li.group__item.group__item__title Watches
+                                                li.group__item: a(href="#") Elegance
+                                                li.group__item: a(href="#") Classic
+                                                li.group__item: a(href="#") Sport
+                                                li.group__item: a(href="#") Heritage
+                                            ul.group
+                                                li.group__item.group__item__title Bags
+                                                li.group__item: a(href="#") Hand Bags
+                                                li.group__item: a(href="#") Messenger Bags
+                                                li.group__item: a(href="#") Large HandBags
+                                                li.group__item: a(href="#") Backpacks
+                                            ul.group
+                                                li.group__item.group__item__title Accessories
+                                                li.group__item: a(href="#") Scarves
+                                                li.group__item: a(href="#") Jewellery
+                                                li.group__item: a(href="#") Headwear
+                                                li.group__item: a(href="#") Others
+                                        a(href="#").mega-menu__card
+                                            .img-container
+                                                img( src="", alt="")
+                                            .text-container
+                                                h4.category-name Winter 2015
+                                                h4.feature Collection
+                            li.links__link
+                                a(href="#") men
+                                .mega-menu.fullbox
+                                    .wrapper
+                                        .mega-menu__links
+                                            ul.group
+                                                li.group__item.group__item__title Clothing
+                                                li.group__item: a(href="#") Jackets
+                                                li.group__item: a(href="#") Blazers
+                                                li.group__item: a(href="#") Shirts
+                                                li.group__item: a(href="#") Jeans
+                                            ul.group
+                                                li.group__item.group__item__title Shoes
+                                                li.group__item: a(href="#") Boots
+                                                li.group__item: a(href="#") Ankle Boots
+                                                li.group__item: a(href="#") Sneakers
+                                                li.group__item: a(href="#") Sandals
+                                            ul.group
+                                                li.group__item.group__item__title Watches
+                                                li.group__item: a(href="#") Elegance
+                                                li.group__item: a(href="#") Classic
+                                                li.group__item: a(href="#") Sport
+                                                li.group__item: a(href="#") Heritage
+                                            ul.group
+                                                li.group__item.group__item__title Accessories
+                                                li.group__item: a(href="#") Scarves
+                                                li.group__item: a(href="#") Jewellery
+                                                li.group__item: a(href="#") Headwear
+                                                li.group__item: a(href="#") Others
+                                        .fast-links
+                                            a(href="#").fast-links__link Sale up to 50% off
+                                            a(href="#").fast-links__link New collection
+                            li.links__link
+                                a(href="#") Watches
+                            li.links__link
+                                a(href="#") Shoes
+                            li.links__link
+                                a(href="#") Accessories
+                            li.links__link
+                                a(href="#") Blogs
+                        ul.actions
+                            li.actions__action.cart
+                                a(href="#")
+                                    i.fa-light.fa-bag-shopping
+                                    span.cart-number 1
+                                .mega-menu.fullwidth
+                                    .mega-menu__products
+                                        .product-card
+                                            .img-container.product-card__image
+                                                img(src="", alt="")
+                                                .navigation
+                                                    span.navigation__link
+                                                        i.fa-light.fa-magnifying-glass-plus
+                                                    span.navigation__link
+                                                        i.fa-light.fa-bag-shopping
+                                                    span.navigation__link
+                                                        i.fa-regular.fa-retweet
+                                                    span.navigation__link
+                                                        i.fa-light.fa-heart
+                                            //- .product-card__tags
+                                            //-     .tag sale
+                                            .product-card__content
+                                                h3.name HIGH HEEL SANDAL
+                                                //- .rate
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star-half-stroke
+                                                .price
+                                                    //- .price__before $49.90
+                                                    .price__after $29.00
+                                            span.product-card__remove: i.fa-solid.fa-xmark
+                                        .product-card
+                                            .img-container.product-card__image
+                                                img(src="", alt="")
+                                                .navigation
+                                                    span.navigation__link
+                                                        i.fa-light.fa-magnifying-glass-plus
+                                                    span.navigation__link
+                                                        i.fa-light.fa-bag-shopping
+                                                    span.navigation__link
+                                                        i.fa-regular.fa-retweet
+                                                    span.navigation__link
+                                                        i.fa-light.fa-heart
+                                            //- .product-card__tags
+                                            //-     .tag sale
+                                            .product-card__content
+                                                h3.name HIGH HEEL ANKLE BOOTS
+                                                //- .rate
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star
+                                                //-     i.fa-solid.fa-star-half-stroke
+                                                .price
+                                                    //- .price__before $49.90
+                                                    .price__after $119.00
+                                            span.product-card__remove: i.fa-solid.fa-xmark
+                                    .mega-menu__details
+                                        .total
+                                            | Total: 
+                                            span.total__price $148.00
+                                        .action
+                                            a(href="#").btn.btn-primary.black View cart
+                                            a(href="#").btn.btn-primary.black Checkout
+                            li.actions__action
+                                i.fa-light.fa-magnifying-glass
+                            li.actions__action 
+                                i.fa-light.fa-bars#activeRightSidebar
+                                .sidebar.sidebar-right#rightSidebar
+                                    span.opacity
+                                    aside.aside
+                                        i.fa-solid.fa-xmark.aside__close#closeRightSidebar
+                                        ul.aside__links 
+                                            li.link: a(href="#") My Account
+                                            li.link: a(href="#") My Wishlist
+                                            li.link: a(href="#") My Cart
+                                            li.link: a(href="#") Check out
+                                            li.link: a(href="#") Campain
+                                            li.link: a(href="#") Blogs
+                                            li.link: a(href="#") Log in
+                                            li.link: a(href="#") Sign up
+                                        footer.aside__footer
+                                            .controler
+                                                label
+                                                    | Language
+                                                    select(name="language")
+                                                        option(value="en") English
+                                                        option(value="ar") Arabic
+                                                label
+                                                    | Currency
+                                                    select(name="currency")
+                                                        option(value="usd") USD
+                                                        option(value="egp") EGP
+                                            hr
+                                            .copyright Copyright &copy; 2015 Designed by #[a(href="#", target="_blank").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-ten.vercel.app/works.html", target="_blank").author Mostafa Neamatalla]. All rights reserved.
+        .page-header 
+            .page-header__tags 
+                span.tag: a(href="#") home
+                span.tag: a(href="#") men
+            h5.page-header__title Category Grid
+
+    include includes/footer.pug
