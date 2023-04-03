@@ -214,7 +214,20 @@ html(lang='en')
                     .by-price By Price
                 .banner Banner
             .products
-                .setting-bar setting bar
+                .setting-bar 
+                    label.select sort by:
+                        select
+                            option(value="default") default 
+                            option(value="name") name
+                            option(value="price") price 
+                    label.select Items/Page:
+                        select
+                            option(value="default") 6 
+                            option(value="name") 12
+                            option(value="price") 24 
+                    .setting-bar__layouts
+                        span.layout.layout--active: i.fa-solid.fa-grid
+                        span.layout: i.fa-solid.fa-list
                 .items items
                 .pagination Pagination 
     include includes/footer.pug

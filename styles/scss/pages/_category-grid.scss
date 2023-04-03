@@ -21,5 +21,36 @@
   & .products {
     @include flex-c;
     gap: 30px;
+    width: 100%;
+
+    & .setting-bar {
+      @include flex-r;
+      align-items: center;
+      gap: 10px;
+
+      & .select {
+        width: 190px;
+      }
+
+      &__layouts {
+        @include flex-r;
+        align-items: center;
+        gap: 16px;
+        border: $border-gray-7;
+        height: 60px;
+        padding: 0 23px;
+        margin-left: auto;
+
+        & .layout {
+          cursor: pointer;
+          color: $color-gray-5;
+          transition: color $speed-1;
+
+          &--active {
+            color: $color-secondary;
+          }
+        }
+      }
+    }
   }
 }

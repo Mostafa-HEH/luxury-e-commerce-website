@@ -3176,6 +3176,34 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+}
+.category-grid .products .setting-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.category-grid .products .setting-bar .select {
+  width: 190px;
+}
+.category-grid .products .setting-bar__layouts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e5e5e5;
+  height: 60px;
+  padding: 0 23px;
+  margin-left: auto;
+}
+.category-grid .products .setting-bar__layouts .layout {
+  cursor: pointer;
+  color: #aaaaaa;
+  transition: color 150ms;
+}
+.category-grid .products .setting-bar__layouts .layout--active {
+  color: #333333;
 }
 
 /*# sourceMappingURL=styles.css.map */
