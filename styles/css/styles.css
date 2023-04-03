@@ -2086,6 +2086,9 @@ footer.footer .copyrights {
   background-color: #ffffff;
   padding: 34px 25px;
 }
+footer.footer .copyrights .wrapper {
+  padding: unset;
+}
 @media screen and (max-width: 600px) {
   footer.footer .copyrights {
     text-align: center;
