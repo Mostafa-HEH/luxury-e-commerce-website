@@ -59,5 +59,37 @@
       gap: 38px 30px;
       justify-content: space-between;
     }
+
+    & .pagination {
+      @include flex-r;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 19px;
+
+      & .pages {
+        @include flex-r;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        & .page {
+          &--active {
+            background-color: $color-secondary;
+            border-color: $color-secondary !important;
+            color: $color-white;
+          }
+        }
+      }
+
+      & .action.black {
+        border: $border-gray-7;
+        font-size: px-rem(13);
+
+        & i {
+          font-size: px-rem(18);
+        }
+      }
+    }
   }
 }

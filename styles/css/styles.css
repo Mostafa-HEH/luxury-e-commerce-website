@@ -3215,5 +3215,32 @@ footer.footer .copyrights .author:hover {
   gap: 38px 30px;
   justify-content: space-between;
 }
+.category-grid .products .pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 19px;
+}
+.category-grid .products .pagination .pages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.category-grid .products .pagination .pages .page--active {
+  background-color: #333333;
+  border-color: #333333 !important;
+  color: #ffffff;
+}
+.category-grid .products .pagination .action.black {
+  border: 1px solid #e5e5e5;
+  font-size: 0.8125rem;
+}
+.category-grid .products .pagination .action.black i {
+  font-size: 1.125rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
