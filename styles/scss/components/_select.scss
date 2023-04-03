@@ -1,5 +1,4 @@
 .select {
-  max-width: 190px;
   width: 100%;
   @include flex-r;
   align-items: center;
@@ -34,7 +33,7 @@
     -moz-appearance: none;
     appearance: none;
 
-    background: url("../../../assets/down-arrow.svg") 96% / 15% no-repeat;
+    background: url("../../../assets/down-arrow.svg") 96% / 12px no-repeat;
   }
 
   &:hover {
