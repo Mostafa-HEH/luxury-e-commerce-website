@@ -52,5 +52,12 @@
         }
       }
     }
+
+    & .items {
+      @include flex-r;
+      flex-wrap: wrap;
+      gap: 38px 30px;
+      justify-content: space-between;
+    }
   }
 }

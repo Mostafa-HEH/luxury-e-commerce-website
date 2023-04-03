@@ -3208,5 +3208,12 @@ footer.footer .copyrights .author:hover {
 .category-grid .products .setting-bar__layouts .layout--active {
   color: #333333;
 }
+.category-grid .products .items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 38px 30px;
+  justify-content: space-between;
+}
 
 /*# sourceMappingURL=styles.css.map */
