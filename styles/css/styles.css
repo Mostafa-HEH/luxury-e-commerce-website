@@ -3162,18 +3162,64 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  box-sizing: content-box;
 }
 .category-grid .display-sidebar {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 270px;
+  min-width: 270px;
 }
 .category-grid .display-sidebar .show-item {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 44px;
+}
+.category-grid .display-sidebar .banner {
+  width: 100%;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding-bottom: 80px;
+  padding-top: 32px;
+}
+.category-grid .display-sidebar .banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  z-index: -1;
+}
+.category-grid .display-sidebar .banner__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.category-grid .display-sidebar .banner__subtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 16px;
+  color: #e5e5e5;
+  text-transform: uppercase;
+}
+.category-grid .display-sidebar .banner__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 16px;
+  color: #ffa290;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  margin-top: 14px;
 }
 .category-grid .products {
   display: flex;
@@ -3229,6 +3275,9 @@ footer.footer .copyrights .author:hover {
   align-items: center;
   justify-content: center;
   gap: 5px;
+}
+.category-grid .products .pagination .pages .page {
+  text-decoration: unset;
 }
 .category-grid .products .pagination .pages .page--active {
   background-color: #333333;

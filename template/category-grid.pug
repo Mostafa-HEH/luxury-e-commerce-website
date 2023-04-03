@@ -212,7 +212,12 @@ html(lang='en')
                     .by-brand By Brand
                     .by-size By Size
                     .by-price By Price
-                .banner Banner
+                .banner
+                    .img-container.banner__image
+                        //- img(src="", alt="")
+                    .banner__subtitle New Collection
+                    .banner__title Women’s
+                    a.btn.btn-secondary.white Shop Now
             .products
                 .setting-bar 
                     label.select sort by:
@@ -531,10 +536,10 @@ html(lang='en')
                 .pagination  
                     span.action.action-secondary.black: i.fa-solid.fa-caret-left
                     .pages
-                        span.action.action-secondary.black.page.page--active 1
-                        span.action.action-secondary.black.page 2
-                        span.action.action-secondary.black.page 3
-                        span.action.action-secondary.black.page 4
-                        span.action.action-secondary.black.page 5
+                        a(href="#").action.action-secondary.black.page.page--active 1
+                        a(href="#").action.action-secondary.black.page 2
+                        a(href="#").action.action-secondary.black.page 3
+                        a(href="#").action.action-secondary.black.page 4
+                        a(href="#").action.action-secondary.black.page 5
                     span.action.action-secondary.black: i.fa-solid.fa-caret-right
     include includes/footer.pug

@@ -4,17 +4,67 @@
     @include grid-1170;
     @include flex-r;
     gap: 30px;
+    box-sizing: content-box;
   }
 
   & .display-sidebar {
     @include flex-c;
     gap: 30px;
-    width: 270px;
+    min-width: 270px;
 
     & .show-item {
       width: 100%;
       @include flex-c;
       gap: 44px;
+    }
+
+    & .banner {
+      width: 100%;
+      height: -webkit-fill-available;
+      @include flex-c;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      padding-bottom: 80px;
+      padding-top: 32px;
+
+      &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $color-secondary;
+        z-index: -1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &__subtitle {
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(18);
+        line-height: 16px;
+        color: $color-gray-7;
+        text-transform: uppercase;
+      }
+
+      &__title {
+        font-family: $play;
+        font-weight: $regular;
+        font-size: px-rem(48);
+        line-height: 16px;
+        color: $color-primary;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+        margin-top: 14px;
+      }
     }
   }
 
@@ -74,6 +124,8 @@
         gap: 5px;
 
         & .page {
+          text-decoration: unset;
+
           &--active {
             background-color: $color-secondary;
             border-color: $color-secondary !important;
