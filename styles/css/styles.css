@@ -1001,6 +1001,47 @@ li {
   border-color: #333333;
 }
 
+.select {
+  max-width: 190px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border: 1px solid #e5e5e5;
+  border-radius: unset;
+  text-transform: uppercase;
+  padding-left: 21px;
+  padding-right: 21px;
+  background-color: #ffffff;
+  transition: border-color 150ms;
+  color: #666666;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 36px;
+  white-space: nowrap;
+  gap: 11px;
+}
+.select select {
+  text-transform: inherit;
+  height: 100%;
+  border: unset;
+  background-color: unset;
+  outline: unset;
+  font-weight: 700;
+  color: #333333;
+  width: -webkit-fill-available;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../../../assets/down-arrow.svg") 96%/15% no-repeat;
+}
+.select:hover {
+  border-color: #333333;
+}
+
 .sidebar {
   position: fixed;
   z-index: 1;

@@ -1,0 +1,43 @@
+.select {
+  max-width: 190px;
+  width: 100%;
+  @include flex-r;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border: $border-gray-7;
+  border-radius: unset;
+  text-transform: uppercase;
+  padding-left: 21px;
+  padding-right: 21px;
+  background-color: $color-white;
+  transition: border-color $speed-1;
+  color: $color-gray-3;
+  font-family: $lato;
+  font-weight: $regular;
+  font-size: px-rem(12);
+  line-height: 36px;
+  white-space: nowrap;
+  gap: 11px;
+
+  & select {
+    text-transform: inherit;
+    height: 100%;
+    border: unset;
+    background-color: unset;
+    outline: unset;
+    font-weight: $bold;
+    color: $color-secondary;
+    width: -webkit-fill-available;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background: url("../../../assets/down-arrow.svg") 96% / 15% no-repeat;
+  }
+
+  &:hover {
+    border-color: $color-secondary;
+  }
+}
