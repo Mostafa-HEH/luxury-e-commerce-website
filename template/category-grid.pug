@@ -208,10 +208,45 @@ html(lang='en')
         .wrapper 
             .display-sidebar
                 .show-item
-                    .category Category
-                    .by-brand By Brand
-                    .by-size By Size
-                    .by-price By Price
+                    .group.category 
+                        h4.group__title Categories
+                        ul.group__list 
+                            li.item Women
+                            li.item.item--active men
+                                ul.sub-list 
+                                    li.item.item--active Suits & Blazer
+                                    li.item Leather
+                                    li.item Shirts
+                                    li.item Jeans
+                                    li.item T-Shirt
+                            li.item Watches
+                            li.item Shoes
+                            li.item Accessories
+                    .group.by-brand 
+                        h4.group__title By Brand
+                        ul.group__list 
+                            li.item Zara
+                            li.item Chanel
+                            li.item gucci
+                            li.item.item--active Calvin klein
+                            li.item Hermes
+                            li.item Diesel
+                    .group.by-size 
+                        h4.group__title By Size
+                        ul.group__list 
+                            li.item xXXS
+                            li.item xXS
+                            li.item xS
+                            li.item s
+                            li.item.item--active l
+                            li.item xl
+                            li.item xxl
+                            li.item xxxl
+                    .group.by-price 
+                        h4.group__title By Price
+                        <input type="range" name="vol" min="0" max="50">
+                        .price Price: #[.from-to #[span.from $10] - #[span.to $220]]
+                    span.btn.btn-primary.black filter
                 .banner
                     .img-container.banner__image
                         //- img(src="", alt="")
