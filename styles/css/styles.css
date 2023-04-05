@@ -3733,7 +3733,7 @@ footer.footer .copyrights .author:hover {
 }
 .category-list .products .items {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 30px;
 }
 .category-list .products .pagination {
