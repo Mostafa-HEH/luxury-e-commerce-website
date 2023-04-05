@@ -10,7 +10,7 @@ html(lang='en')
 
         title Category List
 
-    body.category-grid
+    body.category-list
         nav.navbar.navbar__v1.navbar__v1--active
             a(href="#").logo Luxury
             ul.links
@@ -200,5 +200,81 @@ html(lang='en')
                                                         option(value="egp") EGP
                                             hr
                                             .copyright Copyright &copy; 2015 Designed by #[a(href="#", target="_blank").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-ten.vercel.app/works.html", target="_blank").author Mostafa Neamatalla]. All rights reserved.
-
+        .page-header 
+            .page-header__tags 
+                span.tag: a(href="#") home
+                span.tag: a(href="#") men
+            h5.page-header__title Category Grid
+        .wrapper 
+            .products
+                .setting-bar 
+                    label.select sort by:
+                        select
+                            option(value="default") default 
+                            option(value="name") name
+                            option(value="price") price 
+                    label.select Items/Page:
+                        select
+                            option(value="12") 12
+                            option(value="24") 24 
+                    .setting-bar__layouts
+                        span.layout.layout--active: i.fa-solid.fa-grid
+                        span.layout: i.fa-solid.fa-list
+                .items items
+                .pagination  
+                    span.action.action-secondary.black: i.fa-solid.fa-caret-left
+                    .pages
+                        a(href="#").action.action-secondary.black.page.page--active 1
+                        a(href="#").action.action-secondary.black.page 2
+                        a(href="#").action.action-secondary.black.page 3
+                        a(href="#").action.action-secondary.black.page 4
+                        a(href="#").action.action-secondary.black.page 5
+                    span.action.action-secondary.black: i.fa-solid.fa-caret-right
+            .display-sidebar
+                .show-item
+                    .group.category 
+                        h4.group__title Categories
+                        ul.group__list 
+                            li.item Women
+                            li.item.item--active men
+                                ul.sub-list 
+                                    li.item.item--active Suits & Blazer
+                                    li.item Leather
+                                    li.item Shirts
+                                    li.item Jeans
+                                    li.item T-Shirt
+                            li.item Watches
+                            li.item Shoes
+                            li.item Accessories
+                    .group.by-brand 
+                        h4.group__title By Brand
+                        ul.group__list 
+                            li.item Zara
+                            li.item Chanel
+                            li.item gucci
+                            li.item.item--active Calvin klein
+                            li.item Hermes
+                            li.item Diesel
+                    .group.by-size 
+                        h4.group__title By Size
+                        ul.group__list 
+                            li.item xXXS
+                            li.item xXS
+                            li.item xS
+                            li.item s
+                            li.item.item--active l
+                            li.item xl
+                            li.item xxl
+                            li.item xxxl
+                    .group.by-price 
+                        h4.group__title By Price
+                        <input type="range" name="vol" min="0" max="50">
+                        .price Price: #[.from-to #[span.from $10] - #[span.to $220]]
+                    span.btn.btn-primary.black filter
+                .banner
+                    .img-container.banner__image
+                        //- img(src="", alt="")
+                    .banner__subtitle New Collection
+                    .banner__title Mens
+                    a.btn.btn-secondary.white Shop Now
     include includes/footer.pug
