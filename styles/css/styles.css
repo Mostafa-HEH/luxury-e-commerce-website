@@ -3767,4 +3767,51 @@ footer.footer .copyrights .author:hover {
   font-size: 1.125rem;
 }
 
+.product-details-v1 .wrapper {
+  padding: 81px 25px 78px;
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  box-sizing: content-box;
+}
+.product-details-v1 .related-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+.product-details-v1 .related-products .products {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+}
+.product-details-v1 .related-products .products .product-card {
+  position: relative;
+  z-index: 2;
+}
+.product-details-v1 .related-products .controlers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.product-details-v1 .related-products .controlers .action-secondary {
+  border: 1px solid #e5e5e5;
+}
+.product-details-v1 .related-products .controlers .action:first-child {
+  margin-left: -65px;
+}
+.product-details-v1 .related-products .controlers .action:last-child {
+  margin-right: -65px;
+}
+
 /*# sourceMappingURL=styles.css.map */
