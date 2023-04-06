@@ -7,6 +7,151 @@
     box-sizing: content-box;
   }
 
+  & .product-details {
+    @include flex-r;
+    gap: 30px;
+
+    & .images {
+      @include flex-r;
+      gap: 30px;
+
+      &__subs {
+        @include flex-c;
+        gap: 20px;
+
+        & .img {
+          width: 90px;
+          height: 100px;
+          background-color: $color-gray-9;
+          border: $border-gray-7;
+          transition: border $speed-1;
+          cursor: pointer;
+
+          &--active {
+            border: $border-primary-1;
+          }
+        }
+      }
+
+      &__main {
+        width: 450px;
+        height: 580px;
+        background-color: $color-gray-9;
+        border: $border-gray-7;
+      }
+    }
+
+    & .product-card-list {
+      &__content {
+        & .availability {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(12);
+          line-height: 16px;
+          color: $color-gray-3;
+          text-transform: uppercase;
+          margin-bottom: 40px;
+
+          & span {
+            color: $color-secondary;
+          }
+        }
+
+        & .data-input {
+          @include flex-r;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 40px;
+
+          & label {
+            max-width: 166px;
+            height: 50px;
+          }
+
+          & .select-number {
+            width: 100%;
+            @include flex-r;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            border: $border-gray-7;
+            border-radius: unset;
+            text-transform: uppercase;
+            padding-left: 21px;
+            padding-right: 21px;
+            background-color: $color-white;
+            transition: border-color $speed-1;
+            color: $color-gray-3;
+            font-family: $lato;
+            font-weight: $regular;
+            font-size: px-rem(12);
+            line-height: 36px;
+            white-space: nowrap;
+            gap: 11px;
+
+            & input {
+              text-transform: inherit;
+              height: 100%;
+              border: unset;
+              background-color: unset;
+              outline: unset;
+              font-weight: $bold;
+              color: $color-secondary;
+            }
+
+            &:hover {
+              border-color: $color-secondary;
+            }
+          }
+        }
+
+        & .navigation {
+          margin-bottom: 48px;
+        }
+
+        & .featurs {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(12);
+          line-height: 16px;
+          color: $color-gray-3;
+          text-transform: uppercase;
+          margin-bottom: 44px;
+        }
+
+        & .share {
+          @include flex-r;
+          align-items: flex-start;
+          gap: 19px;
+
+          & span {
+            font-family: $lato;
+            font-weight: $regular;
+            font-size: px-rem(12);
+            line-height: 16px;
+            color: $color-gray-3;
+            text-transform: uppercase;
+          }
+
+          & .social-links {
+            @include flex-r;
+            gap: 10px;
+
+            & a {
+              text-decoration: unset;
+              border: $border-gray-7;
+              color: $color-gray-3;
+
+              & i {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   & .related-products {
     @include flex-c;
     align-items: center;

@@ -206,7 +206,68 @@ html(lang='en')
                 span.tag: a(href="#") women
             h5.page-header__title Product Details
         main.wrapper 
-            section.product-details Product Details 
+            section.product-details
+                .images
+                    .images__subs 
+                        .img-container.img.img--active
+                            //- img(src="", alt="alt")
+                        .img-container.img
+                            //- img(src="", alt="alt")
+                        .img-container.img
+                            //- img(src="", alt="alt")
+                        .img-container.img
+                            //- img(src="", alt="alt")
+                        .img-container.img
+                            //- img(src="", alt="alt")
+                    .img-container.images__main
+                        //- img(src="", alt="alt")
+                .product-card-list
+                    .product-card-list__content
+                        h3.name STRIPED CROP TOP
+                        .rate
+                            .rate__stars
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-light.fa-star
+                            .rate__details
+                                span 12 Review(s)
+                                span.seprator
+                                span Add Your Review
+                        .price
+                            //- .price__before $49.90
+                            .price__after $29.90
+                        .availability Availability: #[span In stock]
+                        .description Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                        .data-input
+                            label.select-number Quantity:
+                                input(type="number" value="1")
+                            label.select Size:
+                                select
+                                    option(value="default") xs 
+                                    option(value="name") l
+                                    option(value="price") m 
+                            label.select Color:
+                                select
+                                    option(value="default") blue 
+                                    option(value="name") black
+                                    option(value="price") green
+                        .navigation
+                            span.action.action-primary.black.icon
+                                i.fa-light.fa-bag-shopping
+                                | Add to cart
+                            span.action.action-secondary.black
+                                i.fa-regular.fa-retweet
+                            span.action.action-secondary.black
+                                i.fa-light.fa-heart
+                        .featurs Free Shipping | Free Return
+                        .share
+                            span Share:
+                            .social-links 
+                                a(href="#").action.action-primary.white: i.fa-brands.fa-facebook-f
+                                a(href="#").action.action-primary.white: i.fa-brands.fa-twitter
+                                a(href="#").action.action-primary.white: i.fa-brands.fa-pinterest-p
             section.related-products
                 h6.section-heading.full-border Related PRODUCTS
                 .products 
