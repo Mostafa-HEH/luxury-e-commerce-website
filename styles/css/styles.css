@@ -4148,4 +4148,15 @@ footer.footer .copyrights .author:hover {
   margin-right: -65px;
 }
 
+.blog-list .wrapper {
+  padding: 81px 25px 80px;
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  box-sizing: content-box;
+}
+
 /*# sourceMappingURL=styles.css.map */
