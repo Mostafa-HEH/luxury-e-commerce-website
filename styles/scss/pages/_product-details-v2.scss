@@ -1,0 +1,50 @@
+.product-details-v2 {
+  & .wrapper {
+    padding: 81px 25px 78px;
+    @include grid-1170;
+    @include flex-c;
+    gap: 80px;
+    box-sizing: content-box;
+  }
+  & .related-products {
+    @include flex-c;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+
+    & .products {
+      @include flex-r;
+      gap: 30px;
+      width: 100%;
+
+      & .product-card {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    & .controlers {
+      @include flex-r;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+
+      & .action-secondary {
+        border: $border-gray-7;
+      }
+
+      & .action {
+        &:first-child {
+          margin-left: -65px;
+        }
+
+        &:last-child {
+          margin-right: -65px;
+        }
+      }
+    }
+  }
+}
