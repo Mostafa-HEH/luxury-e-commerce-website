@@ -3952,6 +3952,165 @@ footer.footer .copyrights .author:hover {
   gap: 80px;
   box-sizing: content-box;
 }
+.product-details-v2 .product-details {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.product-details-v2 .product-details .images {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  gap: 30px;
+}
+.product-details-v2 .product-details .images__subs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.product-details-v2 .product-details .images__subs .img {
+  width: 98px;
+  height: 98px;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  transition: border 150ms;
+  cursor: pointer;
+}
+.product-details-v2 .product-details .images__subs .img--active {
+  border: 1px solid #ffa290;
+}
+.product-details-v2 .product-details .images__main {
+  width: 570px;
+  height: 580px;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e5;
+}
+.product-details-v2 .product-details .product-card-list__content .availability {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.product-details-v2 .product-details .product-card-list__content .availability span {
+  color: #333333;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .selector {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .selector__name {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 36px;
+  color: #666666;
+  text-transform: uppercase;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .selector__options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .selector__options .option {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 36px;
+  color: #999999;
+  text-transform: uppercase;
+  border: 1px solid #e5e5e5;
+  width: 60px;
+  height: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .selector__options .option--active {
+  color: #333333;
+  font-weight: 700;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .select-number {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 36px;
+  color: #666666;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  height: 50px;
+  gap: 11px;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .select-number input {
+  border: 1px solid #e5e5e5;
+  border-radius: unset;
+  text-transform: inherit;
+  height: 100%;
+  outline: unset;
+  font-weight: 700;
+  padding-left: 21px;
+  padding-right: 21px;
+  color: #333333;
+  transition: border-color 150ms;
+  width: 89px;
+}
+.product-details-v2 .product-details .product-card-list__content .data-input .select-number input:hover {
+  border-color: #333333;
+}
+.product-details-v2 .product-details .product-card-list__content .navigation {
+  margin-bottom: 48px;
+}
+.product-details-v2 .product-details .product-card-list__content .featurs {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 44px;
+}
+.product-details-v2 .product-details .product-card-list__content .share {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 19px;
+}
+.product-details-v2 .product-details .product-card-list__content .share span {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: #666666;
+  text-transform: uppercase;
+}
+.product-details-v2 .product-details .product-card-list__content .share .social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.product-details-v2 .product-details .product-card-list__content .share .social-links a {
+  text-decoration: unset;
+  border: 1px solid #e5e5e5;
+  color: #666666;
+}
+.product-details-v2 .product-details .product-card-list__content .share .social-links a i {
+  font-size: 18px;
+}
 .product-details-v2 .related-products {
   display: flex;
   flex-direction: column;
