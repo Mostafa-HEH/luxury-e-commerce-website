@@ -2,11 +2,19 @@
   & .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
-    @include flex-c;
     box-sizing: content-box;
+    @include flex-c;
   }
 
-  & .blog-post-review.list:nth-child(even) {
-    flex-direction: row-reverse;
+  & .posts {
+    @include flex-c;
+
+    & .blog-post-review.list:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  & .loading {
+    margin-top: 69px;
   }
 }

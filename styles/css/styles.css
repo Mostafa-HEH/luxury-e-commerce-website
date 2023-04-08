@@ -1944,6 +1944,18 @@ input[type=range]::-ms-track {
   text-transform: uppercase;
 }
 
+.loading {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: auto;
+}
+.loading__box:nth-child(1), .loading__box:nth-child(4) {
+  background-color: rgb(51, 51, 51);
+}
+
 footer.footer {
   display: flex;
   flex-direction: column;
@@ -4155,12 +4167,19 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
-  box-sizing: content-box;
 }
-.blog-list .blog-post-review.list:nth-child(even) {
+.blog-list .posts {
+  display: flex;
+  flex-direction: column;
+}
+.blog-list .posts .blog-post-review.list:nth-child(even) {
   flex-direction: row-reverse;
+}
+.blog-list .loading {
+  margin-top: 69px;
 }
 
 /*# sourceMappingURL=styles.css.map */
