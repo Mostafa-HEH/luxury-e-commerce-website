@@ -987,7 +987,9 @@ input[type=range]::-ms-track {
 }
 .blog-post-review.list .blog-post-review__img {
   height: 100%;
-  width: 50%;
+  width: 100%;
+  max-width: 585px;
+  min-width: 585px;
 }
 .blog-post-review.list .blog-post-review__content .title {
   font-size: 1.875rem;
@@ -4155,8 +4157,10 @@ footer.footer .copyrights .author:hover {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 80px;
   box-sizing: content-box;
+}
+.blog-list .blog-post-review.list:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /*# sourceMappingURL=styles.css.map */

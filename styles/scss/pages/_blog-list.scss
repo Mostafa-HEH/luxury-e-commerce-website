@@ -3,7 +3,10 @@
     padding: 81px 25px 80px;
     @include grid-1170;
     @include flex-c;
-    gap: 80px;
     box-sizing: content-box;
+  }
+
+  & .blog-post-review.list:nth-child(even) {
+    flex-direction: row-reverse;
   }
 }

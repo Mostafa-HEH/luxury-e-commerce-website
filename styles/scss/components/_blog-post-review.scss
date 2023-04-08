@@ -106,7 +106,9 @@
     & .blog-post-review {
       &__img {
         height: 100%;
-        width: 50%;
+        width: 100%;
+        max-width: 585px;
+        min-width: 585px;
       }
 
       &__content {
