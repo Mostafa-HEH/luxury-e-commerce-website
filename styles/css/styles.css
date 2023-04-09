@@ -4182,4 +4182,23 @@ footer.footer .copyrights .author:hover {
   margin-top: 69px;
 }
 
+.blog-grid .wrapper {
+  padding: 81px 25px 80px;
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+}
+.blog-grid .posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.blog-grid .loading {
+  margin-top: 69px;
+}
+
 /*# sourceMappingURL=styles.css.map */

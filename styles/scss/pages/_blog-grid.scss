@@ -1,0 +1,18 @@
+.blog-grid {
+  & .wrapper {
+    padding: 81px 25px 80px;
+    @include grid-1170;
+    box-sizing: content-box;
+    @include flex-c;
+  }
+
+  & .posts {
+    @include flex-r;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  & .loading {
+    margin-top: 69px;
+  }
+}
