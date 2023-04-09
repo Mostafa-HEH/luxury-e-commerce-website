@@ -4197,6 +4197,21 @@ footer.footer .copyrights .author:hover {
   flex-wrap: wrap;
   gap: 30px;
 }
+.blog-grid .posts .blog-post-review.grid {
+  width: 370px;
+  min-width: unset;
+}
+.blog-grid .posts .blog-post-review.grid .blog-post-review__img {
+  height: 208px;
+  background-color: #cccccc;
+}
+.blog-grid .posts .blog-post-review.grid .blog-post-review__content {
+  padding: 31px 31px 24px;
+}
+.blog-grid .posts .blog-post-review.grid .blog-post-review__content .title {
+  font-size: 1rem;
+  line-height: 24px;
+}
 .blog-grid .loading {
   margin-top: 69px;
 }

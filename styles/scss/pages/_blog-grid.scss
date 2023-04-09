@@ -10,6 +10,24 @@
     @include flex-r;
     flex-wrap: wrap;
     gap: 30px;
+
+    & .blog-post-review.grid {
+      width: 370px;
+      min-width: unset;
+
+      & .blog-post-review__img {
+        height: 208px;
+        background-color: $color-gray-6;
+      }
+
+      & .blog-post-review__content {
+        padding: 31px 31px 24px;
+        & .title {
+          font-size: px-rem(16);
+          line-height: 24px;
+        }
+      }
+    }
   }
 
   & .loading {
