@@ -1,0 +1,8 @@
+.blog-post {
+  & .wrapper {
+    padding: 81px 25px 80px;
+    @include grid-1170;
+    box-sizing: content-box;
+    @include flex-c;
+  }
+}
