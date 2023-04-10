@@ -206,4 +206,52 @@ html(lang='en')
                 span.tag: a(href="#") blogs
             h5.page-header__title blog details
         main.wrapper
+            .img-container.post-image
+                //- img(src="", alt="alt")
+            h3.post-title Rose Printed Dress
+            .metadata 
+                .metadata__data.author
+                    .img-container
+                        //- img(src="", alt="alt")
+                    .name Joyce Salazar
+                .metadata__data
+                    i.fa-regular.fa-calendar-days
+                    span Dec  20, 2016
+                .metadata__data
+                    i.fa-light.fa-comment
+                    span 1
+            .article
+                .article__paragraph: p Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  Cras facilisis quam sed rhoncus dapibus. Quisque lorem enim, dictum at magna eu, hendrerit hendrerit arcu. Etiam vulputate ac tortor ac gravida. Proin accumsan placerat rutrum. Praesent ut eros ac nisi ultrices rhoncus et nec nunc
+                .article__paragraph
+                    h4 This is header
+                    p Nulla fermentum eros vitae est finibus dapibus. Aliquam porta nulla a elit varius efficitur. In in magna sed turpis venenatis tristique eu eget neque. Duis condimentum libero ornare quam tincidunt interdum. Phasellus porttitor nisi ut lectus pellentesque, ut fringilla leo convallis. 
+                    .quote
+                        .quote__content Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
+                        .quote__author Steve Job’s
+                    p Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula. Vivamus tristique vulputate ultricies. Sed vitae ultrices orci. Ut ac tellus feugiat, congue tortor ut, faucibus orci. Nam condimentum vestibulum condimentum.
+                .article__paragraph
+                    h4 This is header
+                    p Phasellus egestas nisi nisi, lobortis ultricies risus semper nec. Vestibulum pharetra ac ante ut pellentesque. Curabitur fringilla dolor quis lorem accumsan, vitae molestie urna dapibus. Pellentesque porta est ac neque bibendum viverra. Vivamus lobortis magna ut interdum laoreet. Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem.
+            .tag-share 
+                .tags tags:
+                    .tag-list Rose, Fashion, Dress
+                .share Share: 
+                    .social-links 
+                        a(href="#"): i.fa-brands.fa-facebook-f
+                        a(href="#"): i.fa-brands.fa-twitter
+                        a(href="#"): i.fa-brands.fa-google-plus-g
+            .post-controlers 
+                a(href="#").post-controlers__change.preview
+                    .direction Preview
+                    .post-name Vestibulum in turpis nec ante iaculis convallis id eget lorem 
+                a(href="#").post-controlers__change.next
+                    .direction Next
+                    .post-name Interdum libero lacinia aenean elementum lorem cursus magna
+            form.post-comment
+                h6.post-comment__title Leave a reply
+                .post-comment__sub-title You must be logged in to post a comment.
+                input(type="text", placeholder="Your Name").input
+                input(type="text", placeholder="Your Email").input
+                textarea(placeholder="Your Comment", rows="5").input
+                button.btn.btn-primary.black(type='submit') Comment
     include includes/footer.pug

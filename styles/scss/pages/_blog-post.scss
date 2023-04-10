@@ -4,5 +4,228 @@
     @include grid-1170;
     box-sizing: content-box;
     @include flex-c;
+    align-items: center;
+  }
+
+  & .post-image {
+    background-color: $color-secondary;
+    height: 658px;
+    margin-bottom: 52px;
+  }
+
+  & .post-title {
+    font-family: $play;
+    font-weight: $bold;
+    font-size: px-rem(65);
+    line-height: 24px;
+    color: $color-gray-2;
+    text-transform: uppercase;
+    margin-bottom: 31px;
+  }
+
+  & .metadata {
+    @include flex-r;
+    align-items: center;
+    gap: 38px;
+    margin-bottom: 43px;
+
+    &__data {
+      @include flex-r;
+      align-items: center;
+      gap: 10px;
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(13);
+      line-height: 20px;
+      color: $color-gray-4;
+      text-transform: uppercase;
+
+      &.author {
+        & .img-container {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: $color-gray-3;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  & .article {
+    @include flex-c;
+    gap: 27px;
+    margin-bottom: 57px;
+
+    &__paragraph {
+      @include flex-c;
+      gap: 27px;
+
+      & h4 {
+        margin-bottom: 3px;
+        font-family: $lato;
+        font-weight: $bold;
+        font-size: px-rem(15);
+        line-height: 24px;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+
+      & p {
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(15);
+        line-height: 24px;
+        color: $color-gray-3;
+        text-transform: capitalize;
+      }
+
+      & .quote {
+        @include flex-c;
+        gap: 27px;
+        padding-left: 59px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+        font-family: $lato;
+        font-weight: $light;
+        font-style: italic;
+        font-size: px-rem(18);
+        line-height: 30px;
+        color: $color-gray-3;
+        border-left: 1px solid #e6e6e6;
+
+        &__author {
+          font-weight: $regular;
+          text-transform: capitalize;
+          @include flex-r;
+          align-items: center;
+          gap: 2px;
+
+          &::before {
+            content: "-";
+          }
+        }
+      }
+    }
+  }
+
+  & .tag-share {
+    width: 100%;
+    @include flex-r;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 17px 0;
+    border-bottom: 1px solid #e6e6e6;
+    font-family: $lato;
+    font-weight: $regular;
+    font-size: px-rem(13);
+    line-height: 24px;
+    color: $color-gray-3;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+
+    & div {
+      @include flex-r;
+      gap: 20px;
+    }
+
+    & .tags {
+      gap: 2px;
+
+      & .tag-list {
+        color: $color-secondary;
+      }
+    }
+
+    & .social-links {
+      gap: 20px;
+
+      & a {
+        & i {
+          color: $color-secondary;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  & .post-controlers {
+    @include flex-r;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+
+    &__change {
+      @include flex-c;
+      gap: 16px;
+      text-decoration: unset;
+
+      & .direction {
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(12);
+        line-height: 24px;
+        color: $color-gray-4;
+        text-transform: uppercase;
+      }
+
+      & .post-name {
+        font-family: $lato;
+        font-weight: $bold;
+        font-size: px-rem(15);
+        line-height: 18px;
+        color: $color-secondary;
+        max-width: 316px;
+      }
+
+      &.preview {
+        align-items: flex-start;
+        text-align: start;
+      }
+
+      &.next {
+        align-items: flex-end;
+        text-align: end;
+      }
+    }
+  }
+
+  & .post-comment {
+    margin-top: 58px;
+    margin-bottom: 61px;
+    @include flex-c;
+    gap: 10px;
+    width: 100%;
+
+    &__title {
+      font-family: $play;
+      font-weight: $bold;
+      font-size: px-rem(25);
+      line-height: 30px;
+      color: $color-secondary;
+      text-transform: uppercase;
+      letter-spacing: $space-1;
+      margin-bottom: 16px;
+    }
+
+    &__sub-title {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 24px;
+      color: $color-gray-3;
+      margin-bottom: 24px;
+    }
+
+    & textarea {
+      height: unset;
+    }
+
+    & button {
+      border: unset;
+      width: 100%;
+      @include flex-r;
+      justify-content: center;
+    }
   }
 }
