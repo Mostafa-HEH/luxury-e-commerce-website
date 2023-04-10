@@ -1,5 +1,5 @@
 .blog-post {
-  & .wrapper {
+  & > .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
     box-sizing: content-box;
@@ -226,6 +226,81 @@
       width: 100%;
       @include flex-r;
       justify-content: center;
+    }
+  }
+
+  & .comments {
+    @include flex-c;
+    gap: 10px;
+    width: 100%;
+
+    & .comments-number {
+      font-family: $play;
+      font-weight: $bold;
+      font-size: px-rem(25);
+      line-height: 30px;
+      color: $color-secondary;
+      text-transform: uppercase;
+      letter-spacing: $speed-1;
+      margin-bottom: 30px;
+    }
+
+    & .comment {
+      border: $border-gray-7;
+      padding: 30px;
+      @include flex-r;
+      gap: 27px;
+      width: 100%;
+
+      &__author-img {
+        background-color: $color-secondary;
+        height: 80px;
+        width: 80px;
+      }
+
+      &__content {
+        @include flex-c;
+        gap: 15px;
+
+        & .metadata {
+          @include flex-r;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: unset;
+
+          & .author-name {
+            font-family: $lato;
+            font-weight: $bold;
+            font-size: px-rem(14);
+            line-height: 31px;
+            color: $color-secondary;
+            text-transform: uppercase;
+          }
+
+          & .date {
+            font-family: $lato;
+            font-weight: $regular;
+            font-size: px-rem(12);
+            line-height: 20px;
+            color: $color-gray-4;
+            text-transform: uppercase;
+            @include flex-r;
+            align-items: center;
+
+            &::before {
+              content: "-";
+            }
+          }
+        }
+
+        & .cmt-text {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(15);
+          line-height: 24px;
+          color: $color-gray-3;
+        }
+      }
     }
   }
 }

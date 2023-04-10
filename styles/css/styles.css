@@ -4216,7 +4216,7 @@ footer.footer .copyrights .author:hover {
   margin-top: 69px;
 }
 
-.blog-post .wrapper {
+.blog-post > .wrapper {
   padding: 81px 25px 80px;
   max-width: 1170px;
   width: 100%;
@@ -4426,6 +4426,76 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.blog-post .comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.blog-post .comments .comments-number {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 150ms;
+  margin-bottom: 30px;
+}
+.blog-post .comments .comment {
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 27px;
+  width: 100%;
+}
+.blog-post .comments .comment__author-img {
+  background-color: #333333;
+  height: 80px;
+  width: 80px;
+}
+.blog-post .comments .comment__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.blog-post .comments .comment__content .metadata {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: unset;
+}
+.blog-post .comments .comment__content .metadata .author-name {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 31px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.blog-post .comments .comment__content .metadata .date {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 20px;
+  color: #999999;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.blog-post .comments .comment__content .metadata .date::before {
+  content: "-";
+}
+.blog-post .comments .comment__content .cmt-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #666666;
 }
 
 /*# sourceMappingURL=styles.css.map */

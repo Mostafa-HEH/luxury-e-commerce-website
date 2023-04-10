@@ -254,4 +254,22 @@ html(lang='en')
                 input(type="text", placeholder="Your Email").input
                 textarea(placeholder="Your Comment", rows="5").input
                 button.btn.btn-primary.black(type='submit') Comment
+            .comments 
+                .comments-number 2 Comments
+                .comment 
+                    .img-container.comment__author-img
+                        //- img(src="", alt="")
+                    .comment__content 
+                        .metadata
+                            .author-name Authemes
+                            .date Dec 28, 2016
+                        .cmt-text Quisque lobortis elementum metus, in interdum odio eleifend vel. Vestibulum nisl diam, tincidunt eget tellus feugiat, congue fringilla ligula. 
+                .comment 
+                    .img-container.comment__author-img
+                        //- img(src="", alt="")
+                    .comment__content 
+                        .metadata
+                            .author-name Envato
+                            .date Dec 25, 2016
+                        .cmt-text Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula. 
     include includes/footer.pug
