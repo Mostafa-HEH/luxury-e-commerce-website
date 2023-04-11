@@ -4508,6 +4508,40 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   gap: 30px;
 }
+.connect-us .connect-form {
+  margin-bottom: 61px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.connect-us .connect-form__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+  margin-bottom: 16px;
+}
+.connect-us .connect-form__sub-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #666666;
+  margin-bottom: 24px;
+}
+.connect-us .connect-form textarea {
+  height: unset;
+}
+.connect-us .connect-form button {
+  border: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .connect-us .maps #map {
   width: 570px;
   height: 521px;
