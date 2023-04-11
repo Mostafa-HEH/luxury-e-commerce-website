@@ -1,0 +1,9 @@
+.shopping-cart {
+  & > .wrapper {
+    padding: 84px 25px 80px;
+    @include grid-1170;
+    box-sizing: content-box;
+    @include flex-r;
+    gap: 30px;
+  }
+}
