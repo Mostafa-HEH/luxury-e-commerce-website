@@ -40,6 +40,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Javascript
 - JSON
 - json-server
+- Leaflet maps
 
 #### Other skills:
 
@@ -52,6 +53,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Browser: Google Chrome
 - Font: Google fonts
 - Icons: Font Awesome
+- Maps: Leaflet
 
 #### Sources:
 
@@ -59,3 +61,4 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - [Normalize.css](https://necolas.github.io/normalize.css/)
 - [Google Fonts](https://fontawesome.com/)
 - [Font Awesome](https://fonts.google.com/)
+- [Leaflet maps](https://leafletjs.com/)

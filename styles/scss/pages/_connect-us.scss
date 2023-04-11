@@ -4,5 +4,19 @@
     @include grid-1170;
     box-sizing: content-box;
     @include flex-r;
+    gap: 30px;
+  }
+
+  & .maps {
+    & #map {
+      width: 570px;
+      height: 521px;
+
+      & .leaflet-bottom.leaflet-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }

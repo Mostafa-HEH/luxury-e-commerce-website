@@ -4506,6 +4506,16 @@ footer.footer .copyrights .author:hover {
   box-sizing: content-box;
   display: flex;
   flex-direction: row;
+  gap: 30px;
+}
+.connect-us .maps #map {
+  width: 570px;
+  height: 521px;
+}
+.connect-us .maps #map .leaflet-bottom.leaflet-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
