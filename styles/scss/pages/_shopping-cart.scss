@@ -9,6 +9,107 @@
 
   & .cart-items {
     @include flex-c;
+    gap: 30px;
+
+    & .items {
+      border-collapse: collapse;
+
+      & tr {
+        border: $border-gray-7;
+        border-width: 1px 0;
+
+        &:first-child {
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      & td,
+      th {
+        padding: 20px 10px;
+      }
+
+      &__bar {
+        & th {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(12);
+          line-height: 43px;
+          color: $color-gray-3;
+          text-transform: uppercase;
+          text-align: left;
+
+          &:first-child {
+            padding-left: 50px;
+          }
+        }
+      }
+
+      &__item {
+        & td.product {
+          @include flex-r;
+          align-items: center;
+          gap: 20px;
+          min-width: 403px;
+
+          & .action {
+            width: 30px;
+            height: 30px;
+            border-color: $color-gray-7;
+            color: $color-gray-5;
+            border-radius: 50%;
+
+            & i {
+              font-size: 13px !important;
+            }
+          }
+
+          & .img {
+            width: 90px;
+            height: 100px;
+            border: $border-gray-7;
+            background-color: $color-gray-9;
+          }
+
+          & .name {
+            font-family: $lato;
+            font-weight: $bold;
+            font-size: px-rem(13);
+            line-height: 19px;
+            color: $color-secondary;
+            text-transform: uppercase;
+            margin-left: 2px;
+          }
+        }
+
+        & td.price,
+        & td.total {
+          font-family: $lato;
+          font-weight: $bold;
+          font-size: px-rem(13);
+          line-height: 16px;
+          color: $color-secondary;
+          text-transform: uppercase;
+          min-width: 118px;
+        }
+
+        & td.quantity {
+          min-width: 118px;
+
+          & .input {
+            width: 89px;
+          }
+        }
+      }
+    }
+
+    & .buttons {
+      @include flex-r;
+      justify-content: flex-end;
+      gap: 10px;
+    }
   }
 
   & .payment-data {

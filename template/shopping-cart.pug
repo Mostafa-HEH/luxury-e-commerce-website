@@ -203,7 +203,34 @@ html(lang='en')
                 span.tag: a(href="#") cart
             h5.page-header__title Your Shopping cart
         main.wrapper
-            .cart-items cart-items
+            .cart-items
+                table.items
+                    tr.items__bar
+                        th Product
+                        th Price
+                        th Quantity
+                        th Total
+                    tr.items__item
+                        td.product
+                            span.action.action-secondary.white: i.fa-solid.fa-xmark
+                            .img-container.img
+                                //- img(src="", alt="")
+                            .name Technical suit
+                        td.price $290.00
+                        td.quantity: input(type="number", value="1").input
+                        td.total $290.00
+                    tr.items__item
+                        td.product
+                            span.action.action-secondary.white: i.fa-solid.fa-xmark
+                            .img-container.img
+                                //- img(src="", alt="")
+                            .name Navy Blue suit
+                        td.price $310.00
+                        td.quantity: input(type="number", value="1").input
+                        td.total $310.00
+                .buttons 
+                    a(href="#").btn.btn-secondary.black Continue Shopping
+                    a(href="#").btn.btn-secondary.black Update Cart
             .payment-data 
                 .total total 
                 .shipping shipping 
