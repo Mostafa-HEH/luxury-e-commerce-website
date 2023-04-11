@@ -4627,5 +4627,26 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   gap: 30px;
 }
+.shopping-cart .cart-items {
+  display: flex;
+  flex-direction: column;
+}
+.shopping-cart .payment-data {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.shopping-cart .payment-data .total {
+  display: flex;
+  flex-direction: column;
+}
+.shopping-cart .payment-data .shipping {
+  display: flex;
+  flex-direction: column;
+}
+.shopping-cart .payment-data .code {
+  display: flex;
+  flex-direction: column;
+}
 
 /*# sourceMappingURL=styles.css.map */

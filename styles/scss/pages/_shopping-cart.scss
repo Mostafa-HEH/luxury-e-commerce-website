@@ -6,4 +6,25 @@
     @include flex-r;
     gap: 30px;
   }
+
+  & .cart-items {
+    @include flex-c;
+  }
+
+  & .payment-data {
+    @include flex-c;
+    gap: 30px;
+
+    & .total {
+      @include flex-c;
+    }
+
+    & .shipping {
+      @include flex-c;
+    }
+
+    & .code {
+      @include flex-c;
+    }
+  }
 }
