@@ -4562,5 +4562,59 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   gap: 30px;
 }
+.about-us .luxury-img {
+  background-color: #333333;
+  height: 445px;
+  min-width: 370px;
+}
+.about-us .our-story {
+  display: flex;
+  flex-direction: column;
+}
+.about-us .our-story__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+  margin-bottom: 28px;
+}
+.about-us .our-story__description {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  color: #666666;
+  text-transform: capitalize;
+  margin-bottom: 27px;
+}
+.about-us .our-story .quote {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding-left: 59px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 30px;
+  color: #333333;
+  border-left: 1px solid #e6e6e6;
+}
+.about-us .our-story .quote__author {
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.about-us .our-story .quote__author::before {
+  content: "-";
+}
 
 /*# sourceMappingURL=styles.css.map */

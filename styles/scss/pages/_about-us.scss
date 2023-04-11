@@ -6,4 +6,62 @@
     @include flex-r;
     gap: 30px;
   }
+
+  & .luxury-img {
+    background-color: $color-secondary;
+    height: 445px;
+    min-width: 370px;
+  }
+
+  & .our-story {
+    @include flex-c;
+
+    &__title {
+      font-family: $play;
+      font-weight: $bold;
+      font-size: px-rem(25);
+      line-height: 30px;
+      color: $color-secondary;
+      text-transform: uppercase;
+      letter-spacing: $space-1;
+      margin-bottom: 28px;
+    }
+
+    &__description {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(15);
+      line-height: 24px;
+      color: $color-gray-3;
+      text-transform: capitalize;
+      margin-bottom: 27px;
+    }
+
+    & .quote {
+      @include flex-c;
+      gap: 27px;
+      padding-left: 59px;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      font-family: $lato;
+      font-weight: $light;
+      font-style: italic;
+      font-size: px-rem(18);
+      line-height: 30px;
+      color: $color-secondary;
+      border-left: 1px solid #e6e6e6;
+
+      &__author {
+        font-weight: $regular;
+        text-transform: capitalize;
+        @include flex-r;
+        align-items: center;
+        gap: 2px;
+
+        &::before {
+          content: "-";
+        }
+      }
+    }
+  }
 }
