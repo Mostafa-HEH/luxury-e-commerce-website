@@ -222,9 +222,28 @@
         <div class="buttons"> <a class="btn btn-secondary black" href="#">Continue Shopping</a><a class="btn btn-secondary black" href="#">Update Cart</a></div>
       </div>
       <div class="payment-data"> 
-        <div class="total">total </div>
-        <div class="shipping">shipping </div>
-        <div class="code">code</div>
+        <div class="total"> 
+          <div class="total__subtotal"><span>SubTotal: </span><span>$600.00 </span></div>
+          <div class="total__shipping"><span>Shipping: </span><span>free</span></div>
+          <div class="total__grand-total"><span>Grand Total:</span><span>$600.00</span></div><span class="total__seprator"></span><span class="btn btn-primary black">Proceed to checkout</span>
+        </div>
+        <form class="shipping"> 
+          <h6 class="shipping__title">Estimate shipping and tax</h6>
+          <div class="shipping__sub-title">Enter your destination to get shipping & tax</div>
+          <select class="select">
+            <option value="default">Country * </option>
+            <option value="egypt">Egypt</option>
+            <option value="usa">USA </option>
+          </select>
+          <input class="input" type="text" placeholder="State/Province">
+          <input class="input" type="text" placeholder="Zip / Postal code">
+          <button class="btn btn-secondary black" type="submit">Get a quote</button>
+        </form>
+        <form class="code">
+          <h6 class="code__title">Discount Codes</h6>
+          <input class="input" type="text" placeholder="Enter your coupin if you have one">
+          <button class="btn btn-secondary black" type="submit">Apply coupon</button>
+        </form>
       </div>
     </main>
   </body>

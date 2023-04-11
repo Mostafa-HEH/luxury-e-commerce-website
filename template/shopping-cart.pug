@@ -232,7 +232,30 @@ html(lang='en')
                     a(href="#").btn.btn-secondary.black Continue Shopping
                     a(href="#").btn.btn-secondary.black Update Cart
             .payment-data 
-                .total total 
-                .shipping shipping 
-                .code code
+                .total 
+                    .total__subtotal
+                        span SubTotal: 
+                        span $600.00 
+                    .total__shipping
+                        span Shipping: 
+                        span free
+                    .total__grand-total
+                        span Grand Total:
+                        span $600.00
+                    span.total__seprator
+                    span.btn.btn-primary.black Proceed to checkout
+                form.shipping 
+                    h6.shipping__title Estimate shipping and tax
+                    .shipping__sub-title Enter your destination to get shipping & tax
+                    select.select
+                        option(value="default") Country * 
+                        option(value="egypt") Egypt
+                        option(value="usa") USA 
+                    input(type="text", placeholder="State/Province").input
+                    input(type="text", placeholder="Zip / Postal code").input
+                    button.btn.btn-secondary.black(type='submit') Get a quote
+                form.code
+                    h6.code__title Discount Codes
+                    input(type="text", placeholder="Enter your coupin if you have one").input
+                    button.btn.btn-secondary.black(type='submit') Apply coupon
     include includes/footer.pug

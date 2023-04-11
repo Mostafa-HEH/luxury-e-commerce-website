@@ -31,12 +31,16 @@
         padding: 20px 10px;
       }
 
+      th {
+        padding: 11px 10px;
+        padding-top: 0;
+      }
+
       &__bar {
         & th {
           font-family: $lato;
           font-weight: $regular;
           font-size: px-rem(12);
-          line-height: 43px;
           color: $color-gray-3;
           text-transform: uppercase;
           text-align: left;
@@ -115,17 +119,74 @@
   & .payment-data {
     @include flex-c;
     gap: 30px;
+    width: 370px;
 
     & .total {
       @include flex-c;
+      border: $border-gray-7;
+      background-color: $color-gray-9;
+      width: 100%;
+      padding: 30px 36px;
+      gap: 30px;
+
+      & div {
+        @include flex-r;
+        justify-content: space-between;
+      }
+
+      &__subtotal,
+      &__shipping,
+      &__grand-total {
+        font-family: $lato;
+        font-weight: $bold;
+        font-size: px-rem(13);
+        line-height: 22px;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+
+      &__grand-total {
+        font-size: px-rem(18);
+      }
+
+      &__seprator {
+        width: 100%;
+        height: 1px;
+        background-color: $color-gray-7;
+      }
     }
 
-    & .shipping {
-      @include flex-c;
-    }
-
+    & .shipping,
     & .code {
       @include flex-c;
+      gap: 10px;
+      border: $border-gray-7;
+      padding: 30px 36px;
+
+      &__title {
+        font-family: $lato;
+        font-weight: $bold;
+        font-size: px-rem(18);
+        line-height: 22px;
+        color: $color-secondary;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      &__sub-title {
+        font-family: $lato;
+        font-weight: $regular;
+        font-size: px-rem(13);
+        line-height: 22px;
+        color: $color-gray-3;
+        margin-bottom: 28px;
+      }
+
+      & button {
+        @include flex-r;
+        justify-content: center;
+        margin-top: 25px;
+      }
     }
   }
 }

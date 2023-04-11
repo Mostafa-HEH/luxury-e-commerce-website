@@ -4649,11 +4649,14 @@ footer.footer .copyrights .author:hover {
 .shopping-cart .cart-items .items th {
   padding: 20px 10px;
 }
+.shopping-cart .cart-items .items th {
+  padding: 11px 10px;
+  padding-top: 0;
+}
 .shopping-cart .cart-items .items__bar th {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
-  line-height: 43px;
   color: #666666;
   text-transform: uppercase;
   text-align: left;
@@ -4718,18 +4721,67 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 370px;
 }
 .shopping-cart .payment-data .total {
   display: flex;
   flex-direction: column;
+  border: 1px solid #e5e5e5;
+  background-color: #f2f2f2;
+  width: 100%;
+  padding: 30px 36px;
+  gap: 30px;
 }
-.shopping-cart .payment-data .shipping {
+.shopping-cart .payment-data .total div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.shopping-cart .payment-data .total__subtotal, .shopping-cart .payment-data .total__shipping, .shopping-cart .payment-data .total__grand-total {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 22px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.shopping-cart .payment-data .total__grand-total {
+  font-size: 1.125rem;
+}
+.shopping-cart .payment-data .total__seprator {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+.shopping-cart .payment-data .shipping, .shopping-cart .payment-data .code {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  border: 1px solid #e5e5e5;
+  padding: 30px 36px;
 }
-.shopping-cart .payment-data .code {
+.shopping-cart .payment-data .shipping__title, .shopping-cart .payment-data .code__title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 22px;
+  color: #333333;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.shopping-cart .payment-data .shipping__sub-title, .shopping-cart .payment-data .code__sub-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 22px;
+  color: #666666;
+  margin-bottom: 28px;
+}
+.shopping-cart .payment-data .shipping button, .shopping-cart .payment-data .code button {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 /*# sourceMappingURL=styles.css.map */
