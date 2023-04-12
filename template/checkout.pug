@@ -202,5 +202,44 @@ html(lang='en')
                 span.tag: a(href="#") home
                 span.tag: a(href="#") cart
             h5.page-header__title Checkout
-        main.wrapper
+        form.wrapper
+            .address adress 
+            .order 
+                .order__title Your Order
+                .order__products
+                    ul.bar 
+                        li product
+                        li price
+                    ul.items 
+                        li.item 
+                            .item__name Technical suit	 x 1
+                            .item__price $290.00
+                        li.item 
+                            .item__name Navy Blue suit	 x 1
+                            .item__price $310.00
+                .order__total 
+                    .subtotal
+                        span SubTotal: 
+                        span $600.00 
+                    .shipping
+                        span Shipping: 
+                        span free
+                    .grand-total
+                        span Grand Total:
+                        span $600.00
+                .order__payment 
+                    label
+                        .main
+                            input(type="radio", name="payment", checked)
+                            | Direct bank transfer
+                        .sub Interdum et malesuada fames a ipsum primis in faucibus. Pellentesque ut nisi erat.Vestibulum a velit in ipsum hendrerit mollis
+                    label
+                        .main
+                            input(type="radio", name="payment")
+                            | Cheque Payment
+                    label
+                        .main
+                            input(type="radio", name="payment")
+                            | PayPal
+                button(type="submit").btn.btn-primary.black Place order
     include includes/footer.pug

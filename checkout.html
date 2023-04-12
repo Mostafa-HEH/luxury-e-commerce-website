@@ -187,7 +187,52 @@
       <div class="page-header__tags"> <span class="tag"><a href="#">home</a></span><span class="tag"><a href="#">cart</a></span></div>
       <h5 class="page-header__title">Checkout</h5>
     </header>
-    <main class="wrapper"></main>
+    <form class="wrapper">
+      <div class="address">adress </div>
+      <div class="order"> 
+        <div class="order__title">Your Order</div>
+        <div class="order__products">
+          <ul class="bar"> 
+            <li>product</li>
+            <li>price</li>
+          </ul>
+          <ul class="items"> 
+            <li class="item"> 
+              <div class="item__name">Technical suit	 x 1</div>
+              <div class="item__price">$290.00</div>
+            </li>
+            <li class="item"> 
+              <div class="item__name">Navy Blue suit	 x 1</div>
+              <div class="item__price">$310.00</div>
+            </li>
+          </ul>
+        </div>
+        <div class="order__total"> 
+          <div class="subtotal"><span>SubTotal: </span><span>$600.00 </span></div>
+          <div class="shipping"><span>Shipping: </span><span>free</span></div>
+          <div class="grand-total"><span>Grand Total:</span><span>$600.00</span></div>
+        </div>
+        <div class="order__payment"> 
+          <label>
+            <div class="main">
+              <input type="radio" name="payment" checked>Direct bank transfer
+            </div>
+            <div class="sub">Interdum et malesuada fames a ipsum primis in faucibus. Pellentesque ut nisi erat.Vestibulum a velit in ipsum hendrerit mollis</div>
+          </label>
+          <label>
+            <div class="main">
+              <input type="radio" name="payment">Cheque Payment
+            </div>
+          </label>
+          <label>
+            <div class="main">
+              <input type="radio" name="payment">PayPal
+            </div>
+          </label>
+        </div>
+        <button class="btn btn-primary black" type="submit">Place order</button>
+      </div>
+    </form>
   </body>
   <footer class="footer"> 
     <main>
