@@ -4784,4 +4784,15 @@ footer.footer .copyrights .author:hover {
   margin-top: 25px;
 }
 
+.checkout > .wrapper {
+  padding: 84px 25px 80px;
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
 /*# sourceMappingURL=styles.css.map */
