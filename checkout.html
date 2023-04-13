@@ -188,7 +188,37 @@
       <h5 class="page-header__title">Checkout</h5>
     </header>
     <form class="wrapper">
-      <div class="address">adress </div>
+      <div class="address"> 
+        <div class="address__title">Ship to a Defferent Address? </div>
+        <div class="address__join">
+          <label>
+            <input type="checkbox">Create an account?
+          </label>
+          <div class="refund">- Returning customer? <a href="#">Click here to login</a></div>
+        </div>
+        <select class="input">
+          <option value="default">Country * </option>
+          <option value="egypt">Egypt</option>
+          <option value="usa">USA</option>
+        </select>
+        <div class="address__group">
+          <input class="input" type="text" placeholder="Frist Name *">
+          <input class="input" type="text" placeholder="Last Name">
+        </div>
+        <input class="input" type="text" placeholder="Company Name">
+        <div class="address__group">
+          <input class="input" type="text" placeholder="Street Address *">
+          <input class="input" type="text" placeholder="Apartment, suite, unite ect (optinal)">
+        </div>
+        <input class="input" type="text" placeholder="Town/City *">
+        <input class="input" type="text" placeholder="Contry/States">
+        <input class="input" type="text" placeholder="Post code/Zip *">
+        <div class="address__group">
+          <input class="input" type="email" placeholder="Email Address *">
+          <input class="input" type="text" placeholder="Phone Number">
+        </div>
+        <textarea class="input" placeholder="Order Note" rows="5"></textarea>
+      </div>
       <div class="order"> 
         <div class="order__title">Your Order</div>
         <div class="order__products">

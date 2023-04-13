@@ -8,6 +8,60 @@
     gap: 30px;
   }
 
+  & .address {
+    @include flex-c;
+    gap: 10px;
+    width: 100%;
+
+    &__title {
+      font-family: $lato;
+      font-weight: $bold;
+      font-size: px-rem(18);
+      color: $color-secondary;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    &__join {
+      @include flex-r;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(12);
+      color: $color-gray-3;
+      text-transform: uppercase;
+      margin-bottom: 21px;
+
+      & label {
+        @include flex-r;
+        align-items: center;
+        gap: 12px;
+      }
+
+      & .refund {
+        & a {
+          color: $color-secondary;
+          text-decoration: unset;
+        }
+      }
+    }
+
+    &__group {
+      @include flex-r;
+      gap: 10px;
+
+      & input {
+        flex: auto;
+      }
+    }
+
+    & textarea {
+      height: unset;
+      flex: auto;
+    }
+  }
+
   & .order {
     @include flex-c;
     border: $border-gray-7;

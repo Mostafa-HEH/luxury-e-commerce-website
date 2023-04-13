@@ -203,7 +203,31 @@ html(lang='en')
                 span.tag: a(href="#") cart
             h5.page-header__title Checkout
         form.wrapper
-            .address adress 
+            .address 
+                .address__title Ship to a Defferent Address? 
+                .address__join
+                    label
+                        input(type="checkbox")
+                        | Create an account?
+                    .refund - Returning customer? #[a(href="#") Click here to login]
+                select.input
+                    option(value="default") Country * 
+                    option(value="egypt") Egypt
+                    option(value="usa") USA
+                .address__group
+                    input(type="text", placeholder="Frist Name *").input
+                    input(type="text", placeholder="Last Name").input
+                input(type="text", placeholder="Company Name").input
+                .address__group
+                    input(type="text", placeholder="Street Address *").input
+                    input(type="text", placeholder="Apartment, suite, unite ect (optinal)").input
+                input(type="text", placeholder="Town/City *").input
+                input(type="text", placeholder="Contry/States").input
+                input(type="text", placeholder="Post code/Zip *").input
+                .address__group
+                    input(type="email", placeholder="Email Address *").input
+                    input(type="text", placeholder="Phone Number").input
+                textarea(placeholder="Order Note", rows="5").input
             .order 
                 .order__title Your Order
                 .order__products

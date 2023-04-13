@@ -4795,6 +4795,54 @@ footer.footer .copyrights .author:hover {
   justify-content: space-between;
   gap: 30px;
 }
+.checkout .address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.checkout .address__title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #333333;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.checkout .address__join {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
+.checkout .address__join label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.checkout .address__join .refund a {
+  color: #333333;
+  text-decoration: unset;
+}
+.checkout .address__group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.checkout .address__group input {
+  flex: auto;
+}
+.checkout .address textarea {
+  height: unset;
+  flex: auto;
+}
 .checkout .order {
   display: flex;
   flex-direction: column;
