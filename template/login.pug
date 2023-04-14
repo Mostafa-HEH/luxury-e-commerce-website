@@ -198,4 +198,21 @@ html(lang='en')
                                             hr
                                             .copyright Copyright &copy; 2015 Designed by #[a(href="#", target="_blank").author AuThemes] Coded by #[a(href="https://mostafa-portfolio-ten.vercel.app/works.html", target="_blank").author Mostafa Neamatalla]. All rights reserved.
         .wrapper
+            form.login
+                h6.login__head Sign In
+                .login__container
+                    .social-logins 
+                        .social-logins__btn.facebook
+                            i.fa-brands.fa-facebook-f
+                            | Sign in with facebook
+                        .social-logins__btn.twitter 
+                            i.fa-brands.fa-twitter
+                            | Sign in with twitter
+                    input(type="email", placeholder="Email address *").input
+                    input(type="password", placeholder="Password *").input
+                    label.remember
+                        input(type="checkbox")
+                        | Remember me!
+                    button(type="submit").btn.btn-primary.black Sign in
+                    a(href="#").forget Fogot your password? 
     include includes/footer.pug
