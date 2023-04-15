@@ -2,8 +2,43 @@
   background-color: rgba(0, 0, 0, 0.6);
 
   & > .wrapper {
-    padding: 84px 25px 80px;
+    padding: 450px 25px 240px;
+    // padding-left: 25px;
+    // padding-right: 25px;
     @include grid-1170;
     box-sizing: content-box;
+    position: relative;
+    @include flex-c;
+    align-items: center;
+    justify-content: center;
+    // min-height: 860px;
+    // height: 100%;
+    gap: 69px;
+  }
+
+  & .err-type {
+    position: absolute;
+    font-family: "Arial";
+    font-weight: $bold;
+    font-size: px-rem(500);
+    color: rgba(255, 255, 255);
+    letter-spacing: $space-1;
+    opacity: 0.08;
+    top: 10%;
+  }
+
+  & .err-massage {
+    font-family: $play;
+    font-weight: $bold;
+    font-size: px-rem(30);
+    color: $color-white;
+    letter-spacing: va-px(100);
+    text-transform: uppercase;
+  }
+
+  & .err-btns {
+    @include flex-r;
+    align-items: center;
+    gap: 10px;
   }
 }
