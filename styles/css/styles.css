@@ -5081,4 +5081,15 @@ footer.footer .copyrights .author:hover {
   text-decoration: unset;
 }
 
+.err-404 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.err-404 > .wrapper {
+  padding: 84px 25px 80px;
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  box-sizing: content-box;
+}
+
 /*# sourceMappingURL=styles.css.map */
