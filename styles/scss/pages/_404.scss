@@ -3,16 +3,12 @@
 
   & > .wrapper {
     padding: 450px 25px 240px;
-    // padding-left: 25px;
-    // padding-right: 25px;
     @include grid-1170;
     box-sizing: content-box;
     position: relative;
     @include flex-c;
     align-items: center;
     justify-content: center;
-    // min-height: 860px;
-    // height: 100%;
     gap: 69px;
   }
 

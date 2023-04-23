@@ -54,6 +54,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Font: Google fonts
 - Icons: Font Awesome
 - Maps: Leaflet
+- API Platform: Postman
 
 #### Sources:
 
