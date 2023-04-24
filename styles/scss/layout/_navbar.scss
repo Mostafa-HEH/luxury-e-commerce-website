@@ -1,5 +1,5 @@
 .navbar {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -427,7 +427,6 @@
     border-bottom: $border-white-15-1;
     padding-left: 25px;
     padding-right: 25px;
-    position: relative;
 
     @media screen and (max-width: 400px) {
       padding-left: 10px;
@@ -484,7 +483,7 @@
     &--animate {
       animation-duration: $speed-1;
       animation-name: navbarActive;
-      position: fixed;
+      position: fixed !important;
       top: 0;
 
       @keyframes navbarActive {

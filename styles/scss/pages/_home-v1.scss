@@ -1,4 +1,8 @@
 .home-v1 {
+  & .navbar {
+    position: absolute;
+  }
+
   & .top-categories-section {
     background-color: $color-white;
     padding-top: 80px;

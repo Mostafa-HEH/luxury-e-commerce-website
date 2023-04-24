@@ -1231,7 +1231,7 @@ input[type=range]::-ms-track {
 }
 
 .navbar {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -1607,7 +1607,6 @@ input[type=range]::-ms-track {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding-left: 25px;
   padding-right: 25px;
-  position: relative;
 }
 @media screen and (max-width: 400px) {
   .navbar__v1 {
@@ -1655,7 +1654,7 @@ input[type=range]::-ms-track {
 .navbar__v1--animate {
   animation-duration: 150ms;
   animation-name: navbarActive;
-  position: fixed;
+  position: fixed !important;
   top: 0;
 }
 @keyframes navbarActive {
@@ -2190,6 +2189,9 @@ footer.footer .copyrights .author:hover {
 .components-page .component.icons .component__types {
   flex-direction: row;
   flex-wrap: wrap;
+}
+.home-v1 .navbar {
+  position: absolute;
 }
 .home-v1 .top-categories-section {
   background-color: #ffffff;
