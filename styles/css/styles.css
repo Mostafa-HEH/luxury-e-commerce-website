@@ -1231,7 +1231,11 @@ input[type=range]::-ms-track {
 }
 
 .navbar {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1994;
 }
 @media screen and (max-width: 960px) {
@@ -1603,6 +1607,7 @@ input[type=range]::-ms-track {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding-left: 25px;
   padding-right: 25px;
+  position: relative;
 }
 @media screen and (max-width: 400px) {
   .navbar__v1 {
@@ -1646,6 +1651,20 @@ input[type=range]::-ms-track {
 }
 .navbar__v1--active .actions__action {
   color: #333333;
+}
+.navbar__v1--animate {
+  animation-duration: 150ms;
+  animation-name: navbarActive;
+  position: fixed;
+  top: 0;
+}
+@keyframes navbarActive {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(10%);
+  }
 }
 .navbar__v3 {
   display: flex;
@@ -2171,13 +2190,6 @@ footer.footer .copyrights .author:hover {
 .components-page .component.icons .component__types {
   flex-direction: row;
   flex-wrap: wrap;
-}
-.home-v1 .navbar__v1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
 }
 .home-v1 .top-categories-section {
   background-color: #ffffff;

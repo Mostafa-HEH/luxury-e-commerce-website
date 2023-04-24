@@ -1,5 +1,9 @@
 .navbar {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1994;
 
   & .links {
@@ -423,6 +427,7 @@
     border-bottom: $border-white-15-1;
     padding-left: 25px;
     padding-right: 25px;
+    position: relative;
 
     @media screen and (max-width: 400px) {
       padding-left: 10px;
@@ -472,6 +477,22 @@
       & .actions {
         &__action {
           color: $color-secondary;
+        }
+      }
+    }
+
+    &--animate {
+      animation-duration: $speed-1;
+      animation-name: navbarActive;
+      position: fixed;
+      top: 0;
+
+      @keyframes navbarActive {
+        from {
+          transform: translateY(0%);
+        }
+        to {
+          transform: translateY(10%);
         }
       }
     }

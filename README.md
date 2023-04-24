@@ -28,6 +28,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Build Layouts.
 - Convert HTML to Pug for more organize, clean, and reusable code.
 - Create dummy Json data.
+- Documenting scripts with JSDoc
 
 #### Skills:
 
@@ -41,6 +42,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - JSON
 - json-server
 - Leaflet maps
+- JSDoc
 
 #### Other skills:
 
@@ -63,3 +65,4 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - [Google Fonts](https://fontawesome.com/)
 - [Font Awesome](https://fonts.google.com/)
 - [Leaflet maps](https://leafletjs.com/)
+- [JSDoc](https://jsdoc.app/index.html)
