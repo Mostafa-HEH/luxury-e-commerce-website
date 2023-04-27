@@ -1,6 +1,8 @@
 /**
  * @file Manages Navigation bars for all pages.
  * About navbar v1, v2, v3
+ * 1 - makeing navbar sticky at the top of the page when srcolling down.
+ * 2 - active drop down links in small screen size menu.
  * @author Mostafa Neamatalla <mostafaneamatalla94@gmail.com>
  */
 
@@ -34,3 +36,30 @@ const activeNavbar = () => {
  * @listens document#scroll
  */
 document.addEventListener("scroll", activeNavbar);
+
+/**
+ * @type {HTMLElement} - the navbar(small screen) sub links
+ */
+const navbarLinks = document.querySelectorAll(".pages-links .links__link");
+
+/**
+ *  Activing sub links ins small screens.
+ */
+const activeSubLinks = (link) => {
+  if (link.classList.contains("links__link--active"))
+    link.classList.remove("links__link--active");
+  else link.classList.add("links__link--active");
+};
+
+/**
+ *  Iterate into links to catch clicked link
+ */
+navbarLinks.forEach((link) => {
+  /**
+   * Listen to sub liks in small screen click
+   *
+   * @type {HTMLElement} - the target of the event
+   * @listens .pages-links .links__link#click
+   */
+  link.children[1]?.addEventListener("click", () => activeSubLinks(link));
+});

@@ -19,6 +19,9 @@ html(lang='en')
                         span.opacity
                         aside.aside
                             i.fa-solid.fa-xmark.aside__close#closeLeftSidebar
+                            //- Menu fast links
+                            include includes/navbar-pages-links.pug
+                            +links
                             ul.aside__links 
                                 li.link: a(href="#") My Account
                                 li.link: a(href="#") My Wishlist
