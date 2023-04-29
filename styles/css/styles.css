@@ -5539,13 +5539,23 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 69px;
+}
+@media screen and (max-width: 850px) {
+  .err-404 > .wrapper {
+    padding-top: 268px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .err-404 > .wrapper {
+    padding-top: 162px;
+  }
 }
 .err-404 .err-type {
   position: absolute;
@@ -5557,6 +5567,16 @@ footer.footer .copyrights .author:hover {
   opacity: 0.08;
   top: 10%;
 }
+@media screen and (max-width: 850px) {
+  .err-404 .err-type {
+    font-size: 19rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .err-404 .err-type {
+    font-size: 11rem;
+  }
+}
 .err-404 .err-massage {
   font-family: "Playfair Display", serif;
   font-weight: 700;
@@ -5564,12 +5584,27 @@ footer.footer .copyrights .author:hover {
   color: #ffffff;
   letter-spacing: 1.6px;
   text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (max-width: 520px) {
+  .err-404 .err-massage {
+    font-size: 1.5rem;
+  }
 }
 .err-404 .err-btns {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 520px) {
+  .err-404 .err-btns .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

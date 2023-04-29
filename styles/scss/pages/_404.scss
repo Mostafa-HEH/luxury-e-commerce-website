@@ -4,12 +4,20 @@
   & > .wrapper {
     padding: 450px 25px 240px;
     @include grid-1170;
-    box-sizing: content-box;
+    box-sizing: border-box;
     position: relative;
     @include flex-c;
     align-items: center;
     justify-content: center;
     gap: 69px;
+
+    @media screen and (max-width: 850px) {
+      padding-top: 268px;
+    }
+
+    @media screen and (max-width: 520px) {
+      padding-top: 162px;
+    }
   }
 
   & .err-type {
@@ -21,6 +29,14 @@
     letter-spacing: $space-1;
     opacity: 0.08;
     top: 10%;
+
+    @media screen and (max-width: 850px) {
+      font-size: 19rem;
+    }
+
+    @media screen and (max-width: 520px) {
+      font-size: 11rem;
+    }
   }
 
   & .err-massage {
@@ -30,11 +46,26 @@
     color: $color-white;
     letter-spacing: va-px(100);
     text-transform: uppercase;
+    text-align: center;
+
+    @media screen and (max-width: 520px) {
+      font-size: 1.5rem;
+    }
   }
 
   & .err-btns {
     @include flex-r;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
+
+    & .btn {
+      @media screen and (max-width: 520px) {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
   }
 }
