@@ -4734,7 +4734,8 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  max-width: 1220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4744,14 +4745,24 @@ footer.footer .copyrights .author:hover {
   height: 658px;
   margin-bottom: 52px;
 }
+@media screen and (max-width: 600px) {
+  .blog-post .post-image {
+    height: 500px;
+  }
+}
 .blog-post .post-title {
   font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 4.0625rem;
-  line-height: 24px;
   color: #222222;
   text-transform: uppercase;
   margin-bottom: 31px;
+  text-align: center;
+}
+@media screen and (max-width: 400px) {
+  .blog-post .post-title {
+    font-size: 3rem;
+  }
 }
 .blog-post .metadata {
   display: flex;
@@ -4759,6 +4770,13 @@ footer.footer .copyrights .author:hover {
   align-items: center;
   gap: 38px;
   margin-bottom: 43px;
+}
+@media screen and (max-width: 400px) {
+  .blog-post .metadata {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 38px;
+  }
 }
 .blog-post .metadata__data {
   display: flex;
@@ -4848,6 +4866,11 @@ footer.footer .copyrights .author:hover {
   color: #666666;
   text-transform: uppercase;
   margin-bottom: 36px;
+}
+@media screen and (max-width: 400px) {
+  .blog-post .tag-share {
+    flex-wrap: wrap;
+  }
 }
 .blog-post .tag-share div {
   display: flex;
@@ -4964,10 +4987,17 @@ footer.footer .copyrights .author:hover {
   gap: 27px;
   width: 100%;
 }
+@media screen and (max-width: 400px) {
+  .blog-post .comments .comment {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .blog-post .comments .comment__author-img {
   background-color: #333333;
   height: 80px;
   width: 80px;
+  min-width: 80px;
 }
 .blog-post .comments .comment__content {
   display: flex;

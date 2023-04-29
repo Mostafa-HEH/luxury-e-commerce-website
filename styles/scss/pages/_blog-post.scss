@@ -2,7 +2,8 @@
   & > .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    max-width: 1220px;
     @include flex-c;
     align-items: center;
   }
@@ -11,16 +12,24 @@
     background-color: $color-secondary;
     height: 658px;
     margin-bottom: 52px;
+
+    @media screen and (max-width: 600px) {
+      height: 500px;
+    }
   }
 
   & .post-title {
     font-family: $play;
     font-weight: $bold;
     font-size: px-rem(65);
-    line-height: 24px;
     color: $color-gray-2;
     text-transform: uppercase;
     margin-bottom: 31px;
+    text-align: center;
+
+    @media screen and (max-width: 400px) {
+      font-size: 3rem;
+    }
   }
 
   & .metadata {
@@ -28,6 +37,12 @@
     align-items: center;
     gap: 38px;
     margin-bottom: 43px;
+
+    @media screen and (max-width: 400px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 38px;
+    }
 
     &__data {
       @include flex-r;
@@ -123,6 +138,10 @@
     color: $color-gray-3;
     text-transform: uppercase;
     margin-bottom: 36px;
+
+    @media screen and (max-width: 400px) {
+      flex-wrap: wrap;
+    }
 
     & div {
       @include flex-r;
@@ -252,10 +271,16 @@
       gap: 27px;
       width: 100%;
 
+      @media screen and (max-width: 400px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
       &__author-img {
         background-color: $color-secondary;
         height: 80px;
         width: 80px;
+        min-width: 80px;
       }
 
       &__content {
