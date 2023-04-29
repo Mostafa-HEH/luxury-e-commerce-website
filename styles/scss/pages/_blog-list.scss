@@ -2,15 +2,23 @@
   & .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-c;
   }
 
   & .posts {
     @include flex-c;
+    @media screen and (max-width: 650px) {
+      gap: 30px;
+    }
 
     & .blog-post-review.list:nth-child(even) {
       flex-direction: row-reverse;
+
+      @media screen and (max-width: 650px) {
+        flex-direction: column;
+      }
     }
   }
 
