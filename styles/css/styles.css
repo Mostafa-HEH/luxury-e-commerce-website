@@ -5007,15 +5007,26 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   gap: 30px;
+}
+@media screen and (max-width: 900px) {
+  .about-us > .wrapper {
+    flex-direction: column;
+  }
 }
 .about-us .luxury-img {
   background-color: #333333;
   height: 445px;
   min-width: 370px;
+}
+@media screen and (max-width: 900px) {
+  .about-us .luxury-img {
+    min-width: unset;
+    width: 100%;
+  }
 }
 .about-us .our-story {
   display: flex;
