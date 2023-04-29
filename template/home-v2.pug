@@ -5,7 +5,7 @@ html(lang='en')
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
 
-                //- Slides Script
+        //- Slides Script
         script(src="scripts/js/slides.js", defer) 
 
         title Luxury Home page v2 
@@ -233,7 +233,9 @@ html(lang='en')
                     a(href="#") Blogs
             ul.actions
                 li.actions__action
-                    i.fa-light.fa-magnifying-glass
+                    //- Search icon
+                    include includes/navbar-search-popout.pug
+                    +searchIcon
         section.popular-categories
             .wrapper
                 a(href="#").category

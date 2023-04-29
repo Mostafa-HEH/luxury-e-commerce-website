@@ -2,8 +2,7 @@
 include navbar-pages-links.pug
 
 //- Search icon
-mixin searchIcon 
-    i.fa-light.fa-magnifying-glass
+include navbar-search-popout.pug
 
 mixin navbar-v1-active(isActive)
     nav#navbar(class=`navbar navbar__v1 ${isActive? ' navbar__v1--active': ''}`)

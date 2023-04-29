@@ -63,3 +63,50 @@ navbarLinks.forEach((link) => {
    */
   link.children[1]?.addEventListener("click", () => activeSubLinks(link));
 });
+
+/**
+ * @type {HTMLElement} - The navbar search icon
+ */
+const searchPopupOpen = document.querySelectorAll(".search .search-icon");
+
+/**
+ * @type {HTMLElement} - Search popup
+ */
+const searchPopup = document.querySelectorAll(".search-popup");
+
+/**
+ * @type {HTMLElement} - Search popup close icon
+ */
+const searchPopupClose = document.querySelectorAll(".search-popup .close");
+
+/**
+ *  Open popup search.
+ */
+const openPopup = () => {
+  searchPopup.forEach((pop) => pop.classList.add("search-popup--active"));
+  document.body.style.overflow = "hidden";
+};
+
+/**
+ *  Close popup search.
+ */
+const closePopup = () => {
+  searchPopup.forEach((pop) => pop.classList.remove("search-popup--active"));
+  document.body.style.overflow = "unset";
+};
+
+/**
+ * Listen to navbar search icon click
+ *
+ * @type {HTMLElement} - the target of the event
+ * @listens .search-icon#click
+ */
+searchPopupOpen.forEach((icon) => icon.addEventListener("click", openPopup));
+
+/**
+ * Listen to popup close icon click
+ *
+ * @type {HTMLElement} - the target of the event
+ * @listens .search-popup .close#click
+ */
+searchPopupClose.forEach((icon) => icon.addEventListener("click", closePopup));

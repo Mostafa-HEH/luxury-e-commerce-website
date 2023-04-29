@@ -1,0 +1,118 @@
+.search-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff00;
+  cursor: auto;
+  @include flex-c;
+  align-items: center;
+  overflow-x: scroll;
+  z-index: 2028;
+  display: none;
+  transition: all $speed-1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &--active {
+    display: flex;
+    background-color: #fff;
+  }
+
+  &__navbar {
+    @include flex-r;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    width: 100%;
+
+    & .logo {
+      color: $color-primary !important;
+    }
+
+    & .close {
+      & i {
+        color: $color-gray-6;
+        font-size: 28px;
+        cursor: pointer;
+        transition: color $speed-1;
+
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  &__input {
+    color: $color-secondary;
+    @include flex-r;
+    align-items: center;
+    position: relative;
+
+    @media screen and (max-width: 600px) {
+      padding: 0 25px;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 100%;
+    }
+
+    & input {
+      font-family: $lato;
+      font-weight: $regular;
+      font-size: px-rem(50);
+      color: $color-secondary;
+      padding: 12px 8px;
+      border: unset;
+      border-bottom: 1px solid #e6e6e6;
+
+      &:focus {
+        outline: unset;
+      }
+
+      &::placeholder {
+        color: inherit;
+      }
+
+      @media screen and (max-width: 600px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
+    }
+
+    & .search-icon {
+      position: absolute;
+      right: 8px;
+
+      @media screen and (max-width: 400px) {
+        top: 0;
+        right: 19%;
+      }
+
+      & i {
+        font-size: 36px;
+        color: inherit !important;
+      }
+    }
+  }
+
+  &__results {
+    & .wrapper {
+      padding: 84px 25px 80px;
+      @include grid-1170;
+      max-width: 1220px;
+      box-sizing: border-box;
+      @include flex-r;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+}
