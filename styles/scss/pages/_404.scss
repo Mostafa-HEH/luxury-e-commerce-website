@@ -4,6 +4,7 @@
   & > .wrapper {
     padding: 450px 25px 240px;
     @include grid-1170;
+    max-width: 1220px;
     box-sizing: border-box;
     position: relative;
     @include flex-c;

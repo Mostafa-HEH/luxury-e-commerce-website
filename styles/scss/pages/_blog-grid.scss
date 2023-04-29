@@ -2,7 +2,8 @@
   & .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-c;
   }
 
@@ -10,10 +11,15 @@
     @include flex-r;
     flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
 
     & .blog-post-review.grid {
       width: 370px;
       min-width: unset;
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
 
       & .blog-post-review__img {
         height: 208px;
@@ -22,15 +28,17 @@
 
       & .blog-post-review__content {
         padding: 31px 31px 24px;
+
+        @media screen and (max-width: 400px) {
+          padding-right: 14px;
+          padding-left: 14px;
+        }
+
         & .title {
           font-size: px-rem(16);
           line-height: 24px;
         }
       }
     }
-  }
-
-  & .loading {
-    margin-top: 69px;
   }
 }

@@ -2,6 +2,7 @@
   & > .wrapper {
     padding: 84px 25px 80px;
     @include grid-1170;
+    max-width: 1220px;
     box-sizing: border-box;
     @include flex-r;
     gap: 30px;

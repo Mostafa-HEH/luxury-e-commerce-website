@@ -29,6 +29,10 @@
       align-items: center;
       gap: 38px;
 
+      @media screen and (max-width: 400px) {
+        gap: 10px;
+      }
+
       &__data {
         @include flex-r;
         align-items: center;
@@ -39,6 +43,12 @@
         line-height: 20px;
         color: $color-gray-4;
         text-transform: uppercase;
+
+        &:nth-child(2) {
+          @media screen and (max-width: 350px) {
+            display: none;
+          }
+        }
 
         & a {
           color: inherit;
@@ -84,9 +94,11 @@
         & .details {
           @include flex-r;
           align-items: center;
-          gap: 38px;
+          justify-content: space-between;
 
           &__data {
+            white-space: nowrap;
+
             &.read-more {
               margin-left: auto;
             }
