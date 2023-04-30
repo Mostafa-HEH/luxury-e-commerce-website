@@ -2,22 +2,37 @@
   & .wrapper {
     padding: 81px 25px 78px;
     @include grid-1170;
+    max-width: 1220px;
     @include flex-c;
     gap: 80px;
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
 
   & .product-details {
     @include flex-r;
     gap: 30px;
 
+    @media screen and (max-width: 950px) {
+      flex-direction: column;
+    }
+
     & .images {
       @include flex-r;
       gap: 30px;
 
+      @media screen and (max-width: 1100px) {
+        flex-direction: column-reverse;
+      }
+
       &__subs {
         @include flex-c;
         gap: 20px;
+
+        @media screen and (max-width: 1100px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
 
         & .img {
           width: 90px;
@@ -38,11 +53,24 @@
         height: 580px;
         background-color: $color-gray-9;
         border: $border-gray-7;
+
+        @media screen and (max-width: 950px) {
+          width: 100%;
+        }
       }
     }
 
     & .product-card-list {
+      @media screen and (max-width: 950px) {
+        justify-content: center;
+      }
+
       &__content {
+        @media screen and (max-width: 950px) {
+          align-items: center;
+          text-align: center;
+        }
+
         & .availability {
           font-family: $lato;
           font-weight: $regular;
@@ -59,9 +87,14 @@
 
         & .data-input {
           @include flex-r;
+          flex-wrap: wrap;
           align-items: center;
           gap: 10px;
           margin-bottom: 40px;
+
+          @media screen and (max-width: 950px) {
+            justify-content: center;
+          }
 
           & label {
             max-width: 166px;
@@ -107,6 +140,17 @@
 
         & .navigation {
           margin-bottom: 48px;
+          flex-wrap: wrap;
+
+          @media screen and (max-width: 350px) {
+            justify-content: center;
+          }
+
+          & span:nth-child(1) {
+            @media screen and (max-width: 350px) {
+              flex: 100%;
+            }
+          }
         }
 
         & .featurs {
