@@ -2,10 +2,15 @@
   & > .wrapper {
     padding: 84px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-r;
     justify-content: space-between;
     gap: 30px;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   & .address {
@@ -24,6 +29,7 @@
 
     &__join {
       @include flex-r;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       font-family: $lato;
@@ -32,6 +38,7 @@
       color: $color-gray-3;
       text-transform: uppercase;
       margin-bottom: 21px;
+      gap: 12px;
 
       & label {
         @include flex-r;
@@ -49,6 +56,7 @@
 
     &__group {
       @include flex-r;
+      flex-wrap: wrap;
       gap: 10px;
 
       & input {
@@ -69,6 +77,10 @@
     width: 100%;
     padding: 30px 36px;
     max-width: 370px;
+
+    @media screen and (max-width: 900px) {
+      max-width: unset;
+    }
 
     &__title {
       font-family: $lato;
@@ -204,6 +216,11 @@
 
     & .btn {
       border: unset;
+
+      @media screen and (max-width: 900px) {
+        width: 100%;
+        justify-content: center;
+      }
     }
   }
 }
