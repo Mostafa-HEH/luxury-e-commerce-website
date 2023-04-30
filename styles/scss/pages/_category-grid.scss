@@ -2,15 +2,20 @@
   & .wrapper {
     padding: 81px 25px 80px;
     @include grid-1170;
+    max-width: 1220px;
     @include flex-r;
     gap: 30px;
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
 
   & .display-sidebar {
     @include flex-c;
     gap: 30px;
     min-width: 270px;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
 
     & .show-item {
       width: 100%;
@@ -256,6 +261,8 @@
     & .setting-bar {
       @include flex-r;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
 
       & .select {
@@ -271,6 +278,10 @@
         padding: 0 23px;
         margin-left: auto;
 
+        @media screen and (max-width: 550px) {
+          margin-left: unset;
+        }
+
         & .layout {
           cursor: pointer;
           color: $color-gray-5;
@@ -283,11 +294,61 @@
       }
     }
 
+    & > .display-sidebar {
+      display: none;
+
+      @media screen and (max-width: 850px) {
+        display: flex;
+      }
+
+      & .show-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & .group {
+        }
+
+        & .btn {
+          flex: 100%;
+          justify-content: center;
+        }
+      }
+
+      & .banner {
+        display: none;
+      }
+    }
+
     & .items {
-      @include flex-r;
-      flex-wrap: wrap;
       gap: 38px 30px;
-      justify-content: space-between;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @media screen and (max-width: 940px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media screen and (max-width: 850px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media screen and (max-width: 450px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      & .product-card {
+        width: 100%;
+
+        &__image {
+          width: 100%;
+        }
+      }
     }
 
     & .pagination {
@@ -305,6 +366,12 @@
 
         & .page {
           text-decoration: unset;
+
+          &:nth-child(n + 4) {
+            @media screen and (max-width: 440px) {
+              display: none;
+            }
+          }
 
           &--active {
             background-color: $color-secondary;
