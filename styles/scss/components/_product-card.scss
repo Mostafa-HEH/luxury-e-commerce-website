@@ -184,41 +184,55 @@
   position: relative;
   gap: 29px;
 
-  &__image {
-    background-color: $color-gray-9;
-    width: 270px;
-    height: 324px;
-    border: $border-gray-7;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
   }
 
-  &__tags {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include flex-r;
-    gap: 2px;
+  & .product-card {
+    &__image {
+      background-color: $color-gray-9;
+      width: 270px;
+      height: 324px;
+      border: $border-gray-7;
 
-    & .tag {
-      background-color: $color-white;
-      padding: 10px;
-      border: $border-secondary-1;
-      font-family: $lato;
-      font-weight: $black;
-      font-size: px-rem(13);
-      line-height: 22px;
-      text-transform: uppercase;
-      color: $color-secondary;
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+
+    &__tags {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include flex-r;
+      gap: 2px;
+
+      & .tag {
+        background-color: $color-white;
+        padding: 10px;
+        border: $border-secondary-1;
+        font-family: $lato;
+        font-weight: $black;
+        font-size: px-rem(13);
+        line-height: 22px;
+        text-transform: uppercase;
+        color: $color-secondary;
+      }
     }
   }
 
   &__content {
     @include flex-c;
 
+    @media screen and (max-width: 650px) {
+      align-items: center;
+      text-align: center;
+    }
+
     & .name {
       font-family: $lato;
       font-weight: $black;
       font-size: px-rem(25);
-      line-height: 16px;
       color: $color-secondary;
       text-transform: uppercase;
       text-decoration: unset;
@@ -229,8 +243,13 @@
     & .rate {
       @include flex-r;
       align-items: center;
+      flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 19px;
+
+      @media screen and (max-width: 650px) {
+        justify-content: center;
+      }
 
       &__stars {
         @include flex-r;

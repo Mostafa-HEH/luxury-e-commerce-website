@@ -4,13 +4,18 @@
     @include grid-1170;
     @include flex-r;
     gap: 30px;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    max-width: 1220px;
   }
 
   & .display-sidebar {
     @include flex-c;
     gap: 30px;
     min-width: 270px;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
 
     & .show-item {
       width: 100%;
@@ -256,6 +261,8 @@
     & .setting-bar {
       @include flex-r;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
 
       & .select {
@@ -271,6 +278,10 @@
         padding: 0 23px;
         margin-left: auto;
 
+        @media screen and (max-width: 550px) {
+          margin-left: unset;
+        }
+
         & .layout {
           cursor: pointer;
           color: $color-gray-5;
@@ -280,6 +291,29 @@
             color: $color-secondary;
           }
         }
+      }
+    }
+
+    & > .display-sidebar {
+      display: none;
+
+      @media screen and (max-width: 850px) {
+        display: flex;
+      }
+
+      & .show-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & .btn {
+          flex: 100%;
+          justify-content: center;
+        }
+      }
+
+      & .banner {
+        display: none;
       }
     }
 
@@ -303,6 +337,12 @@
 
         & .page {
           text-decoration: unset;
+
+          &:nth-child(n + 4) {
+            @media screen and (max-width: 440px) {
+              display: none;
+            }
+          }
 
           &--active {
             background-color: $color-secondary;
