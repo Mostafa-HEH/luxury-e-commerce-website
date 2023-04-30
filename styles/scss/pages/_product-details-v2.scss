@@ -2,23 +2,34 @@
   & .wrapper {
     padding: 81px 25px 78px;
     @include grid-1170;
+    max-width: 1220px;
     @include flex-c;
     gap: 80px;
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
 
   & .product-details {
     @include flex-r;
     gap: 30px;
 
+    @media screen and (max-width: 950px) {
+      flex-direction: column;
+    }
+
     & .images {
       @include flex-c;
       flex-direction: column-reverse;
+      justify-content: flex-end;
       gap: 30px;
 
       &__subs {
         @include flex-r;
         gap: 20px;
+
+        @media screen and (max-width: 950px) {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
 
         & .img {
           width: 98px;
@@ -39,11 +50,24 @@
         height: 580px;
         background-color: $color-gray-9;
         border: $border-gray-7;
+
+        @media screen and (max-width: 950px) {
+          width: 100%;
+        }
       }
     }
 
     & .product-card-list {
+      @media screen and (max-width: 950px) {
+        justify-content: center;
+      }
+
       &__content {
+        @media screen and (max-width: 950px) {
+          align-items: center;
+          text-align: center;
+        }
+
         & .availability {
           font-family: $lato;
           font-weight: $regular;
@@ -78,6 +102,7 @@
 
             &__options {
               @include flex-r;
+              flex-wrap: wrap;
               gap: 10px;
               align-items: center;
 
@@ -139,6 +164,18 @@
 
         & .navigation {
           margin-bottom: 48px;
+
+          flex-wrap: wrap;
+
+          @media screen and (max-width: 350px) {
+            justify-content: center;
+          }
+
+          & span:nth-child(1) {
+            @media screen and (max-width: 350px) {
+              flex: 100%;
+            }
+          }
         }
 
         & .featurs {
