@@ -2,9 +2,15 @@
   & > .wrapper {
     padding: 84px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-r;
     gap: 30px;
+    justify-content: space-between;
+
+    @media screen and (max-width: 950px) {
+      flex-direction: column;
+    }
   }
 
   & .cart-items {
@@ -112,7 +118,18 @@
     & .buttons {
       @include flex-r;
       justify-content: flex-end;
+      flex-wrap: wrap;
       gap: 10px;
+
+      @media screen and (max-width: 950px) {
+        justify-content: center;
+      }
+
+      & .btn {
+        @media screen and (max-width: 400px) {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -121,6 +138,10 @@
     gap: 30px;
     width: 370px;
 
+    @media screen and (max-width: 950px) {
+      width: 100%;
+    }
+
     & .total {
       @include flex-c;
       border: $border-gray-7;
@@ -128,6 +149,10 @@
       width: 100%;
       padding: 30px 36px;
       gap: 30px;
+
+      @media screen and (max-width: 400px) {
+        padding: 30px 16px;
+      }
 
       & div {
         @include flex-r;
@@ -154,6 +179,12 @@
         height: 1px;
         background-color: $color-gray-7;
       }
+
+      & .btn {
+        @media screen and (max-width: 400px) {
+          width: 100%;
+        }
+      }
     }
 
     & .shipping,
@@ -162,6 +193,10 @@
       gap: 10px;
       border: $border-gray-7;
       padding: 30px 36px;
+
+      @media screen and (max-width: 400px) {
+        padding: 30px 16px;
+      }
 
       &__title {
         font-family: $lato;
@@ -186,6 +221,10 @@
         @include flex-r;
         justify-content: center;
         margin-top: 25px;
+
+        @media screen and (max-width: 400px) {
+          width: 100%;
+        }
       }
     }
   }

@@ -5408,10 +5408,17 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  max-width: 1220px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   gap: 30px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 950px) {
+  .shopping-cart > .wrapper {
+    flex-direction: column;
+  }
 }
 .shopping-cart .cart-items {
   display: flex;
@@ -5501,13 +5508,29 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 10px;
+}
+@media screen and (max-width: 950px) {
+  .shopping-cart .cart-items .buttons {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .shopping-cart .cart-items .buttons .btn {
+    width: 100%;
+  }
 }
 .shopping-cart .payment-data {
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 370px;
+}
+@media screen and (max-width: 950px) {
+  .shopping-cart .payment-data {
+    width: 100%;
+  }
 }
 .shopping-cart .payment-data .total {
   display: flex;
@@ -5517,6 +5540,11 @@ footer.footer .copyrights .author:hover {
   width: 100%;
   padding: 30px 36px;
   gap: 30px;
+}
+@media screen and (max-width: 400px) {
+  .shopping-cart .payment-data .total {
+    padding: 30px 16px;
+  }
 }
 .shopping-cart .payment-data .total div {
   display: flex;
@@ -5539,12 +5567,22 @@ footer.footer .copyrights .author:hover {
   height: 1px;
   background-color: #e5e5e5;
 }
+@media screen and (max-width: 400px) {
+  .shopping-cart .payment-data .total .btn {
+    width: 100%;
+  }
+}
 .shopping-cart .payment-data .shipping, .shopping-cart .payment-data .code {
   display: flex;
   flex-direction: column;
   gap: 10px;
   border: 1px solid #e5e5e5;
   padding: 30px 36px;
+}
+@media screen and (max-width: 400px) {
+  .shopping-cart .payment-data .shipping, .shopping-cart .payment-data .code {
+    padding: 30px 16px;
+  }
 }
 .shopping-cart .payment-data .shipping__title, .shopping-cart .payment-data .code__title {
   font-family: "Lato", sans-serif;
@@ -5568,6 +5606,11 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   justify-content: center;
   margin-top: 25px;
+}
+@media screen and (max-width: 400px) {
+  .shopping-cart .payment-data .shipping button, .shopping-cart .payment-data .code button {
+    width: 100%;
+  }
 }
 
 .checkout > .wrapper {
