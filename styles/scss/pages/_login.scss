@@ -2,7 +2,8 @@
   & > .wrapper {
     padding: 84px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-r;
     align-items: center;
     justify-content: center;
@@ -35,6 +36,10 @@
       width: 100%;
       @include flex-c;
       gap: 10px;
+
+      @media screen and (max-width: 400px) {
+        padding: 36px 16px;
+      }
 
       & .social-logins {
         padding-bottom: 17px;

@@ -5700,7 +5700,8 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  max-width: 1220px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -5735,6 +5736,11 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media screen and (max-width: 400px) {
+  .login .login__container {
+    padding: 36px 16px;
+  }
 }
 .login .login__container .social-logins {
   padding-bottom: 17px;
