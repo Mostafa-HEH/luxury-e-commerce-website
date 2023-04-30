@@ -2,9 +2,14 @@
   & > .wrapper {
     padding: 84px 25px 80px;
     @include grid-1170;
-    box-sizing: content-box;
+    max-width: 1220px;
+    box-sizing: border-box;
     @include flex-r;
     gap: 30px;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   & .connect-form {
@@ -41,6 +46,10 @@
       border: unset;
       @include flex-r;
       justify-content: center;
+
+      @media screen and (max-width: 900px) {
+        width: 100%;
+      }
     }
   }
 
@@ -48,6 +57,10 @@
     & #map {
       width: 570px;
       height: 521px;
+
+      @media screen and (max-width: 900px) {
+        width: 100%;
+      }
 
       & .leaflet-bottom.leaflet-right {
         width: 100%;

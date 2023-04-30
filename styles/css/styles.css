@@ -5169,10 +5169,16 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  box-sizing: content-box;
+  max-width: 1220px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   gap: 30px;
+}
+@media screen and (max-width: 900px) {
+  .connect-us > .wrapper {
+    flex-direction: column;
+  }
 }
 .connect-us .connect-form {
   margin-bottom: 61px;
@@ -5208,9 +5214,19 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   justify-content: center;
 }
+@media screen and (max-width: 900px) {
+  .connect-us .connect-form button {
+    width: 100%;
+  }
+}
 .connect-us .maps #map {
   width: 570px;
   height: 521px;
+}
+@media screen and (max-width: 900px) {
+  .connect-us .maps #map {
+    width: 100%;
+  }
 }
 .connect-us .maps #map .leaflet-bottom.leaflet-right {
   width: 100%;
