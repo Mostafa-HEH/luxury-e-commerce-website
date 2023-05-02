@@ -8,8 +8,8 @@ html(lang='en')
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
 
-                //- Slides Script
-        script(src="scripts/js/slides.js", defer) 
+        //- Display products Script
+        script(src="scripts/js/products.js", defer) 
 
         title Category Grid
 
@@ -39,9 +39,9 @@ html(lang='en')
                         span.layout: i.fa-solid.fa-list
                 +displaySidebar
                 .items 
-                    .product-card
+                    //- .product-card
                         .img-container.product-card__image
-                            //- img(src="", alt="")
+                            img(src="", alt="")
                             .navigation
                                 span.navigation__link
                                     i.fa-light.fa-magnifying-glass-plus
@@ -51,8 +51,8 @@ html(lang='en')
                                     i.fa-regular.fa-retweet
                                 span.navigation__link
                                     i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
+                        .product-card__tags
+                            .tag sale
                         .product-card__content
                             h3.name Navy Blue suit
                             .rate
@@ -62,259 +62,259 @@ html(lang='en')
                                 i.fa-solid.fa-star
                                 i.fa-solid.fa-star-half-stroke
                             .price
-                                //- .price__before $49.90
+                                .price__before $49.90
                                 .price__after $310.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name Supper 130 Wool Suit
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                            .price
-                                //- .price__before $49.90
-                                .price__after $350.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name Basic Blazer
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star-half-stroke
-                            .price
-                                //- .price__before $49.90
-                                .price__after $119.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name Blazer with elbow
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                            .price
-                                //- .price__before $49.90
-                                .price__after $310.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name STRIPED BLAZER
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star-half-stroke
-                            .price
-                                //- .price__before $49.90
-                                .price__after $169.90
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name Two - Tone Suit Blazer
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star-half-stroke
-                            .price
-                                //- .price__before $49.90
-                                .price__after $189.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name WOOL BLAZER
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-light.fa-star
-                            .price
-                                //- .price__before $49.90
-                                .price__after $199.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name STRUCTURED SUIT BLAZER
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star 
-                                i.fa-solid.fa-star 
-                            .price
-                                //- .price__before $49.90
-                                .price__after $169.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name ELBOW PATCHES
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star 
-                                i.fa-light.fa-star 
-                            .price
-                                //- .price__before $49.90
-                                .price__after $119.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name FAUX LEATHER LAPEL
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                            .price
-                                //- .price__before $49.90
-                                .price__after $149.00
-                    .product-card
-                        .img-container.product-card__image
-                            //- img(src="", alt="")
-                            .navigation
-                                span.navigation__link
-                                    i.fa-light.fa-magnifying-glass-plus
-                                span.navigation__link
-                                    i.fa-light.fa-bag-shopping
-                                span.navigation__link
-                                    i.fa-regular.fa-retweet
-                                span.navigation__link
-                                    i.fa-light.fa-heart
-                        //- .product-card__tags
-                        //-     .tag sale
-                        .product-card__content
-                            h3.name BIRDSEYE SUIT WAISTCOAT
-                            .rate
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star
-                                i.fa-solid.fa-star-half-stroke
-                            .price
-                                //- .price__before $49.90
-                                .price__after $79.90
-                    .product-card
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name Supper 130 Wool Suit
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $350.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name Basic Blazer
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star-half-stroke
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $119.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name Blazer with elbow
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $310.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name STRIPED BLAZER
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star-half-stroke
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $169.90
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name Two - Tone Suit Blazer
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star-half-stroke
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $189.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name WOOL BLAZER
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-light.fa-star
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $199.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name STRUCTURED SUIT BLAZER
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star 
+                    //-             i.fa-solid.fa-star 
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $169.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name ELBOW PATCHES
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star 
+                    //-             i.fa-light.fa-star 
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $119.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name FAUX LEATHER LAPEL
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $149.00
+                    //- .product-card
+                    //-     .img-container.product-card__image
+                    //-         //- img(src="", alt="")
+                    //-         .navigation
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-magnifying-glass-plus
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-bag-shopping
+                    //-             span.navigation__link
+                    //-                 i.fa-regular.fa-retweet
+                    //-             span.navigation__link
+                    //-                 i.fa-light.fa-heart
+                    //-     //- .product-card__tags
+                    //-     //-     .tag sale
+                    //-     .product-card__content
+                    //-         h3.name BIRDSEYE SUIT WAISTCOAT
+                    //-         .rate
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star
+                    //-             i.fa-solid.fa-star-half-stroke
+                    //-         .price
+                    //-             //- .price__before $49.90
+                    //-             .price__after $79.90
+                    //- .product-card
                         .img-container.product-card__image
                             //- img(src="", alt="")
                             .navigation
@@ -343,9 +343,16 @@ html(lang='en')
                     span.action.action-secondary.black: i.fa-solid.fa-caret-left
                     .pages
                         a(href="#").action.action-secondary.black.page.page--active 1
-                        a(href="#").action.action-secondary.black.page 2
-                        a(href="#").action.action-secondary.black.page 3
-                        a(href="#").action.action-secondary.black.page 4
-                        a(href="#").action.action-secondary.black.page 5
+                        //- a(href="#").action.action-secondary.black.page 2
+                        //- a(href="#").action.action-secondary.black.page 3
+                        //- a(href="#").action.action-secondary.black.page 4
+                        //- a(href="#").action.action-secondary.black.page 5
                     span.action.action-secondary.black: i.fa-solid.fa-caret-right
+        .loading-container
+            span.logo Luxury
+            .loading
+                .loading__box
+                .loading__box
+                .loading__box
+                .loading__box
     include includes/footer.pug

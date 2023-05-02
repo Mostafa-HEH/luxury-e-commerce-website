@@ -5,6 +5,22 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   margin: auto;
+  animation-duration: 1s;
+  animation-name: rotating;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0);
+      opacity: 0.5;
+    }
+
+    to {
+      transform: rotate(1turn);
+      opacity: 1;
+    }
+  }
 
   &__box:nth-child(1),
   &__box:nth-child(4) {
