@@ -131,6 +131,7 @@ class Product {
  */
 class Products extends Product {
   sideBarData = {};
+  pageURL = window.location.href;
 
   /**
    * Init array of products
@@ -145,15 +146,55 @@ class Products extends Product {
   }
 
   /**
+   * Takes page url and search spacific param and change its value
+   * Stack overflow#https://stackoverflow.com/questions/7171099/how-to-replace-url-parameter-with-javascript-jquery
+   * @param {String} url
+   * @param {String} paramName
+   * @param {*} paramValue
+   * @returns URL with changed prame
+   */
+  replaceUrlParam(url, paramName, paramValue) {
+    if (paramValue == null) {
+      paramValue = "";
+    }
+    let pattern = new RegExp("\\b(" + paramName + "=).*?(&|#|$)");
+    if (url.search(pattern) >= 0) {
+      return url.replace(pattern, "$1" + paramValue + "$2");
+    }
+    url = url.replace(/[?#]$/, "");
+    return (
+      url + (url.indexOf("?") > 0 ? "&" : "?") + paramName + "=" + paramValue
+    );
+  }
+
+  /**
    * Render products pased on these parameters
    * @param {Object} productsDisplay - Object of filters that controles how products displaies
    * @returns {HTMLElement}
    */
-  productsArray({ currentPage, productsLimit }) {
-    const pageStart = currentPage * productsLimit - 12;
+  productsArray({ currentPage, productsLimit, pageSort }) {
+    /**
+     * Soring array of data
+     * @param {*} a - Compare value 1
+     * @param {*} b Compare value 2
+     * @returns Sorted array
+     */
+    const sorting = (a, b) => {
+      if (pageSort === "name") {
+        if (a.title < b.title) return -1;
+        if (a.title > b.title) return 1;
+      } else if (pageSort === "price") {
+        if (a.price < b.price) return -1;
+        if (a.price > b.price) return 1;
+      }
+      return 0;
+    };
+
+    const pageStart = currentPage * productsLimit - productsLimit;
     const pageEnd = currentPage * productsLimit;
 
     return this.data
+      .sort(sorting)
       .map((item) => this.productGridRender(item))
       .slice(pageStart, pageEnd)
       .join("");
@@ -234,45 +275,23 @@ class Products extends Product {
   /**
    * Takes limit number and pased on it compain paginations pased on it.
    * @param {Integer} param0 - Page limit
+   * @param {Integer} param1 - Current page number
    */
   paginationRender({ productsLimit, currentPage }) {
-    /**
-     * Takes page url and search spacific param and change its value
-     * Stack overflow#https://stackoverflow.com/questions/7171099/how-to-replace-url-parameter-with-javascript-jquery
-     * @param {String} url
-     * @param {String} paramName
-     * @param {*} paramValue
-     * @returns URL with changed prame
-     */
-    const replaceUrlParam = (url, paramName, paramValue) => {
-      if (paramValue == null) {
-        paramValue = "";
-      }
-      let pattern = new RegExp("\\b(" + paramName + "=).*?(&|#|$)");
-      if (url.search(pattern) >= 0) {
-        return url.replace(pattern, "$1" + paramValue + "$2");
-      }
-      url = url.replace(/[?#]$/, "");
-      return (
-        url + (url.indexOf("?") > 0 ? "&" : "?") + paramName + "=" + paramValue
-      );
-    };
-
     /**
      * Creates pages links
      * @param {Integer} pageNumber
      * @returns {HTMLElement}
      */
     const pageNumberSegment = (pageNumber) =>
-      `<a class="action action-secondary black page" data-number=${pageNumber} href="${replaceUrlParam(
-        pageURL,
+      `<a class="action action-secondary black page" data-number=${pageNumber} href="${this.replaceUrlParam(
+        this.pageURL,
         "page",
         pageNumber
       )}">${pageNumber}</a>`;
 
     const pages = [];
     const pagesNumber = Math.ceil(this.data.length / productsLimit);
-    const pageURL = window.location.href;
     currentPage = parseInt(currentPage);
 
     let i = 1;
@@ -291,16 +310,48 @@ class Products extends Product {
     categoryGridPrevious.addEventListener("click", () => {
       if (currentPage > 1)
         window.location.assign(
-          replaceUrlParam(pageURL, "page", currentPage - 1)
+          this.replaceUrlParam(this.pageURL, "page", currentPage - 1)
         );
     });
 
     categoryGridNext.addEventListener("click", () => {
       if (currentPage < pagesNumber)
         window.location.assign(
-          replaceUrlParam(pageURL, "page", currentPage + 1)
+          this.replaceUrlParam(this.pageURL, "page", currentPage + 1)
         );
     });
+  }
+
+  /**
+   * Change how products displays pased on changing in setting bar
+   * @param {Integer} param0 - Page display limit
+   */
+  settingbarConroler({ productsLimit, pageSort }) {
+    categoryGridSortby.addEventListener("change", (e) => {
+      window.location.assign(
+        this.replaceUrlParam(this.pageURL, "sort", e.target.value)
+      );
+    });
+
+    let x = 0;
+    while (categoryGridSortby[x]) {
+      if (categoryGridSortby[x].value === pageSort)
+        categoryGridSortby[x].setAttribute("selected", true);
+      x++;
+    }
+
+    categoryGridDisplayRange.addEventListener("change", (e) => {
+      window.location.assign(
+        this.replaceUrlParam(this.pageURL, "limit", e.target.value)
+      );
+    });
+
+    let i = 0;
+    while (categoryGridDisplayRange[i]) {
+      if (categoryGridDisplayRange[i].value === productsLimit)
+        categoryGridDisplayRange[i].setAttribute("selected", true);
+      i++;
+    }
   }
 }
 
@@ -340,6 +391,16 @@ const categoryGridNext = document.querySelector(
   ".category-grid .products .pagination #nextPage"
 );
 
+/**
+ * @type {HTMLElement} - category Grid settings controls how products displays
+ */
+const categoryGridSortby = document.querySelector(
+  ".category-grid .products .setting-bar #sortBy select"
+);
+const categoryGridDisplayRange = document.querySelector(
+  ".category-grid .products .setting-bar #displayRange select"
+);
+
 const productsDisplay = {
   currentPage: URLParameter("page") || 1,
   pageSort: URLParameter("sort") || "default",
@@ -353,4 +414,5 @@ fetch("http://localhost:3000/products")
     const products = new Products(data);
     products.productsRender(productsDisplay);
     products.paginationRender(productsDisplay);
+    products.settingbarConroler(productsDisplay);
   });
