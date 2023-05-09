@@ -616,6 +616,11 @@ input[type=range]::-ms-track {
     width: 100%;
   }
 }
+.product-card__image img {
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .product-card__image .navigation {
   position: absolute;
   bottom: -50px;

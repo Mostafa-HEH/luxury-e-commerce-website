@@ -30,6 +30,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Create dummy Json data.
 - Documenting scripts with JSDoc.
 - Injecting api data to html.
+- Render fake data and update HTML & CSS pased on how data displays.
 
 #### Skills:
 
@@ -44,6 +45,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - json-server
 - Leaflet maps
 - JSDoc
+- regexr
 
 #### Other skills:
 
@@ -67,3 +69,4 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - [Font Awesome](https://fonts.google.com/)
 - [Leaflet maps](https://leafletjs.com/)
 - [JSDoc](https://jsdoc.app/index.html)
+- [regexr](https://regexr.com/)
