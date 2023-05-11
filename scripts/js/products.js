@@ -383,11 +383,12 @@ class Products extends Product {
      * @returns Render item in sidebar section
      */
     const itemSegments = (departName, departValue, isChecked) =>
-      `<li class="item">
+      `<li class="item ${isChecked ? "item--active" : ""}">
         <input type="checkbox" ${
           isChecked && "checked"
         } name="${departName}" value="${departValue}"/>
         ${departValue}
+        <span class="box"></span>
       </li>`;
 
     /**
