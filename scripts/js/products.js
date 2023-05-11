@@ -209,7 +209,7 @@ class Products extends Product {
       )
       .sort(sorting)
       .map((item) => {
-        this.productsLength++;
+        if (this.isFilters) this.productsLength++;
         return this.productGridRender(item);
       })
       .slice(pageStart, pageEnd)
