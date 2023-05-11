@@ -1,7 +1,7 @@
 mixin displaySidebar
     .display-sidebar
-        .show-item
-            .group.category 
+        form.show-item
+            //- .group.category 
                 h4.group__title Categories
                 ul.group__list 
                     li.item Women
@@ -15,16 +15,37 @@ mixin displaySidebar
                     li.item Watches
                     li.item Shoes
                     li.item Accessories
-            .group.by-brand 
+            //- .group.category 
+                h4.group__title Categories
+                ul.group__list 
+                    li.item
+                        input(type="checkbox", name="category", value="women")
+                        | Women
+                    li.item
+                        input(type="checkbox", name="category", value="men")
+                        | men
+                    li.item 
+                        input(type="checkbox", name="category", value="watches")
+                        | Watches
+                    li.item 
+                        input(type="checkbox", name="category", value="shoes")
+                        | Shoes
+                    li.item 
+                        input(type="checkbox", name="category", value="accessories")
+                        | Accessories
+            //- .group.by-brand 
                 h4.group__title By Brand
                 ul.group__list 
-                    li.item Zara
-                    li.item Chanel
-                    li.item gucci
-                    li.item.item--active Calvin klein
-                    li.item Hermes
-                    li.item Diesel
-            .group.by-size 
+                    li.item 
+                        input(type="checkbox", name="brand", value="zara")
+                        | Zara
+                    li.item
+                        input(type="checkbox", name="brand", value="chanal")
+                        | Chanel
+                    li.item 
+                        input(type="checkbox", name="brand", value="gucci")
+                        | gucci
+            //- .group.by-size 
                 h4.group__title By Size
                 ul.group__list 
                     li.item xXXS
@@ -35,11 +56,11 @@ mixin displaySidebar
                     li.item xl
                     li.item xxl
                     li.item xxxl
-            .group.by-price 
+            //- .group.by-price 
                 h4.group__title By Price
                 <input type="range" name="vol" min="0" max="50">
                 .price Price: #[.from-to #[span.from $10] - #[span.to $220]]
-            span.btn.btn-primary.black filter
+            button.btn.btn-primary.black(type="submit") filter
         .banner
             .img-container.banner__image
                 //- img(src="", alt="")

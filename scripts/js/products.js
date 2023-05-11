@@ -132,14 +132,17 @@ class Product {
 class Products extends Product {
   sideBarData = {};
   pageURL = window.location.href;
+  productsLength;
 
   /**
    * Init array of products
    * @param {Array} data - Array of products fetched from api
    */
-  constructor(data) {
+  constructor(data, isFilters) {
     super();
     this.data = data;
+    this.isFilters = isFilters;
+    this.productsLength = this.isFilters ? 0 : this.data.length;
     this.fetchCategories();
     this.fetchBrands();
     this.fetchPriceRange();
@@ -172,7 +175,7 @@ class Products extends Product {
    * @param {Object} productsDisplay - Object of filters that controles how products displaies
    * @returns {HTMLElement}
    */
-  productsArray({ currentPage, productsLimit, pageSort }) {
+  productsArray({ currentPage, productsLimit, pageSort, filters }) {
     /**
      * Soring array of data
      * @param {*} a - Compare value 1
@@ -194,8 +197,21 @@ class Products extends Product {
     const pageEnd = currentPage * productsLimit;
 
     return this.data
+      .filter((item) =>
+        filters.categories.length > 0
+          ? filters.categories.includes(item.category.toLowerCase())
+          : item
+      )
+      .filter((item) =>
+        filters.brands.length > 0
+          ? filters.brands.includes(item.brand.toLowerCase())
+          : item
+      )
       .sort(sorting)
-      .map((item) => this.productGridRender(item))
+      .map((item) => {
+        this.productsLength++;
+        return this.productGridRender(item);
+      })
       .slice(pageStart, pageEnd)
       .join("");
   }
@@ -291,7 +307,7 @@ class Products extends Product {
       )}">${pageNumber}</a>`;
 
     const pages = [];
-    const pagesNumber = Math.ceil(this.data.length / productsLimit);
+    const pagesNumber = Math.ceil(this.productsLength / productsLimit);
     currentPage = parseInt(currentPage);
 
     let i = 1;
@@ -353,6 +369,64 @@ class Products extends Product {
       i++;
     }
   }
+
+  /**
+   * Render sidebar sections
+   * @param {Object} param0 - Filters that collected from URL
+   */
+  sidebarRender({ filters }) {
+    /**
+     * Render Sidebar sections item
+     * @param {String} departName - Category, brands...
+     * @param {*} departValue - men, woman....
+     * @param {*} isChecked - Check if URL search contains item value it will be checked
+     * @returns Render item in sidebar section
+     */
+    const itemSegments = (departName, departValue, isChecked) =>
+      `<li class="item">
+        <input type="checkbox" ${
+          isChecked && "checked"
+        } name="${departName}" value="${departValue}"/>
+        ${departValue}
+      </li>`;
+
+    /**
+     * Render Sidebar Category section
+     * @param {Array} categories - Parameters categories selected.
+     * @returns {HTMLElment} Sidebar Category section
+     */
+    const categorySegments = (categories) => `
+    <div class="group category">
+      <h4 class="group__title">Categories</h4>
+      <ul class="group__list">${this.sideBarData.categories
+        .map((item) =>
+          itemSegments("category", item, categories.includes(item))
+        )
+        .join("")}
+      </ul>
+    </div>`;
+
+    /**
+     * Render Sidebar barnd section
+     * @param {Array} brands - Parameters categories selected.
+     * @returns {HTMLElment} Sidebar barnd section
+     */
+    const brandSegments = (brands) => `
+    <div class="group by-brand">
+      <h4 class="group__title">By Brand</h4>
+      <ul class="group__list">${this.sideBarData.brands
+        .map((item) => itemSegments("brand", item, brands.includes(item)))
+        .join("")}
+      </ul>
+    </div>`;
+
+    const { categories, brands } = filters;
+
+    sidebarItems.insertAdjacentHTML(
+      "afterbegin",
+      categorySegments(categories) + brandSegments(brands)
+    );
+  }
 }
 
 /**
@@ -361,11 +435,18 @@ class Products extends Product {
  * @returns Value of parameter from urlk
  */
 const URLParameter = (parameter) => {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-
   return urlParams.get(parameter);
 };
+
+/**
+ * Take Department name and collect all values from parameters in URL
+ * @param {String} paramTo Sidebar Category or Brands
+ * @returns Array of selected value
+ */
+const fetchFilterParams = (paramTo) =>
+  Array.from(urlParams)
+    .map((param) => (param[0] === paramTo ? param[1] : undefined))
+    .filter((param) => param !== undefined);
 
 /**
  * @type {HTMLElement} - category Grid Products
@@ -401,18 +482,34 @@ const categoryGridDisplayRange = document.querySelector(
   ".category-grid .products .setting-bar #displayRange select"
 );
 
+/**
+ * @type {HTMLElement} - Products filters sidebar
+ */
+const sidebarItems = document.querySelector(".display-sidebar .show-item");
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 const productsDisplay = {
   currentPage: URLParameter("page") || 1,
   pageSort: URLParameter("sort") || "default",
   productsLimit: URLParameter("limit") || 12,
-  filters: {},
+  filters: {
+    isFilters:
+      fetchFilterParams("category").length > 0 ||
+      fetchFilterParams("brand").length > 0
+        ? true
+        : false,
+    categories: fetchFilterParams("category"),
+    brands: fetchFilterParams("brand"),
+  },
 };
 
 fetch("http://localhost:3000/products")
   .then((res) => res.json())
   .then((data) => {
-    const products = new Products(data);
+    const products = new Products(data, productsDisplay.filters.isFilters);
     products.productsRender(productsDisplay);
     products.paginationRender(productsDisplay);
     products.settingbarConroler(productsDisplay);
+    products.sidebarRender(productsDisplay);
   });
