@@ -497,7 +497,7 @@
     </div>
     <div class="wrapper">
       <div class="display-sidebar">
-        <form class="show-item">
+        <form class="show-item" id="categorySidebar">
           <button class="btn btn-primary black" type="submit">filter</button>
         </form>
         <div class="banner">
@@ -508,14 +508,14 @@
       </div>
       <div class="products">
         <div class="setting-bar"> 
-          <label class="select" id="sortBy">sort by:
+          <label class="select" id="categorySortFilter">sort by:
             <select>
               <option value="default">default </option>
               <option value="name">name</option>
               <option value="price">price </option>
             </select>
           </label>
-          <label class="select" id="displayRange">Items/Page:
+          <label class="select" id="categoryRangeLimit">Items/Page:
             <select>
               <option value="12">12</option>
               <option value="24">24 </option>
@@ -524,7 +524,7 @@
           <div class="setting-bar__layouts"><span class="layout layout--active"><i class="fa-solid fa-grid"></i></span><span class="layout"><i class="fa-solid fa-list"></i></span></div>
         </div>
         <div class="display-sidebar">
-          <form class="show-item">
+          <form class="show-item" id="categorySidebar">
             <button class="btn btn-primary black" type="submit">filter</button>
           </form>
           <div class="banner">
@@ -533,9 +533,9 @@
             <div class="banner__title">Women’s</div><a class="btn btn-secondary white">Shop Now</a>
           </div>
         </div>
-        <div class="items"> </div>
-        <div class="pagination"> <span class="action action-secondary black" id="previousPage"><i class="fa-solid fa-caret-left"></i></span>
-          <div class="pages"></div><span class="action action-secondary black" id="nextPage"><i class="fa-solid fa-caret-right"></i></span>
+        <div class="items" id="categoryProducts"></div>
+        <div class="pagination"> <span class="action action-secondary black" id="categoryPaginationPrv"><i class="fa-solid fa-caret-left"></i></span>
+          <div class="pages" id="categoryPagination"></div><span class="action action-secondary black" id="categoryPaginationNxt"><i class="fa-solid fa-caret-right"></i></span>
         </div>
       </div>
     </div>

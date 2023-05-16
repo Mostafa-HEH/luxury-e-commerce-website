@@ -25,12 +25,12 @@ html(lang='en')
             +displaySidebar
             .products
                 .setting-bar 
-                    label.select#sortBy sort by:
+                    label.select#categorySortFilter sort by:
                         select
                             option(value="default") default 
                             option(value="name") name
                             option(value="price") price 
-                    label.select#displayRange Items/Page:
+                    label.select#categoryRangeLimit Items/Page:
                         select
                             option(value="12") 12
                             option(value="24") 24 
@@ -38,7 +38,7 @@ html(lang='en')
                         span.layout.layout--active: i.fa-solid.fa-grid
                         span.layout: i.fa-solid.fa-list
                 +displaySidebar
-                .items 
+                .items#categoryProducts
                     //- .product-card
                         .img-container.product-card__image
                             img(src="", alt="")
@@ -340,14 +340,14 @@ html(lang='en')
                                 //- .price__before $49.90
                                 .price__after $189.00
                 .pagination  
-                    span.action.action-secondary.black#previousPage: i.fa-solid.fa-caret-left
-                    .pages
+                    span.action.action-secondary.black#categoryPaginationPrv: i.fa-solid.fa-caret-left
+                    .pages#categoryPagination
                         //- a(href="#").action.action-secondary.black.page.page--active 1
                         //- a(href="#").action.action-secondary.black.page 2
                         //- a(href="#").action.action-secondary.black.page 3
                         //- a(href="#").action.action-secondary.black.page 4
                         //- a(href="#").action.action-secondary.black.page 5
-                    span.action.action-secondary.black#nextPage: i.fa-solid.fa-caret-right
+                    span.action.action-secondary.black#categoryPaginationNxt: i.fa-solid.fa-caret-right
         .loading-container
             span.logo Luxury
             .loading

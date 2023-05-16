@@ -6,7 +6,15 @@
 
 /** Class representing a product. */
 class Product {
-  dollerRate = 31;
+  priceData = {
+    dbPrice: "egp",
+    displayPrice: {
+      currency: "usd",
+      symbol: "$",
+    },
+    convertingRate: 31,
+  };
+  titleLength = 30;
 
   /**
    * Init product object.
@@ -17,23 +25,13 @@ class Product {
   }
 
   /**
-   * Sliceing title into 30 char if it more than 30 char.
-   * @param {String} title - Slice titles longest than 30 char.
-   * @returns 30 Character.
-   */
-  titleSlice(title) {
-    return title.slice(0, 30) + (title.length > 30 ? "..." : "");
-  }
-
-  /**
    * Receive tags array and loop into with returning tags component.
    * @param {Array} tags - Array of tags
    * @returns {HTMLElement}
    */
-  tagSegments(tags) {
-    return tags
-      ? tags.map((tag) => `<div class="tag">${tag}</div>`).join("")
-      : "";
+  tagsRender(tags) {
+    if (!tags) return "";
+    return tags.map((tag) => `<div class="tag">${tag}</div>`).join("");
   }
 
   /**
@@ -41,32 +39,39 @@ class Product {
    * @param {Integer} rate - Rate number from 5
    * @returns {HTMLElement}
    */
-  rateSegments(rate) {
+  rateRender(rate) {
+    /**
+     * Generates stars segments based on rate number.
+     * @param {Number} rate - Rating number
+     * @param {Object} starsSegments - Object of html segment.
+     * @returns {HTMLElement} Full rate stars.
+     */
+    const handleRate = (rate, { half, empty, full }) => {
+      const stars = [];
+
+      let i = 5;
+      for (; i > 0; i--) {
+        if (i > rate) {
+          if (i - 0.5 <= rate) {
+            stars.push(half);
+          } else {
+            stars.push(empty);
+          }
+        } else {
+          stars.push(full);
+        }
+      }
+      return stars.reverse();
+    };
+
+    const starsSegments = {
+      full: `<i class="fa-solid fa-star"></i>`,
+      empty: `<i class="fa-light fa-star"></i>`,
+      half: `<i class="fa-solid fa-star-half-stroke"></i>`,
+    };
+
     if (!rate) return "";
-
-    const rateInteger = Math.trunc(rate);
-    const decemalNumber = parseInt(rate.toString().split(".")[1]);
-    const betweenRatingAnd5 =
-      5 - (decemalNumber ? rateInteger + 1 : rateInteger);
-    const ratingStars = [];
-
-    for (let i = 1; i <= rateInteger; i++) {
-      ratingStars.push('<i class="fa-solid fa-star"></i>');
-    }
-
-    if (decemalNumber === NaN || decemalNumber < 3)
-      ratingStars.push('<i class="fa-light fa-star"></i>');
-
-    if (3 <= decemalNumber && decemalNumber <= 8)
-      ratingStars.push('<i class="fa-solid fa-star-half-stroke"></i>');
-
-    if (8 < decemalNumber) ratingStars.push('<i class="fa-solid fa-star"></i>');
-
-    for (let i = 1; i <= betweenRatingAnd5; i++) {
-      ratingStars.push('<i class="fa-light fa-star"></i>');
-    }
-
-    return ratingStars.map((star) => star).join("");
+    return handleRate(rate, starsSegments).join("");
   }
 
   /**
@@ -76,22 +81,38 @@ class Product {
    * @param {Integer} discount - Product discount
    * @returns {HTMLElement}
    */
-  priceSegments(price, discount) {
-    const finalPrice = (price / this.dollerRate).toFixed(2);
-    const finalPriceDiscount = (
-      (price - (100 * discount) / price) /
-      this.dollerRate
-    ).toFixed(2);
+  priceRender(price, discount) {
+    /**
+     * Converting price into spacific currency
+     * @param {Number} price
+     * @returns - Converted price
+     */
+    const priceConvert = (price) => {
+      return (price / convertingRate).toFixed(2);
+    };
 
-    if (discount)
-      return `
-          <div class="price__before">$${finalPrice}</div>
-          <div class="price__after">$${finalPriceDiscount}</div>
-      `;
-    else
-      return `
-          <div class="price__after">$${finalPrice}</div>
-      `;
+    /**
+     * Takes price, discount and return price after discount
+     * @param {Number} price
+     * @param {Number} discount
+     * @returns - Price with discount
+     */
+    const applyDiscount = (price, discount) => {
+      return ((price - (100 * discount) / price) / convertingRate).toFixed(2);
+    };
+
+    const { convertingRate, displayPrice } = this.priceData;
+    const { symbol } = displayPrice;
+
+    const priceBefore = discount
+      ? `<div class="price__before">${symbol}${priceConvert(price)}</div>`
+      : "";
+
+    const priceAfter = `<div class="price__after">${symbol}${
+      discount ? applyDiscount(price, discount) : priceConvert(price)
+    }</div>`;
+
+    return priceBefore + priceAfter;
   }
 
   /**
@@ -115,11 +136,11 @@ class Product {
       <div class="img-container product-card__image"><img src=${thumbnail} alt="${title}">
         <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
       </div>
-      <div class="product-card__tags">${this.tagSegments(tags)}</div>
+      <div class="product-card__tags">${this.tagsRender(tags)}</div>
       <div class="product-card__content">
-        <h3 class="name">${this.titleSlice(title)}</h3>
-        <div class="rate">${this.rateSegments(rating)}</div>
-      <div class="price">${this.priceSegments(price, discountPercentage)}</div>
+        <h3 class="name">${title}</h3>
+        <div class="rate">${this.rateRender(rating)}</div>
+      <div class="price">${this.priceRender(price, discountPercentage)}</div>
       </div>
       </div>
       `;
@@ -130,22 +151,82 @@ class Product {
  * Category grid page products render.
  */
 class Products extends Product {
+  productsSegmentsArray = null;
+  pageDisplay = {
+    start: 0,
+    end: 12,
+  };
   sideBarData = {};
   pageURL = window.location.href;
-  productsLength;
 
   /**
    * Init array of products
    * @param {Array} data - Array of products fetched from api
    */
-  constructor(data, isFilters) {
+  constructor(data, productsDisplay) {
     super();
     this.data = data;
-    this.isFilters = isFilters;
-    this.productsLength = this.isFilters ? 0 : this.data.length;
-    this.fetchCategories();
-    this.fetchBrands();
-    this.fetchPriceRange();
+    this.productsDisplay = productsDisplay;
+
+    const { currentPage, productsLimit } = this.productsDisplay;
+    this.pageDisplay.start = currentPage * productsLimit - productsLimit;
+    this.pageDisplay.end = currentPage * productsLimit;
+  }
+
+  /**
+   *---------------------------------------------------
+   *[************ Making things methods **************]
+   *---------------------------------------------------
+   * 1 - Methods:
+   *      - {generateProductsArray} - Generates products list pased on filters,
+   *        sorting, number of displayed products
+   *      - {replaceUrlParam} - Replace URL serach parametres.
+   *      - {settingbarConroler} Change Categorid page sitting controles how
+   *        products displays.
+   *
+   */
+
+  /**
+   * Render products pased on these parameters
+   * @param {Object} productsDisplay - Object of filters that controles how products displaies
+   * @returns {HTMLElement}
+   */
+  generateProductsArray() {
+    /**
+     * Soring array of data
+     * @param {*} a - Compare value 1
+     * @param {*} b Compare value 2
+     * @returns Sorted array
+     */
+    const sorting = (a, b) => {
+      if (pageSort === "name") {
+        if (a.title < b.title) return -1;
+        if (a.title > b.title) return 1;
+      } else if (pageSort === "price") {
+        if (a.price < b.price) return -1;
+        if (a.price > b.price) return 1;
+      }
+      return 0;
+    };
+
+    const { pageSort, filters } = this.productsDisplay;
+
+    this.productsSegmentsArray = this.data
+      .filter((item) =>
+        filters.categories.length > 0
+          ? filters.categories.includes(item.category.toLowerCase())
+          : item
+      )
+      .filter((item) =>
+        filters.brands.length > 0
+          ? filters.brands.includes(item.brand.toLowerCase())
+          : item
+      )
+      .sort(sorting)
+      .map((item) => {
+        // Method from main class
+        return this.productGridRender(item);
+      });
   }
 
   /**
@@ -171,129 +252,119 @@ class Products extends Product {
   }
 
   /**
-   * Render products pased on these parameters
-   * @param {Object} productsDisplay - Object of filters that controles how products displaies
-   * @returns {HTMLElement}
+   * Change how products displays pased on changing in setting bar
+   * @param {Integer} param0 - Page display limit
    */
-  productsArray({ currentPage, productsLimit, pageSort, filters }) {
+  settingbarConroler() {
     /**
-     * Soring array of data
-     * @param {*} a - Compare value 1
-     * @param {*} b Compare value 2
-     * @returns Sorted array
+     * Make selected option the deafult selected
+     * @param {HTMLElement} optionsContainer - The select container
      */
-    const sorting = (a, b) => {
-      if (pageSort === "name") {
-        if (a.title < b.title) return -1;
-        if (a.title > b.title) return 1;
-      } else if (pageSort === "price") {
-        if (a.price < b.price) return -1;
-        if (a.price > b.price) return 1;
+    const selectDefault = (optionsContainer) => {
+      let i = 0;
+      while (optionsContainer[i]) {
+        if ([pageSort, productsLimit].includes(optionsContainer[i].value))
+          optionsContainer[i].setAttribute("selected", true);
+        i++;
       }
-      return 0;
     };
 
-    const pageStart = currentPage * productsLimit - productsLimit;
-    const pageEnd = currentPage * productsLimit;
-
-    return this.data
-      .filter((item) =>
-        filters.categories.length > 0
-          ? filters.categories.includes(item.category.toLowerCase())
-          : item
-      )
-      .filter((item) =>
-        filters.brands.length > 0
-          ? filters.brands.includes(item.brand.toLowerCase())
-          : item
-      )
-      .sort(sorting)
-      .map((item) => {
-        if (this.isFilters) this.productsLength++;
-        return this.productGridRender(item);
-      })
-      .slice(pageStart, pageEnd)
-      .join("");
-  }
-
-  /**
-   * Fetching categories names from products objects.
-   * @returns {Array} of categories
-   */
-  fetchCategories() {
-    let uniqueCategories = [];
-    let uniqueDepartments = {};
-
-    this.data.forEach((product) => {
-      const formatingCategory = product.category.toLowerCase();
-      const departments = product.department?.toLowerCase();
-
-      if (!uniqueCategories.includes(formatingCategory)) {
-        uniqueCategories.push(formatingCategory);
-        uniqueDepartments[formatingCategory] = departments ? [] : null;
-      }
-
-      if (!uniqueDepartments[formatingCategory]?.includes(departments))
-        uniqueDepartments[formatingCategory]?.push(departments);
-    });
-
-    let sortedUniqueCategories = uniqueCategories.sort();
-    this.sideBarData.categories = sortedUniqueCategories;
-    this.sideBarData.departments = uniqueDepartments;
-  }
-
-  /**
-   * Fetching brands names from products objects.
-   * @returns {Array} of brands
-   */
-  fetchBrands() {
-    const uniqueBrands = [];
-
-    this.data.forEach((product) => {
-      const formatingBrands = product.brand.toLowerCase();
-
-      if (!uniqueBrands.includes(formatingBrands))
-        uniqueBrands.push(formatingBrands);
-    });
-
-    const sortedUniqueBrands = uniqueBrands.sort();
-    this.sideBarData.brands = sortedUniqueBrands;
-  }
-
-  /**
-   * Fetching price range.
-   * @returns {Object} of min & max
-   */
-  fetchPriceRange() {
-    this.sideBarData.priceRange = {
-      min: 99999,
-      max: 0,
+    /**
+     * Change param and reload page
+     * @param {Object} e - Event
+     * @param {String} param - The url parameter
+     */
+    const replaceSelectedParam = (e, param) => {
+      window.location.assign(
+        this.replaceUrlParam(this.pageURL, param, e.target.value)
+      );
     };
 
-    this.data.forEach((product) => {
-      let priceConvert = Math.round(product.price / this.dollerRate);
+    const { productsLimit, pageSort } = this.productsDisplay;
 
-      if (priceConvert > this.sideBarData.priceRange.max)
-        this.sideBarData.priceRange.max = priceConvert;
+    // Change sort filter based on option value
+    categorySortFilter.addEventListener("change", (e) =>
+      replaceSelectedParam(e, "sort")
+    );
 
-      if (priceConvert < this.sideBarData.priceRange.min)
-        this.sideBarData.priceRange.min = priceConvert;
-    });
+    // Maske parameter sort value selected in html
+    selectDefault(categorySortFilter);
+
+    // Change limit based on option value
+    categoryRangeLimit.addEventListener("change", (e) =>
+      replaceSelectedParam(e, "limit")
+    );
+
+    // Maske parameter limit value selected in html
+    selectDefault(categoryRangeLimit);
   }
+
+  /**
+   * Fetching sections data from database.
+   * @param {String} sectionNameDB - Section name in database.
+   * @param {String} propertyName - Section name in sideBarData property.
+   */
+  fetchSideBarData(sectionNameDB, propertyName) {
+    const uniqueDataArr = [];
+
+    this.data.forEach((item) => {
+      const formatingItem = item[sectionNameDB].toLowerCase();
+
+      if (!uniqueDataArr.includes(formatingItem))
+        uniqueDataArr.push(formatingItem);
+    });
+
+    const sortUniqueDataArr = uniqueDataArr.sort();
+    this.sideBarData[propertyName] = sortUniqueDataArr;
+  }
+
+  /**
+   *---------------------------------------------------
+   */
+
+  /**
+   *---------------------------------------------------
+   *[************** Comopnents render ****************]
+   *---------------------------------------------------
+   * 1 - Methods:
+   *      - {productsRender} - render Products arrtay form
+   *        (productsSegmentsArray) property
+   *      - {paginationRender} - render Pagination form
+   *        (productsDisplay) property
+   *      - {sidebarRender} - sidebar sections generator
+   */
 
   /**
    * Injecting products into category grid page
    */
-  productsRender(productsDisplay) {
-    categoryGridProducts.innerHTML = this.productsArray(productsDisplay);
+  productsRender() {
+    const { start, end } = this.pageDisplay;
+
+    this.generateProductsArray();
+    categoryProducts.innerHTML = this.productsSegmentsArray
+      ?.slice(start, end)
+      .join("");
   }
 
   /**
-   * Takes limit number and pased on it compain paginations pased on it.
-   * @param {Integer} param0 - Page limit
-   * @param {Integer} param1 - Current page number
+   * Generate pagination and render it.
    */
-  paginationRender({ productsLimit, currentPage }) {
+  paginationRender() {
+    /**
+     * Change page direction pased when click.
+     * @param {String} direction - Direction clicked.
+     */
+    const changePagination = (direction) => {
+      if (direction === "prv" && currentPage > 1)
+        window.location.assign(
+          this.replaceUrlParam(this.pageURL, "page", currentPage - 1)
+        );
+      if (direction === "nxt" && currentPage < pagesNumber)
+        window.location.assign(
+          this.replaceUrlParam(this.pageURL, "page", currentPage + 1)
+        );
+    };
+
     /**
      * Creates pages links
      * @param {Integer} pageNumber
@@ -306,75 +377,41 @@ class Products extends Product {
         pageNumber
       )}">${pageNumber}</a>`;
 
+    let { productsLimit, currentPage } = this.productsDisplay;
     const pages = [];
-    const pagesNumber = Math.ceil(this.productsLength / productsLimit);
+    const pagesNumber = Math.ceil(
+      this.productsSegmentsArray.length / productsLimit
+    );
     currentPage = parseInt(currentPage);
 
+    // Generate pages
     let i = 1;
     for (; i <= pagesNumber; i++) {
       pages.push(pageNumberSegment(i));
     }
 
-    categoryGridPagination.innerHTML = pages.join("");
+    categoryPagination.innerHTML = pages.join("");
 
-    categoryGridPagination.childNodes.forEach((link) => {
+    // Change style for current page
+    categoryPagination.childNodes.forEach((link) => {
       if (link.dataset.number == currentPage) {
         link.classList.add("page--active");
       }
     });
 
-    categoryGridPrevious.addEventListener("click", () => {
-      if (currentPage > 1)
-        window.location.assign(
-          this.replaceUrlParam(this.pageURL, "page", currentPage - 1)
-        );
-    });
-
-    categoryGridNext.addEventListener("click", () => {
-      if (currentPage < pagesNumber)
-        window.location.assign(
-          this.replaceUrlParam(this.pageURL, "page", currentPage + 1)
-        );
-    });
-  }
-
-  /**
-   * Change how products displays pased on changing in setting bar
-   * @param {Integer} param0 - Page display limit
-   */
-  settingbarConroler({ productsLimit, pageSort }) {
-    categoryGridSortby.addEventListener("change", (e) => {
-      window.location.assign(
-        this.replaceUrlParam(this.pageURL, "sort", e.target.value)
-      );
-    });
-
-    let x = 0;
-    while (categoryGridSortby[x]) {
-      if (categoryGridSortby[x].value === pageSort)
-        categoryGridSortby[x].setAttribute("selected", true);
-      x++;
-    }
-
-    categoryGridDisplayRange.addEventListener("change", (e) => {
-      window.location.assign(
-        this.replaceUrlParam(this.pageURL, "limit", e.target.value)
-      );
-    });
-
-    let i = 0;
-    while (categoryGridDisplayRange[i]) {
-      if (categoryGridDisplayRange[i].value === productsLimit)
-        categoryGridDisplayRange[i].setAttribute("selected", true);
-      i++;
-    }
+    // Controles page change when click arrows
+    categoryPaginationPrv.addEventListener("click", () =>
+      changePagination("prv")
+    );
+    categoryPaginationNxt.addEventListener("click", () =>
+      changePagination("nxt")
+    );
   }
 
   /**
    * Render sidebar sections
-   * @param {Object} param0 - Filters that collected from URL
    */
-  sidebarRender({ filters }) {
+  sidebarRender() {
     /**
      * Render Sidebar sections item
      * @param {String} departName - Category, brands...
@@ -384,51 +421,109 @@ class Products extends Product {
      */
     const itemSegments = (departName, departValue, isChecked) =>
       `<li class="item ${isChecked ? "item--active" : ""}">
-        <input type="checkbox" ${
-          isChecked && "checked"
-        } name="${departName}" value="${departValue}"/>
-        ${departValue}
-        <span class="box"></span>
-      </li>`;
+          <input type="checkbox" ${
+            isChecked && "checked"
+          } name="${departName}" value="${departValue}"/>
+          ${departValue}
+          <span class="box"></span>
+        </li>`;
 
     /**
-     * Render Sidebar Category section
-     * @param {Array} categories - Parameters categories selected.
-     * @returns {HTMLElment} Sidebar Category section
+     * Generate Sidebar section
+     * @param {Object} sectionObject - Contain section informations
+     * @returns {HTMLElment} - The section html
      */
-    const categorySegments = (categories) => `
-    <div class="group category">
-      <h4 class="group__title">Categories</h4>
-      <ul class="group__list">${this.sideBarData.categories
-        .map((item) =>
-          itemSegments("category", item, categories.includes(item))
-        )
-        .join("")}
-      </ul>
-    </div>`;
+    const sectionRender = (sectionObject) => {
+      const {
+        sectionClass,
+        sectionTitle,
+        itemsArray,
+        itemsInUrl,
+        sectionItemsValue,
+      } = sectionObject;
 
-    /**
-     * Render Sidebar barnd section
-     * @param {Array} brands - Parameters categories selected.
-     * @returns {HTMLElment} Sidebar barnd section
-     */
-    const brandSegments = (brands) => `
-    <div class="group by-brand">
-      <h4 class="group__title">By Brand</h4>
-      <ul class="group__list">${this.sideBarData.brands
-        .map((item) => itemSegments("brand", item, brands.includes(item)))
-        .join("")}
-      </ul>
-    </div>`;
+      return `
+      <div class="group ${sectionClass}">
+        <h4 class="group__title">${sectionTitle}</h4>
+        <ul class="group__list">${itemsArray
+          .map((item) =>
+            itemSegments(sectionItemsValue, item, itemsInUrl.includes(item))
+          )
+          .join("")}
+        </ul>
+      </div>`;
+    };
 
+    // Fetch sidebar sections data
+    this.fetchSideBarData("category", "categories");
+    this.fetchSideBarData("brand", "brands");
+
+    const { filters } = this.productsDisplay;
     const { categories, brands } = filters;
+    const categoriesObj = {
+      sectionClass: "category",
+      sectionTitle: "Categories",
+      itemsArray: this.sideBarData.categories,
+      itemsInUrl: categories,
+      sectionItemsValue: "category",
+    };
+    const brandsObj = {
+      sectionClass: "by-brand",
+      sectionTitle: "By Brand",
+      itemsArray: this.sideBarData.brands,
+      itemsInUrl: brands,
+      sectionItemsValue: "brand",
+    };
 
-    sidebarItems.insertAdjacentHTML(
+    categorySidebar.insertAdjacentHTML(
       "afterbegin",
-      categorySegments(categories) + brandSegments(brands)
+      sectionRender(categoriesObj) + sectionRender(brandsObj)
     );
   }
+
+  /**
+   *---------------------------------------------------
+   */
 }
+
+/**
+ * @type {HTMLElement} - category Products
+ */
+const categoryProducts = document.getElementById("categoryProducts");
+
+/**
+ * @type {HTMLElement} - category Grid Pagination
+ */
+const categoryPagination = document.getElementById("categoryPagination");
+
+/**
+ * @type {HTMLElement} - category Pagination pages controlers
+ */
+const categoryPaginationPrv = document.getElementById("categoryPaginationPrv");
+const categoryPaginationNxt = document.getElementById("categoryPaginationNxt");
+
+/**
+ * @type {HTMLElement} - category Grid settings controls how products displays
+ */
+const categorySortFilter = document.querySelector("#categorySortFilter select");
+const categoryRangeLimit = document.querySelector("#categoryRangeLimit select");
+
+/**
+ * @type {HTMLElement} - Products filters sidebar
+ */
+const categorySidebar = document.getElementById("categorySidebar");
+
+/**
+ *---------------------------------------------------
+ *[********* Reading data from URL param ***********]
+ *---------------------------------------------------
+ * 1 - Functions
+ *      - {URLParameter} get spacific param value
+ *        by passing param as string.
+ *      - {fetchFilterParams} get sidebar params values.
+ * 2 - Object
+ *      - {productsDisplay} collecting data
+ */
 
 /**
  * Receve url parameter and returns value
@@ -449,47 +544,9 @@ const fetchFilterParams = (paramTo) =>
     .map((param) => (param[0] === paramTo ? param[1] : undefined))
     .filter((param) => param !== undefined);
 
-/**
- * @type {HTMLElement} - category Grid Products
- */
-const categoryGridProducts = document.querySelector(
-  ".category-grid .products .items"
-);
-
-/**
- * @type {HTMLElement} - category Grid Pagination
- */
-const categoryGridPagination = document.querySelector(
-  ".category-grid .products .pagination .pages"
-);
-
-/**
- * @type {HTMLElement} - category Grid Pagination pages controlers
- */
-const categoryGridPrevious = document.querySelector(
-  ".category-grid .products .pagination #previousPage"
-);
-const categoryGridNext = document.querySelector(
-  ".category-grid .products .pagination #nextPage"
-);
-
-/**
- * @type {HTMLElement} - category Grid settings controls how products displays
- */
-const categoryGridSortby = document.querySelector(
-  ".category-grid .products .setting-bar #sortBy select"
-);
-const categoryGridDisplayRange = document.querySelector(
-  ".category-grid .products .setting-bar #displayRange select"
-);
-
-/**
- * @type {HTMLElement} - Products filters sidebar
- */
-const sidebarItems = document.querySelector(".display-sidebar .show-item");
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+
 const productsDisplay = {
   currentPage: URLParameter("page") || 1,
   pageSort: URLParameter("sort") || "default",
@@ -504,13 +561,59 @@ const productsDisplay = {
     brands: fetchFilterParams("brand"),
   },
 };
+/**
+ * ---------------------------------------------------
+ */
+
+/**
+ *---------------------------------------------------
+ *[************* Server fetching data **************]
+ *---------------------------------------------------
+ * 1- Functions
+ *      - {handleData} Do things when server is ok.
+ *      - {handleServerError} Handle data from server
+ *        if server respond 200 or other.
+ *      - {handleDataError} handle errors
+ *        if it happen in {handleData}.
+ *
+ * 2- Fetch Api
+ */
+
+/**
+ * Fetching array of data from server ("/proucts")
+ * @param {Array} data
+ */
+const handleData = (data) => {
+  const products = new Products(data, productsDisplay);
+
+  products.productsRender();
+  products.paginationRender();
+  products.settingbarConroler();
+  products.sidebarRender();
+};
+
+/**
+ * Handle data from server
+ * @param {*} res
+ * @returns error or data
+ */
+const handleServerError = (res) => {
+  if (!res.ok) console.log("Server has somthing worng");
+  else return res.json();
+};
+
+/**
+ * Handle errors while fetching data.
+ * @param {Object} error
+ */
+const handleDataError = (error) => {
+  console.log(error);
+};
 
 fetch("http://localhost:3000/products")
-  .then((res) => res.json())
-  .then((data) => {
-    const products = new Products(data, productsDisplay.filters.isFilters);
-    products.productsRender(productsDisplay);
-    products.paginationRender(productsDisplay);
-    products.settingbarConroler(productsDisplay);
-    products.sidebarRender(productsDisplay);
-  });
+  .then(handleServerError)
+  .then(handleData);
+
+/**
+ * ---------------------------------------------------
+ */

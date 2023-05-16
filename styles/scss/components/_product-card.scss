@@ -138,6 +138,9 @@
       color: $color-secondary;
       text-transform: uppercase;
       text-decoration: unset;
+      text-align: center;
+      max-width: 90%;
+      line-height: 20px;
     }
 
     & .price {
@@ -244,6 +247,9 @@
       text-decoration: unset;
       margin-top: 11px;
       margin-bottom: 23px;
+      text-align: unset;
+      max-width: unset;
+      line-height: unset;
     }
 
     & .rate {
