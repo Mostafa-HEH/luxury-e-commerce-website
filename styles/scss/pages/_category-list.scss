@@ -40,6 +40,7 @@
 
         &__list {
           @include flex-c;
+          align-items: flex-start;
           gap: 22px;
 
           & .item {
@@ -52,12 +53,14 @@
             text-transform: uppercase;
             cursor: pointer;
             @include flex-r;
+            flex-direction: row-reverse;
             align-items: center;
             gap: 7px;
             flex-wrap: wrap;
             gap: 22px;
+            position: relative;
 
-            &::before {
+            & span {
               content: "";
               height: 5.69px;
               width: 5.69px;
@@ -71,8 +74,15 @@
               box-sizing: border-box;
             }
 
-            &--active {
-              &::before {
+            & input {
+              position: absolute;
+              left: -5px;
+              width: 16px;
+              height: 16px;
+              z-index: 1;
+              opacity: 0;
+
+              &:checked + span.box {
                 border: $border-gray-7;
                 background-color: $color-secondary;
               }
@@ -201,6 +211,9 @@
           }
         }
       }
+      & button {
+        border: unset;
+      }
     }
 
     & .banner {
@@ -212,6 +225,7 @@
       position: relative;
       padding-bottom: 80px;
       padding-top: 32px;
+      max-height: 500px;
 
       &__image {
         position: absolute;

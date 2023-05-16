@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
+    <script src="scripts/js/products.js" defer> </script>
     <script src="scripts/js/slides.js" defer> </script>
     <title>Category List</title>
   </head>
@@ -498,14 +499,14 @@
     <div class="wrapper"> 
       <div class="products">
         <div class="setting-bar"> 
-          <label class="select">sort by:
+          <label class="select" id="categorySortFilter">sort by:
             <select>
               <option value="default">default </option>
               <option value="name">name</option>
               <option value="price">price </option>
             </select>
           </label>
-          <label class="select">Items/Page:
+          <label class="select" id="categoryRangeLimit">Items/Page:
             <select>
               <option value="12">12</option>
               <option value="24">24 </option>
@@ -513,195 +514,15 @@
           </label>
           <div class="setting-bar__layouts"><span class="layout layout--active"><i class="fa-solid fa-grid"></i></span><span class="layout"><i class="fa-solid fa-list"></i></span></div>
         </div>
-        <div class="display-sidebar">
-          <div class="show-item">
-            <div class="group category"> 
-              <h4 class="group__title">Categories</h4>
-              <ul class="group__list"> 
-                <li class="item">Women</li>
-                <li class="item item--active">men
-                  <ul class="sub-list"> 
-                    <li class="item item--active">Suits & Blazer</li>
-                    <li class="item">Leather</li>
-                    <li class="item">Shirts</li>
-                    <li class="item">Jeans</li>
-                    <li class="item">T-Shirt</li>
-                  </ul>
-                </li>
-                <li class="item">Watches</li>
-                <li class="item">Shoes</li>
-                <li class="item">Accessories</li>
-              </ul>
-            </div>
-            <div class="group by-brand"> 
-              <h4 class="group__title">By Brand</h4>
-              <ul class="group__list"> 
-                <li class="item">Zara</li>
-                <li class="item">Chanel</li>
-                <li class="item">gucci</li>
-                <li class="item item--active">Calvin klein</li>
-                <li class="item">Hermes</li>
-                <li class="item">Diesel</li>
-              </ul>
-            </div>
-            <div class="group by-size"> 
-              <h4 class="group__title">By Size</h4>
-              <ul class="group__list"> 
-                <li class="item">xXXS</li>
-                <li class="item">xXS</li>
-                <li class="item">xS</li>
-                <li class="item">s</li>
-                <li class="item item--active">l</li>
-                <li class="item">xl</li>
-                <li class="item">xxl</li>
-                <li class="item">xxxl</li>
-              </ul>
-            </div>
-            <div class="group by-price"> 
-              <h4 class="group__title">By Price</h4><input type="range" name="vol" min="0" max="50">
-              <div class="price">Price: 
-                <div class="from-to"><span class="from">$10</span> - <span class="to">$220</span></div>
-              </div>
-            </div><span class="btn btn-primary black">filter</span>
-          </div>
-          <div class="banner">
-            <div class="img-container banner__image"></div>
-            <div class="banner__subtitle">New Collection</div>
-            <div class="banner__title">Women’s</div><a class="btn btn-secondary white">Shop Now</a>
-          </div>
-        </div>
-        <div class="items">
-          <div class="product-card-list">
-            <div class="img-container product-card__image"></div>
-            <div class="product-card-list__content">
-              <h3 class="name">TOP WITH CROSSOVER STRAPS</h3>
-              <div class="rate">
-                <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-                <div class="rate__details"><span>2 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-              </div>
-              <div class="price">
-                <div class="price__after">$35.90</div>
-              </div>
-              <div class="description">Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.</div>
-              <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-          </div>
-          <div class="product-card-list">
-            <div class="img-container product-card__image"></div>
-            <div class="product-card-list__content">
-              <h3 class="name">SUEDE CUTWORK TOP</h3>
-              <div class="rate">
-                <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-                <div class="rate__details"><span>2 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-              </div>
-              <div class="price">
-                <div class="price__after">$69.90</div>
-              </div>
-              <div class="description">Etiam ornare euismod convallis. Donec laoreet mattis est nec faucibus. Fusce augue tellus, pretium quis velit vel, vulputate ullamcorper eros. Nunc vitae vulputate velit. Ut ultrices leo dapibus, porta urna ut, pellentesque magna.</div>
-              <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-          </div>
-          <div class="product-card-list">
-            <div class="img-container product-card__image"></div>
-            <div class="product-card-list__content">
-              <h3 class="name">Navy Blue suit</h3>
-              <div class="rate">
-                <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-                <div class="rate__details"><span>2 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-              </div>
-              <div class="price">
-                <div class="price__after">$310.00</div>
-              </div>
-              <div class="description">Aenean sodales lorem et lacus semper ultricies. Mauris consectetur risus vitae eleifend sodales. Nunc nec massa sed ligula placerat commodo. Vivamus pretium diam non urna bibendum, a tristique arcu aliquet. </div>
-              <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-          </div>
-          <div class="product-card-list">
-            <div class="img-container product-card__image"></div>
-            <div class="product-card-list__content">
-              <h3 class="name">STRIPED CROP TOP</h3>
-              <div class="rate">
-                <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-                <div class="rate__details"><span>2 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-              </div>
-              <div class="price">
-                <div class="price__after">$29.00</div>
-              </div>
-              <div class="description">Donec sollicitudin eleifend tempus. Proin id augue lacus. Suspendisse potenti. Vestibulum rutrum orci malesuada, aliquam nisl ac, vulputate dui. Donec laoreet magna quis magna tincidunt, eget tincidunt dui ultricies</div>
-              <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-          </div>
-          <div class="product-card-list">
-            <div class="img-container product-card__image"></div>
-            <div class="product-card-list__content">
-              <h3 class="name">GATHERED POPLIN TOP</h3>
-              <div class="rate">
-                <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-                <div class="rate__details"><span>2 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-              </div>
-              <div class="price">
-                <div class="price__after">$29.90</div>
-              </div>
-              <div class="description">Sed iaculis dolor sapien, at pharetra dolor tincidunt non. Quisque malesuada mollis eleifend. Nullam ligula mauris, porttitor sed condimentum facilisis, mattis sodales libero. Nulla arcu justo, tincidunt ut scelerisque in, blandit ut dui.</div>
-              <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="pagination"> <span class="action action-secondary black"><i class="fa-solid fa-caret-left"></i></span>
-          <div class="pages"><a class="action action-secondary black page page--active" href="#">1</a><a class="action action-secondary black page" href="#">2</a><a class="action action-secondary black page" href="#">3</a><a class="action action-secondary black page" href="#">4</a><a class="action action-secondary black page" href="#">5</a></div><span class="action action-secondary black"><i class="fa-solid fa-caret-right"></i></span>
+        <div class="items" id="categoryProducts"></div>
+        <div class="pagination"> <span class="action action-secondary black" id="categoryPaginationPrv"><i class="fa-solid fa-caret-left"></i></span>
+          <div class="pages" id="categoryPagination"></div><span class="action action-secondary black" id="categoryPaginationNxt"><i class="fa-solid fa-caret-right"></i></span>
         </div>
       </div>
       <div class="display-sidebar">
-        <div class="show-item">
-          <div class="group category"> 
-            <h4 class="group__title">Categories</h4>
-            <ul class="group__list"> 
-              <li class="item">Women</li>
-              <li class="item item--active">men
-                <ul class="sub-list"> 
-                  <li class="item item--active">Suits & Blazer</li>
-                  <li class="item">Leather</li>
-                  <li class="item">Shirts</li>
-                  <li class="item">Jeans</li>
-                  <li class="item">T-Shirt</li>
-                </ul>
-              </li>
-              <li class="item">Watches</li>
-              <li class="item">Shoes</li>
-              <li class="item">Accessories</li>
-            </ul>
-          </div>
-          <div class="group by-brand"> 
-            <h4 class="group__title">By Brand</h4>
-            <ul class="group__list"> 
-              <li class="item">Zara</li>
-              <li class="item">Chanel</li>
-              <li class="item">gucci</li>
-              <li class="item item--active">Calvin klein</li>
-              <li class="item">Hermes</li>
-              <li class="item">Diesel</li>
-            </ul>
-          </div>
-          <div class="group by-size"> 
-            <h4 class="group__title">By Size</h4>
-            <ul class="group__list"> 
-              <li class="item">xXXS</li>
-              <li class="item">xXS</li>
-              <li class="item">xS</li>
-              <li class="item">s</li>
-              <li class="item item--active">l</li>
-              <li class="item">xl</li>
-              <li class="item">xxl</li>
-              <li class="item">xxxl</li>
-            </ul>
-          </div>
-          <div class="group by-price"> 
-            <h4 class="group__title">By Price</h4><input type="range" name="vol" min="0" max="50">
-            <div class="price">Price: 
-              <div class="from-to"><span class="from">$10</span> - <span class="to">$220</span></div>
-            </div>
-          </div><span class="btn btn-primary black">filter</span>
-        </div>
+        <form class="show-item" id="categorySidebar">
+          <button class="btn btn-primary black" type="submit">filter</button>
+        </form>
         <div class="banner">
           <div class="img-container banner__image"></div>
           <div class="banner__subtitle">New Collection</div>

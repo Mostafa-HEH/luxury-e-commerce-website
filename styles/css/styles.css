@@ -4180,6 +4180,7 @@ footer.footer .copyrights .author:hover {
 .category-list .display-sidebar .show-item .group__list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 22px;
 }
 .category-list .display-sidebar .show-item .group__list .item {
@@ -4192,12 +4193,14 @@ footer.footer .copyrights .author:hover {
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 7px;
   flex-wrap: wrap;
   gap: 22px;
+  position: relative;
 }
-.category-list .display-sidebar .show-item .group__list .item::before {
+.category-list .display-sidebar .show-item .group__list .item span {
   content: "";
   height: 5.69px;
   width: 5.69px;
@@ -4210,7 +4213,15 @@ footer.footer .copyrights .author:hover {
   border-style: dashed;
   box-sizing: border-box;
 }
-.category-list .display-sidebar .show-item .group__list .item--active::before {
+.category-list .display-sidebar .show-item .group__list .item input {
+  position: absolute;
+  left: -5px;
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+  opacity: 0;
+}
+.category-list .display-sidebar .show-item .group__list .item input:checked + span.box {
   border: 1px solid #e5e5e5;
   background-color: #333333;
 }
@@ -4320,6 +4331,9 @@ footer.footer .copyrights .author:hover {
   font-weight: 700;
   color: #333333;
 }
+.category-list .display-sidebar .show-item button {
+  border: unset;
+}
 .category-list .display-sidebar .banner {
   width: 100%;
   height: -webkit-fill-available;
@@ -4330,6 +4344,7 @@ footer.footer .copyrights .author:hover {
   position: relative;
   padding-bottom: 80px;
   padding-top: 32px;
+  max-height: 500px;
 }
 .category-list .display-sidebar .banner__image {
   position: absolute;

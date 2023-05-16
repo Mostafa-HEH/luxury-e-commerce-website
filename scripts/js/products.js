@@ -145,6 +145,62 @@ class Product {
       </div>
       `;
   }
+
+  /**
+   * Receive product object and returns product as HTML-CSS component.
+   * @param {Object} item - product opject
+   * @returns {HTMLElement}
+   */
+  productListRender(item) {
+    const {
+      thumbnail,
+      title,
+      tags,
+      rating,
+      price,
+      discountPercentage,
+      description,
+    } = item;
+
+    return `
+      <div class="product-card-list">
+        <div class="img-container product-card__image"><img src="${thumbnail}" alt="${title}"></div>
+        <div class="product-card__tags">${this.tagsRender(tags)}</div>
+        <div class="product-card-list__content">
+          <h3 class="name">${title}</h3>
+          <div class="rate">
+            <div class="rate__stars">${this.rateRender(rating)}</div>
+            <!-- Not designed yet, rendere static data -->
+            <div class="rate__details">
+              <span>2 Review(s)</span>
+              <span class="seprator"></span>
+              <span>Add Your Review</span>
+            </div>
+          </div>
+          <div class="price">${this.priceRender(
+            price,
+            discountPercentage
+          )}</div>
+          <div class="description">${
+            description?.length > 230
+              ? description.slice(0, 230) + " ..."
+              : description || ""
+          }</div>
+          <div class="navigation">
+            <span class="action action-primary black icon">
+              <i class="fa-light fa-bag-shopping"></i>Add to cart
+            </span>
+            <span class="action action-secondary black">
+              <i class="fa-regular fa-retweet"></i>
+            </span>
+            <span class="action action-secondary black">
+              <i class="fa-light fa-heart"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
 }
 
 /**
@@ -158,6 +214,7 @@ class Products extends Product {
   };
   sideBarData = {};
   pageURL = window.location.href;
+  displayType = "list";
 
   /**
    * Init array of products
@@ -225,7 +282,8 @@ class Products extends Product {
       .sort(sorting)
       .map((item) => {
         // Method from main class
-        return this.productGridRender(item);
+        if (this.displayType === "list") return this.productListRender(item);
+        if (this.displayType === "grid") return this.productGridRender(item);
       });
   }
 
