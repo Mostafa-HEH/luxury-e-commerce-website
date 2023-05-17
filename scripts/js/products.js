@@ -1,6 +1,5 @@
 /**
- * @file Manages rendering products in all pages.
- * About pages
+ * @file Manages rendering products in Categoty grid & list pages.
  * @author Mostafa Neamatalla <mostafaneamatalla94@gmail.com>
  */
 

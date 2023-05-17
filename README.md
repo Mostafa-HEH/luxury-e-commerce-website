@@ -40,7 +40,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - HTML (Pug)
 - CSS
 - Sass (Scss)
-- Javascript | Object-oriented programming
+- Javascript | Object-oriented programming | Async/await
 - JSON
 - json-server
 - Leaflet maps
