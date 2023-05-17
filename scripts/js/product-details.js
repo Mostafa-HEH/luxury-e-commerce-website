@@ -136,11 +136,11 @@ const imagesRender = ({ images, title }) => {
 };
 
 /**
- * Generates prodact details
+ * Generates prodact details for v1
  * @param {Object} param - Product object
  * @returns {HTMLElement}
  */
-const productDetails = ({
+const renderProductDetailsV1 = ({
   title,
   rating,
   price,
@@ -242,6 +242,94 @@ const productDetails = ({
   `;
 };
 
+/**
+ * Generates prodact details for v2
+ * @param {Object} param - Product object
+ * @returns {HTMLElement}
+ */
+const renderProductDetailsV2 = ({
+  title,
+  rating,
+  price,
+  discountPercentage,
+  stock,
+  description,
+  size,
+  color,
+  features,
+}) => {
+  return `
+    <div class="product-card-list">
+      <div class="product-card-list__content">
+        <h3 class="name">${title}</h3>
+        <div class="rate">
+          ${
+            rating ? `<div class="rate__stars">${rateRender(rating)}</div>` : ""
+          }
+          <!-- Not designed yet -->
+          <div class="rate__details"><span>12 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
+        </div>
+        <div class="price">${priceRender(price, discountPercentage)}</div>
+        <div class="availability">Availability: <span>${
+          stock > 0 ? "In stock" : "Not available"
+        }</span></div>
+        ${description ? `<div class="description">${description}</div>` : ""}
+        <div class="data-input">
+          ${
+            size
+              ? `
+            <div class="selector">
+              <div class="selector__name">size: </div>
+              <div class="selector__options">
+                ${size
+                  ?.map((item) => `<div class="option">${item}</div>`)
+                  .join("")}
+              </div>
+            </div>
+          `
+              : ""
+          }
+          ${
+            color
+              ? `
+            <div class="selector">
+              <div class="selector__name">color: </div>
+              <div class="selector__options">
+              ${color
+                ?.map((item) => `<div class="option">${item}</div>`)
+                .join("")}
+              </div>
+          </div>
+          `
+              : ""
+          }
+          ${
+            stock
+              ? `<label class="select-number">
+              Quantity:
+              <input type="number" value="${stock > 0 ? 1 : 0}" min="1" max=${
+                  stock || 0
+                }>
+            </label>`
+              : ""
+          }
+        </div>
+        <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
+        <div class="featurs">${
+          features
+            ?.map(
+              (item, idx) => item + (idx !== features.length - 1 ? " | " : "")
+            )
+            .join("") || ""
+        }</div>
+        <div class="share"><span>Share:</span>
+          <div class="social-links"> <a class="action action-primary white" href="#"><i class="fa-brands fa-facebook-f"></i></a><a class="action action-primary white" href="#"><i class="fa-brands fa-twitter"></i></a><a class="action action-primary white" href="#"><i class="fa-brands fa-pinterest-p"></i></a></div>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
 // Collecting url parameters
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -258,6 +346,7 @@ const priceData = {
 };
 
 const productDetailsV1 = document.getElementById("productDetailsV1");
+const productDetailsV2 = document.getElementById("productDetailsV2");
 
 /**
  * Fetching array of data from server ("/proucts")
@@ -266,8 +355,13 @@ const productDetailsV1 = document.getElementById("productDetailsV1");
 const handleData = async (data) => {
   const productObj = data.filter((item) => item.id === productID)[0];
 
-  productDetailsV1.innerHTML =
-    (await imagesRender(productObj)) + productDetails(productObj);
+  if (productDetailsV1)
+    productDetailsV1.innerHTML =
+      (await imagesRender(productObj)) + renderProductDetailsV1(productObj);
+
+  if (productDetailsV2)
+    productDetailsV2.innerHTML =
+      (await imagesRender(productObj)) + renderProductDetailsV2(productObj);
 
   // Images - Main & Sub Image
   const productDetailsMainImage = document.getElementById(

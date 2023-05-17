@@ -39,6 +39,12 @@
           transition: border $speed-1;
           cursor: pointer;
 
+          & img {
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+          }
+
           &--active {
             border: $border-primary-1;
           }
@@ -50,6 +56,12 @@
         height: 580px;
         background-color: $color-gray-9;
         border: $border-gray-7;
+
+        & img {
+          aspect-ratio: 3/2;
+          object-fit: contain;
+          mix-blend-mode: multiply;
+        }
 
         @media screen and (max-width: 950px) {
           width: 100%;
@@ -114,12 +126,14 @@
                 color: $color-gray-4;
                 text-transform: uppercase;
                 border: $border-gray-7;
-                width: 60px;
+                min-width: 60px;
+                width: fit-content;
                 height: 22px;
                 @include flex-r;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                padding: 0 20px;
 
                 &--active {
                   color: $color-secondary;

@@ -5,8 +5,8 @@ html(lang='en')
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
 
-                //- Slides Script
-        script(src="scripts/js/slides.js", defer) 
+        //- Render data Script
+        script(src="scripts/js/product-details.js", defer) 
 
         title Product Details v2
 
@@ -19,21 +19,21 @@ html(lang='en')
                 span.tag: a(href="#") women
             h5.page-header__title Product Details
         main.wrapper 
-            section.product-details
+            section.product-details#productDetailsV2
                 .images
                     .images__subs 
                         .img-container.img.img--active
-                            //- img(src="", alt="alt")
+                            img(src="", alt="alt")
                         .img-container.img
-                            //- img(src="", alt="alt")
+                            img(src="", alt="alt")
                         .img-container.img
-                            //- img(src="", alt="alt")
+                            img(src="", alt="alt")
                         .img-container.img
-                            //- img(src="", alt="alt")
+                            img(src="", alt="alt")
                         .img-container.img
-                            //- img(src="", alt="alt")
+                            img(src="", alt="alt")
                     .img-container.images__main
-                        //- img(src="", alt="alt")
+                        img(src="", alt="alt")
                 .product-card-list
                     .product-card-list__content
                         h3.name TECHNICAL SUIT
@@ -49,7 +49,7 @@ html(lang='en')
                                 span.seprator
                                 span Add Your Review
                         .price
-                            //- .price__before $49.90
+                            .price__before $49.90
                             .price__after $169.00
                         .availability Availability: #[span In stock]
                         .description Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
