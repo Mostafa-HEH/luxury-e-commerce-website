@@ -3,7 +3,7 @@
  * @author Mostafa Neamatalla <mostafaneamatalla94@gmail.com>
  */
 
-//TODO this function is have twins in products js
+//TODO duplcated with products.js
 /**
  * Receve url parameter and returns value
  * @param {String} parameter - Url parameter.
@@ -13,8 +13,97 @@ const URLParameter = (parameter) => {
   return urlParams.get(parameter);
 };
 
+//TODO duplcated with products.js
+/**
+ * Receive rate number and returns rate as HTML-CSS components as stars.
+ * @param {Integer} rate - Rate number from 5
+ * @returns {HTMLElement}
+ */
+const rateRender = (rate) => {
+  /**
+   * Generates stars segments based on rate number.
+   * @param {Number} rate - Rating number
+   * @param {Object} starsSegments - Object of html segment.
+   * @returns {HTMLElement} Full rate stars.
+   */
+  const handleRate = (rate, { half, empty, full }) => {
+    const stars = [];
+
+    let i = 5;
+    for (; i > 0; i--) {
+      if (i > rate) {
+        if (i - 0.5 <= rate) {
+          stars.push(half);
+        } else {
+          stars.push(empty);
+        }
+      } else {
+        stars.push(full);
+      }
+    }
+    return stars.reverse();
+  };
+
+  const starsSegments = {
+    full: `<i class="fa-solid fa-star"></i>`,
+    empty: `<i class="fa-light fa-star"></i>`,
+    half: `<i class="fa-solid fa-star-half-stroke"></i>`,
+  };
+
+  if (!rate) return "";
+  return handleRate(rate, starsSegments).join("");
+};
+
+//TODO duplcated with products.js
+/**
+ * Receive price and discount and returns HTML-CSS component with price befor
+ * and after discounting and calculate price into doller.
+ * @param {Integer} price - Product price
+ * @param {Integer} discount - Product discount
+ * @returns {HTMLElement}
+ */
+const priceRender = (price, discount) => {
+  /**
+   * Converting price into spacific currency
+   * @param {Number} price
+   * @returns - Converted price
+   */
+  const priceConvert = (price) => {
+    return (price / convertingRate).toFixed(2);
+  };
+
+  /**
+   * Takes price, discount and return price after discount
+   * @param {Number} price
+   * @param {Number} discount
+   * @returns - Price with discount
+   */
+  const applyDiscount = (price, discount) => {
+    return ((price - (100 * discount) / price) / convertingRate).toFixed(2);
+  };
+
+  const { convertingRate, displayPrice } = priceData;
+  const { symbol } = displayPrice;
+
+  const priceBefore = discount
+    ? `<div class="price__before">${symbol}${priceConvert(price)}</div>`
+    : "";
+
+  const priceAfter = `<div class="price__after">${symbol}${
+    discount ? applyDiscount(price, discount) : priceConvert(price)
+  }</div>`;
+
+  return priceBefore + priceAfter;
+};
+
 //TODO make subImages that more than 5 slides
-const imagesRender = (images, title) => {
+/**
+ * Generate main & sub Images for onetime render.
+ * @param {Array} images  - Images source string.
+ * @param {String} title - Product title for images alt .
+ * @returns {HTMLElemnet} - Generated images.
+ */
+const imagesRender = ({ images, title }) => {
   /**
    * Generate image segment
    * @param {String} img - Image source code
@@ -46,10 +135,127 @@ const imagesRender = (images, title) => {
         `;
 };
 
+/**
+ * Generates prodact details
+ * @param {Object} param - Product object
+ * @returns {HTMLElement}
+ */
+const productDetails = ({
+  title,
+  rating,
+  price,
+  discountPercentage,
+  stock,
+  description,
+  size,
+  color,
+  features,
+}) => {
+  return `
+  <div class="product-card-list">
+    <div class="product-card-list__content">
+    <h3 class="name">${title}</h3>
+    <div class="rate">
+        ${rating ? `<div class="rate__stars">${rateRender(rating)}</div>` : ""}
+        <!-- Not designed yet -->
+        <div class="rate__details">
+          <span>12 Review(s)</span>
+          <span class="seprator"></span>
+          <span>Add Your Review</span>
+        </div>
+    </div>
+    <div class="price">${priceRender(price, discountPercentage)}</div>
+    <div class="availability">Availability: <span>${
+      stock > 0 ? "In stock" : "Not available"
+    }</span></div>
+    ${description ? `<div class="description">${description}</div>` : ""}
+    <div class="data-input">
+        ${
+          stock
+            ? `<label class="select-number">
+            Quantity:
+            <input type="number" value="${stock > 0 ? 1 : 0}" min="1" max=${
+                stock || 0
+              }>
+          </label>`
+            : ""
+        }
+        ${
+          size
+            ? `<label class="select">
+            Size:
+            <select>
+                ${size?.map(
+                  (item) => `<option value="${item}">${item}</option>`
+                )}
+            </select>
+          </label>`
+            : ""
+        }
+        ${
+          color
+            ? `<label class="select">
+            Color:
+            <select>
+                ${color?.map(
+                  (item) => `<option value="${item}">${item}</option>`
+                )}
+            </select>
+          </label> `
+            : ""
+        }
+    </div>
+    <div class="navigation">
+      <span class="action action-primary black icon">
+        <i class="fa-light fa-bag-shopping"></i>
+        Add to cart
+      </span>
+      <span class="action action-secondary black">
+        <i class="fa-regular fa-retweet"></i>
+      </span>
+      <span class="action action-secondary black">
+        <i class="fa-light fa-heart"></i>
+      </span>
+    </div>
+    <div class="featurs">${
+      features
+        ?.map((item, idx) => item + (idx !== features.length - 1 ? " | " : ""))
+        .join("") || ""
+    }</div>
+    <div class="share">
+        <span>Share:</span>
+        <div class="social-links">
+          <a class="action action-primary white" href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a class="action action-primary white" href="#">
+            <i class="fa-brands fa-twitter"></i> 
+          </a>
+          <a class="action action-primary white" href="#">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+        </div>
+    </div>
+    </div>
+  </div>
+    
+  `;
+};
+
 // Collecting url parameters
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const productID = parseInt(URLParameter("id"));
+
+//TODO duplcated with products.js
+const priceData = {
+  dbPrice: "egp",
+  displayPrice: {
+    currency: "usd",
+    symbol: "$",
+  },
+  convertingRate: 31,
+};
 
 const productDetailsV1 = document.getElementById("productDetailsV1");
 
@@ -58,49 +264,10 @@ const productDetailsV1 = document.getElementById("productDetailsV1");
  * @param {Array} data
  */
 const handleData = async (data) => {
-  const { images, title } = data.filter((item) => item.id === productID)[0];
+  const productObj = data.filter((item) => item.id === productID)[0];
 
-  productDetailsV1.innerHTML = await `      
-    ${imagesRender(images, title)}
-    <div class="product-card-list">
-        <div class="product-card-list__content">
-        <h3 class="name">STRIPED CROP TOP</h3>
-        <div class="rate">
-            <div class="rate__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
-            <div class="rate__details"><span>12 Review(s)</span><span class="seprator"></span><span>Add Your Review</span></div>
-        </div>
-        <div class="price">
-            <div class="price__before">$49.90</div>
-            <div class="price__after">$29.90</div>
-        </div>
-        <div class="availability">Availability: <span>In stock</span></div>
-        <div class="description">Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.</div>
-        <div class="data-input">
-            <label class="select-number">Quantity:
-            <input type="number" value="1">
-            </label>
-            <label class="select">Size:
-            <select>
-                <option value="default">xs </option>
-                <option value="name">l</option>
-                <option value="price">m </option>
-            </select>
-            </label>
-            <label class="select">Color:
-            <select>
-                <option value="default">blue </option>
-                <option value="name">black</option>
-                <option value="price">green</option>
-            </select>
-            </label>
-        </div>
-        <div class="navigation"><span class="action action-primary black icon"><i class="fa-light fa-bag-shopping"></i>Add to cart</span><span class="action action-secondary black"><i class="fa-regular fa-retweet"></i></span><span class="action action-secondary black"><i class="fa-light fa-heart"></i></span></div>
-        <div class="featurs">Free Shipping | Free Return</div>
-        <div class="share"><span>Share:</span>
-            <div class="social-links"> <a class="action action-primary white" href="#"><i class="fa-brands fa-facebook-f"></i></a><a class="action action-primary white" href="#"><i class="fa-brands fa-twitter"></i></a><a class="action action-primary white" href="#"><i class="fa-brands fa-pinterest-p"></i></a></div>
-        </div>
-        </div>
-    </div>`;
+  productDetailsV1.innerHTML =
+    (await imagesRender(productObj)) + productDetails(productObj);
 
   // Images - Main & Sub Image
   const productDetailsMainImage = document.getElementById(
@@ -122,10 +289,12 @@ const handleData = async (data) => {
       });
 
       // Rerender seletet sub image as main image
-      productDetailsMainImage.innerHTML = `<img src="${images[imgId]}" alt="${title}">`;
+      productDetailsMainImage.innerHTML = `<img src="${productObj.images[imgId]}" alt="${productObj.title}">`;
     });
   });
 };
+
+//TODO duplcated with products.js
 
 /**
  * Handle data from server

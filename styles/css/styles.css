@@ -4532,6 +4532,11 @@ footer.footer .copyrights .author:hover {
   transition: border 150ms;
   cursor: pointer;
 }
+.product-details-v1 .product-details .images__subs .img img {
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .product-details-v1 .product-details .images__subs .img--active {
   border: 1px solid #ffa290;
 }
@@ -4540,6 +4545,11 @@ footer.footer .copyrights .author:hover {
   height: 580px;
   background-color: #f2f2f2;
   border: 1px solid #e5e5e5;
+}
+.product-details-v1 .product-details .images__main img {
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 @media screen and (max-width: 950px) {
   .product-details-v1 .product-details .images__main {
@@ -4583,8 +4593,9 @@ footer.footer .copyrights .author:hover {
   }
 }
 .product-details-v1 .product-details .product-card-list__content .data-input label {
-  max-width: 166px;
   height: 50px;
+  min-width: 166px;
+  width: fit-content;
 }
 .product-details-v1 .product-details .product-card-list__content .data-input .select-number {
   width: 100%;
@@ -4607,6 +4618,8 @@ footer.footer .copyrights .author:hover {
   line-height: 36px;
   white-space: nowrap;
   gap: 11px;
+  min-width: 166px;
+  width: fit-content;
 }
 .product-details-v1 .product-details .product-card-list__content .data-input .select-number input {
   text-transform: inherit;
