@@ -230,19 +230,6 @@ class Products extends Product {
   }
 
   /**
-   *---------------------------------------------------
-   *[************ Making things methods **************]
-   *---------------------------------------------------
-   * 1 - Methods:
-   *      - {generateProductsArray} - Generates products list pased on filters,
-   *        sorting, number of displayed products
-   *      - {replaceUrlParam} - Replace URL serach parametres.
-   *      - {settingbarConroler} Change Categorid page sitting controles how
-   *        products displays.
-   *
-   */
-
-  /**
    * Render products pased on these parameters
    * @param {Object} productsDisplay - Object of filters that controles how products displaies
    * @returns {HTMLElement}
@@ -374,22 +361,6 @@ class Products extends Product {
     const sortUniqueDataArr = uniqueDataArr.sort();
     this.sideBarData[propertyName] = sortUniqueDataArr;
   }
-
-  /**
-   *---------------------------------------------------
-   */
-
-  /**
-   *---------------------------------------------------
-   *[************** Comopnents render ****************]
-   *---------------------------------------------------
-   * 1 - Methods:
-   *      - {productsRender} - render Products arrtay form
-   *        (productsSegmentsArray) property
-   *      - {paginationRender} - render Pagination form
-   *        (productsDisplay) property
-   *      - {sidebarRender} - sidebar sections generator
-   */
 
   /**
    * Injecting products into category grid page
@@ -537,10 +508,6 @@ class Products extends Product {
       sectionRender(categoriesObj) + sectionRender(brandsObj)
     );
   }
-
-  /**
-   *---------------------------------------------------
-   */
 }
 
 /**
@@ -569,18 +536,6 @@ const categoryRangeLimit = document.querySelector("#categoryRangeLimit select");
  * @type {HTMLElement} - Products filters sidebar
  */
 const categorySidebar = document.getElementById("categorySidebar");
-
-/**
- *---------------------------------------------------
- *[********* Reading data from URL param ***********]
- *---------------------------------------------------
- * 1 - Functions
- *      - {URLParameter} get spacific param value
- *        by passing param as string.
- *      - {fetchFilterParams} get sidebar params values.
- * 2 - Object
- *      - {productsDisplay} collecting data
- */
 
 /**
  * Receve url parameter and returns value
@@ -618,23 +573,6 @@ const productsDisplay = {
     brands: fetchFilterParams("brand"),
   },
 };
-/**
- * ---------------------------------------------------
- */
-
-/**
- *---------------------------------------------------
- *[************* Server fetching data **************]
- *---------------------------------------------------
- * 1- Functions
- *      - {handleData} Do things when server is ok.
- *      - {handleServerError} Handle data from server
- *        if server respond 200 or other.
- *      - {handleDataError} handle errors
- *        if it happen in {handleData}.
- *
- * 2- Fetch Api
- */
 
 /**
  * Fetching array of data from server ("/proucts")
@@ -670,7 +608,3 @@ const handleDataError = (error) => {
 fetch("http://localhost:3000/products")
   .then(handleServerError)
   .then(handleData);
-
-/**
- * ---------------------------------------------------
- */

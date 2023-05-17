@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
-    <script src="scripts/js/slides.js" defer> </script>
+    <script src="scripts/js/classes/product.js" defer></script>
+    <script src="scripts/js/classes/products.js" defer></script>
+    <script src="scripts/js/home.js" defer></script>
     <title>Luxury Home page v2 </title>
   </head>
   <body class="home-v2">
@@ -563,56 +565,7 @@
     <section class="new-products">
       <div class="wrapper">
         <h6 class="section-heading fit-border">New Products</h6>
-        <div class="products"> 
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Navy Blue suit</h3>
-              <div class="price">
-                <div class="price__after">$310.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Technical suit</h3>
-              <div class="price">
-                <div class="price__after">$290.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="name">Silk Blouse</h3>
-              <div class="price">
-                <div class="price__after">49.90</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="name">cITY BAG WITH LOCK</h3>
-              <div class="price">
-                <div class="price__after">39.90</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="products" id="newProducts"></div>
         <div class="controlers"> <span class="action action-secondary black"><i class="fa-solid fa-caret-left"></i></span><span class="action action-secondary black"><i class="fa-solid fa-caret-right"></i></span></div>
       </div>
     </section>

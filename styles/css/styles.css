@@ -2673,6 +2673,10 @@ footer.footer .copyrights .author:hover {
   flex-wrap: wrap;
   gap: 38px 30px;
 }
+.home-v1 .new-products-section .products-container .product-card {
+  max-width: 270px;
+  width: 100%;
+}
 .home-v1 .offers-section {
   min-height: 612px;
   height: 100%;
@@ -3191,6 +3195,10 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   gap: 30px;
   overflow: hidden;
+  width: 100%;
+}
+.home-v2 .new-products .products .product-card {
+  max-width: 270px;
   width: 100%;
 }
 @media screen and (max-width: 500px) {
