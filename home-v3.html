@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
-    <script src="scripts/js/slides.js" defer> </script>
+    <script src="scripts/js/classes/product.js" defer></script>
+    <script src="scripts/js/classes/products.js" defer></script>
+    <script src="scripts/js/home.js" defer></script>
     <title>Luxury Home page v3</title>
   </head>
   <body class="home-v3">
@@ -336,132 +338,8 @@
     <section class="featured-products">
       <div class="wrapper"> 
         <h6 class="section-heading separator">Featured Products</h6>
-        <div class="tabs-changer"><span class="tabs-changer__tab tabs-changer__tab--active">all</span><span class="tabs-changer__tab">Women</span><span class="tabs-changer__tab">men</span><span class="tabs-changer__tab">Couple</span></div>
-        <div class="products">
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Seamaster 300M Gents</h3>
-              <div class="price">
-                <!-- .price__before $49.90-->
-                <div class="price__after">$19200.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Daniel Wellington</h3>
-              <div class="price">
-                <!-- .price__before $49.90-->
-                <div class="price__after">$6900.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Quilted gold rimmed</h3>
-              <div class="price">
-                <!-- .price__before $49.90-->
-                <div class="price__after">$1900.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Classic Round Stainless</h3>
-              <div class="price">
-                <!-- .price__before $49.90-->
-                <div class="price__after">$3900.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <div class="product-card__tags">
-              <div class="tag">sale</div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="name">Quilted gold rimmed</h3>
-              <div class="price">
-                <div class="price__before">$12500.00</div>
-                <div class="price__after">$11900.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <div class="product-card__tags">
-              <div class="tag">sale</div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="name">Heritage Mens</h3>
-              <div class="price">
-                <div class="price__before">$3200.00</div>
-                <div class="price__after">$2900.00</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <!-- .product-card__tags-->
-            <!--     .tag sale-->
-            <div class="product-card__content">
-              <h3 class="name">Stamped Bracelet</h3>
-              <div class="price">
-                <!-- .price__before $15900.90-->
-                <div class="price__after">$15900.90</div>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-container product-card__image">
-              <!-- img(src="", alt="")-->
-              <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-            </div>
-            <div class="product-card__tags">
-              <div class="tag">new</div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="name">Seamaster Mens</h3>
-              <div class="price">
-                <!-- .price__before $15900.90-->
-                <div class="price__after">$3900.00</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="tabs-changer" id="topProductsTabs"><span class="tabs-changer__tab tabs-changer__tab--active" data-tab="all-featured">all</span><span class="tabs-changer__tab" data-tab="shoes-featured">shoes</span><span class="tabs-changer__tab" data-tab="watches-featured">watches</span></div>
+        <div class="products" id="topProducts" data-page="home-v3"></div>
       </div>
     </section>
     <section class="testimonials">

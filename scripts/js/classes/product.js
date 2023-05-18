@@ -96,7 +96,9 @@ class Product {
      * @returns - Price with discount
      */
     const applyDiscount = (price, discount) => {
-      return ((price - (100 * discount) / price) / convertingRate).toFixed(2);
+      const convertPrice = price / convertingRate;
+
+      return (convertPrice - (convertPrice / 100) * discount).toFixed(2);
     };
 
     const { convertingRate, displayPrice } = this.priceData;
