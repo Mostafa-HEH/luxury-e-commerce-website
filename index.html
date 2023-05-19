@@ -14,6 +14,7 @@
     <script src="scripts/js/classes/product.js" defer></script>
     <script src="scripts/js/classes/products.js" defer></script>
     <script src="scripts/js/home.js" defer></script>
+    <script src="scripts/js/slides.js" defer></script>
     <title>Luxury Home page v1 </title>
   </head>
   <body class="home-v1">
@@ -494,30 +495,32 @@
           </ul>
         </nav>
     <section class="hero-section">
-      <div class="slides">
-        <div class="img-container slides__slide" data-id="0">
-          <!-- img(src="", alt="")-->
-          <div class="slide-content slide-content-v2">
-            <h2 class="slide-content__headline">Fall/Winter</h2>
-            <p class="slide-content__description">Women’s Collection 2016</p><a class="btn btn-primary white" href="#">View collection</a>
+      <div class="slider">
+        <div class="slider__slides" id="sliderSlides">
+          <div class="img-container slide" data-slide="1">
+            <!-- img(src="", alt="")-->
+            <div class="slide-content slide-content-v2">
+              <h2 class="slide-content__headline">Fall/Winter</h2>
+              <p class="slide-content__description">Women’s Collection 2016</p><a class="btn btn-primary white" href="#">View collection</a>
+            </div>
+          </div>
+          <div class="img-container slide slide--active" data-slide="2">
+            <!-- img(src="", alt="")-->
+            <div class="slide-content">
+              <h2 class="slide-content__headline">Luxury</h2>
+              <p class="slide-content__description">Men’s Collection 2016</p><a class="btn btn-primary white" href="#">View collection</a>
+            </div>
+          </div>
+          <div class="img-container slide" data-slide="3">
+            <!-- img(src="", alt="")-->
+            <div class="slide-content slide-content-v2 slide-content-v3">
+              <h2 class="slide-content__headline">Watches</h2>
+              <p class="slide-content__description">Men’s Collection 2016</p><a class="btn btn-primary white" href="#">men’s collection 2016</a>
+            </div>
           </div>
         </div>
-        <div class="img-container slides__slide slides__slide--active" data-id="1">
-          <!-- img(src="", alt="")-->
-          <div class="slide-content">
-            <h2 class="slide-content__headline">Luxury</h2>
-            <p class="slide-content__description">Men’s Collection 2016</p><a class="btn btn-primary white" href="#">View collection</a>
-          </div>
-        </div>
-        <div class="img-container slides__slide" data-id="2">
-          <!-- img(src="", alt="")-->
-          <div class="slide-content slide-content-v2 slide-content-v3">
-            <h2 class="slide-content__headline">Watches</h2>
-            <p class="slide-content__description">Men’s Collection 2016</p><a class="btn btn-primary white" href="#">men’s collection 2016</a>
-          </div>
-        </div>
-        <div class="slides__controlers"><span class="action action-secondary white" id="heroSlideLeftControler"><i class="fa-solid fa-caret-left"></i></span><span class="action action-secondary white" id="heroSlideRightControler"><i class="fa-solid fa-caret-right"></i></span></div>
-        <div class="bullets white"><span class="bullet" data-id="0"></span><span class="bullet bullet--active" data-id="1"></span><span class="bullet" data-id="2"></span></div>
+        <div class="slider__controler" id="sliderControlers"><span class="action action-secondary white" data-btn="previous"><i class="fa-solid fa-caret-left"></i></span><span class="action action-secondary white" data-btn="next"><i class="fa-solid fa-caret-right"></i></span></div>
+        <div class="bullets white slider__bullets" id="sliderBullets"><span class="bullet" data-bullet="1"></span><span class="bullet bullet--active" data-bullet="2"></span><span class="bullet" data-bullet="3"></span></div>
       </div>
     </section>
     <section class="top-categories-section">
