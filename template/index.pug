@@ -14,8 +14,8 @@ html(lang='en')
         //- Home scripts
         script(src="scripts/js/home.js", defer)
 
-        //- Slides controller
-        script(src="scripts/js/slides.js", defer)
+        //- Home v1 scripts
+        script(src="scripts/js/home-v1.js", defer)
 
         title Luxury Home page v1 
 
@@ -23,35 +23,7 @@ html(lang='en')
         include includes/navbar-v1.pug
         +navbar-v1-active(false)
         section.hero-section
-            //- .slides
-            //-     .img-container.slides__slide
-            //-         // img(src="", alt="")
-            //-         .slide-content.slide-content-v2
-            //-             h2.slide-content__headline Fall/Winter
-            //-             p.slide-content__description Women’s Collection 2016
-            //-             a(href="#").btn.btn-primary.white View collection
-            //-     .img-container.slides__slide.slides__slide--active
-            //-         // img(src="", alt="")
-            //-         .slide-content
-            //-             h2.slide-content__headline Luxury
-            //-             p.slide-content__description Men’s Collection 2016
-            //-             a(href="#").btn.btn-primary.white View collection
-            //-     .img-container.slides__slide
-            //-         // img(src="", alt="")
-            //-         .slide-content.slide-content-v2.slide-content-v3
-            //-             h2.slide-content__headline Watches
-            //-             p.slide-content__description Men’s Collection 2016
-            //-             a(href="#").btn.btn-primary.white men’s collection 2016
-            //-     .slides__controlers
-            //-         span.action.action-secondary.white
-            //-             i.fa-solid.fa-caret-left
-            //-         span.action.action-secondary.white
-            //-             i.fa-solid.fa-caret-right
-            //-     .bullets.white
-            //-         span(data-id='0').bullet
-            //-         span(data-id='1').bullet.bullet--active
-            //-         span(data-id='2').bullet
-            .slider
+            .slider#heroSectionslider
                 .slider__slides#sliderSlides
                     .img-container.slide(data-slide="1")
                         // img(src="", alt="")
@@ -81,23 +53,23 @@ html(lang='en')
                     span.bullet.bullet--active(data-bullet="2")
                     span.bullet(data-bullet="3")
         section.top-categories-section
-            .categories-container
+            .categories-container#topCategories
                 a(href="#").category
                     .img-container.category__img
-                        // img(src="", alt="alt")
+                        img(src="", alt="alt")
                     .category__title: h4 Men
                 a(href="#").category
                     .img-container.category__img
-                        // img(src="", alt="alt")
+                        img(src="", alt="alt")
                     .category__title: h4 Women
                 .offer: p Take $15 off $100 with code #[strong FALL15], online only.
                 a(href="#").category
                     .img-container.category__img
-                        // img(src="", alt="alt")
+                        img(src="", alt="alt")
                     .category__title: h4 Watches
                 a(href="#").category
                     .img-container.category__img
-                        // img(src="", alt="alt")
+                        img(src="", alt="alt")
                     .category__title: h4 Bags
         section.new-products-section
             .wrapper 
