@@ -221,3 +221,20 @@ testimonialsSliderBullets?.forEach((bullet) => {
     );
   });
 });
+
+// Top products change slide
+const newProductsArrows = document.querySelectorAll(
+  "#newProductsDisplay .controlers .arrow"
+);
+
+newProductsArrows.forEach((arrow) =>
+  arrow.addEventListener("click", () => {
+    if (arrow.dataset.direction === "left") {
+      newProducts.scrollLeft = newProducts.scrollLeft - newProducts.offsetWidth;
+    } else if (arrow.dataset.direction === "right") {
+      newProducts.scrollLeft = newProducts.scrollLeft + newProducts.offsetWidth;
+    } else {
+      console.log("Click direction is something else not right or left");
+    }
+  })
+);

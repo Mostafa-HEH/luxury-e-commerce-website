@@ -483,10 +483,21 @@
       gap: 30px;
       overflow: hidden;
       width: 100%;
+      scroll-snap-type: x mandatory;
+      overflow-y: hidden;
+      transition: all $speed-1;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
 
       & .product-card {
         max-width: 270px;
         width: 100%;
+        scroll-snap-align: center;
 
         &__image {
           @media screen and (max-width: 500px) {

@@ -3317,10 +3317,20 @@ footer.footer .copyrights .author:hover {
   gap: 30px;
   overflow: hidden;
   width: 100%;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  transition: all 150ms;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.home-v2 .new-products .products::-webkit-scrollbar {
+  display: none;
 }
 .home-v2 .new-products .products .product-card {
   max-width: 270px;
   width: 100%;
+  scroll-snap-align: center;
 }
 @media screen and (max-width: 500px) {
   .home-v2 .new-products .products .product-card__image {
