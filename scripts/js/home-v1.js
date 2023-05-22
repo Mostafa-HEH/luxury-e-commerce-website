@@ -122,3 +122,104 @@ topCategories.forEach(
     </a>
     `)
 );
+
+// Home new products
+const newProducts = document.getElementById("newProducts");
+
+// Home top products
+const topProducts = document.getElementById("topProducts");
+
+// Home top products tabs
+const topProductsTabs = document.querySelectorAll(
+  "#topProductsTabs .tabs-changer__tab"
+);
+
+/**
+ * Fetching array of data from server ("/proucts")
+ * @param {Array} data
+ */
+const handleData = (data) => {
+  const products = new Products(data, "grid");
+
+  // Render new products section
+  products.customRender("new-products");
+  newProducts.innerHTML = products.productsRender();
+
+  // Change displayed products top-products as default.
+  products.customRender("top-products");
+  topProducts.innerHTML = products.productsRender();
+
+  // Change displayed products pased on tab click.
+  topProductsTabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      topProductsTabs.forEach((item) =>
+        item.classList.remove("tabs-changer__tab--active")
+      );
+
+      if (e.target.dataset.tab === "top") {
+        tab.classList.add("tabs-changer__tab--active");
+        products.customRender("top-products");
+      }
+
+      if (e.target.dataset.tab === "sale") {
+        tab.classList.add("tabs-changer__tab--active");
+        products.customRender("sale-products");
+      }
+
+      topProducts.innerHTML = products.productsRender();
+    });
+  });
+};
+
+/**
+ * Handle data from server
+ * @param {*} res
+ * @returns error or data
+ */
+const handleServerError = (res) => {
+  if (!res.ok) console.log("Server has somthing worng");
+  else return res.json();
+};
+
+/**
+ * Handle errors while fetching data.
+ * @param {Object} error
+ */
+const handleDataError = (error) => {
+  console.log(error);
+};
+
+fetch("http://localhost:3000/products")
+  .then(handleServerError)
+  .then(handleData);
+
+// offer Section slider
+
+// Slider slides
+const offerSliderSlides = document.querySelectorAll(
+  "#offerSectionslider #sliderSlides .slide"
+);
+
+// Slider Bullets
+const offerSliderBullets = document.querySelectorAll(
+  "#offerSectionslider #sliderBullets .bullet"
+);
+
+let currentSlideHomev1Offer = 1;
+
+// Slider click
+offerSliderBullets?.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    offerSliderSlides[currentSlideHomev1Offer].classList.remove(
+      "slide--active"
+    );
+    offerSliderBullets[currentSlideHomev1Offer].classList.remove(
+      "bullet--active"
+    );
+
+    currentSlideHomev1Offer = parseInt(e.target.dataset.id) - 1;
+
+    offerSliderSlides[currentSlideHomev1Offer].classList.add("slide--active");
+    offerSliderBullets[currentSlideHomev1Offer].classList.add("bullet--active");
+  });
+});

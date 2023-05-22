@@ -13,7 +13,6 @@
     <script src="scripts/js/sidebar.js" defer> </script>
     <script src="scripts/js/classes/product.js" defer></script>
     <script src="scripts/js/classes/products.js" defer></script>
-    <script src="scripts/js/home.js" defer></script>
     <script src="scripts/js/home-v1.js" defer></script>
     <title>Luxury Home page v1 </title>
   </head>
@@ -497,7 +496,7 @@
     <section class="hero-section">
       <div class="slider" id="heroSectionslider">
         <div class="slider__slides" id="sliderSlides">
-          <div class="img-container slide" data-slide="1">
+          <div class="img-container slide">
             <!-- img(src="", alt="")-->
             <div class="slide-content slide-content-v2">
               <h2 class="slide-content__headline">Fall/Winter</h2>
@@ -554,29 +553,31 @@
     </section>
     <section class="offers-section">
       <div class="wrapper"> 
-        <div class="offers-section__slides"> 
-          <div class="slide">
-            <div class="img-container slide__img">
-              <!-- img(src="#", alt="Slide One")-->
+        <div class="slider" id="offerSectionslider">
+          <div class="slider__slides" id="sliderSlides">
+            <div class="slide">
+              <div class="img-container slide__img">
+                <!-- img(src="#", alt="Slide One")-->
+              </div>
+              <h4 class="slide__head">Slide One</h4>
+              <p class="slide__desciption">Slide One Description</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
-            <h4 class="slide__head">Slide One</h4>
-            <p class="slide__desciption">Slide One Description</p><a class="btn btn-primary black" href="#">Shop now</a>
-          </div>
-          <div class="slide slide--active">
-            <div class="img-container slide__img">
-              <!-- img(src="#", alt="Deal of the day")-->
+            <div class="slide slide--active">
+              <div class="img-container slide__img">
+                <!-- img(src="#", alt="Deal of the day")-->
+              </div>
+              <h4 class="slide__head">Deal of the day</h4>
+              <p class="slide__desciption">Clothing & Sccessories Sale Up To <strong>50%</strong> Off</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
-            <h4 class="slide__head">Deal of the day</h4>
-            <p class="slide__desciption">Clothing & Sccessories Sale Up To <strong>50%</strong> Off</p><a class="btn btn-primary black" href="#">Shop now</a>
-          </div>
-          <div class="slide">
-            <div class="img-container slide__img">
-              <!-- img(src="#", alt="Slide Three")-->
+            <div class="slide">
+              <div class="img-container slide__img">
+                <!-- img(src="#", alt="Slide Three")-->
+              </div>
+              <h4 class="slide__head">Slide Three</h4>
+              <p class="slide__desciption">Slide Three Description</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
-            <h4 class="slide__head">Slide Three</h4>
-            <p class="slide__desciption">Slide Three Description</p><a class="btn btn-primary black" href="#">Shop now</a>
           </div>
-          <div class="bullets gray-3"><span class="bullet" data-id="0"></span><span class="bullet bullet--active" data-id="1"></span><span class="bullet" data-id="2"></span></div>
+          <div class="bullets gray-3 slider__bullets" id="sliderBullets"><span class="bullet" data-id="1"></span><span class="bullet bullet--active" data-id="2"></span><span class="bullet" data-id="3"></span></div>
         </div>
       </div>
     </section>
