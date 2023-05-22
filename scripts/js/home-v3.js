@@ -72,3 +72,43 @@ heroSliderBullets?.forEach((bullet) => {
     heroSliderBullets[currentSlideHero].classList.add("bullet--active");
   });
 });
+
+// Populuer Categories Section
+const populerCategories = document.querySelectorAll("#topCategories .category");
+const populerCategoriesArray = [
+  {
+    id: 1,
+    title: "Women",
+    link: "#",
+    imgSrc: "#",
+  },
+  {
+    id: 2,
+    title: "Men",
+    link: "#",
+    imgSrc: "#",
+  },
+  {
+    id: 3,
+    title: "bags",
+    link: "#",
+    imgSrc: "#",
+  },
+  {
+    id: 4,
+    title: "watches",
+    link: "#",
+    imgSrc: "#",
+  },
+];
+
+// Render categoris
+populerCategories.forEach(
+  (elm, id) =>
+    (elm.outerHTML = `
+    <a class="category" href="${populerCategoriesArray[id].link}">
+        <div class="img-container category__img"><img src="${populerCategoriesArray[id].imgSrc}" alt="${populerCategoriesArray[id].title}"></div>
+        <div class="category__title"><h4>${populerCategoriesArray[id].title}</h4></div>
+    </a>
+    `)
+);
