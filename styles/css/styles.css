@@ -3233,9 +3233,6 @@ footer.footer .copyrights .author:hover {
   max-width: 1170px;
   width: 100%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .home-v2 .testimonials .section-heading {
   color: #ffffff;
@@ -3284,6 +3281,17 @@ footer.footer .copyrights .author:hover {
 }
 .home-v2 .testimonials .comment__author::before, .home-v2 .testimonials .comment__author::after {
   content: "-";
+}
+.home-v2 .testimonials .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v2 .testimonials .slider .slide {
+  display: none;
+}
+.home-v2 .testimonials .slider .slide--active {
+  display: flex;
 }
 .home-v2 .new-products {
   padding: 80px 25px 87px;

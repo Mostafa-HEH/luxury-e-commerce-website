@@ -272,13 +272,31 @@ html(lang='en')
         section.testimonials
             .wrapper 
                 h6.section-heading.fit-border Testimonials
-                .comment
-                    p.comment__content Cras et nibh convallis, suscipit nibh sed, sodales quam. Phasellus auctor, lectus ac sagittis fringilla, est metus elementum dui, non sagittis tellus tortor sodales odio. Vivamus congue erat eget dui condimentum, nec interdum nunc posuere
-                    h6.comment__author Angelina Jolie
-                .bullets.white
-                    span(data-id='0').bullet
-                    span(data-id='1').bullet.bullet--active
-                    span(data-id='2').bullet
+                .slider#testimonialsSectionslider
+                    .slider__slides#sliderSlides
+                        .comment.slide
+                            p.comment__content Suscipit nibh sed, sodales quam. Phasellus auctor, lectus ac sagittis fringilla, est metus elementum dui, non sagittis tellus tortor sodales odio. Vivamus congue erat eget dui condimentum, nec interdum nunc posuere
+                            h6.comment__author Test One
+                        .comment.slide.slide--active
+                            p.comment__content Cras et nibh convallis, suscipit nibh sed, sodales quam. Phasellus auctor, lectus ac sagittis fringilla, est metus elementum dui, non sagittis tellus tortor sodales odio. Vivamus congue erat eget dui condimentum, nec interdum nunc posuere
+                            h6.comment__author Angelina Jolie
+                        .comment.slide
+                            p.comment__content Phasellus auctor, lectus ac sagittis fringilla, est metus elementum dui, non sagittis tellus tortor sodales odio. Vivamus congue erat eget dui condimentum, nec interdum nunc posuere
+                            h6.comment__author Test Three
+                    .bullets.white.slider__bullets#sliderBullets
+                        span(data-id='1').bullet
+                        span(data-id='2').bullet.bullet--active
+                        span(data-id='3').bullet
+        //- section.testimonials
+        //-     .wrapper 
+        //-         h6.section-heading.fit-border Testimonials
+        //-         .comment
+        //-             p.comment__content Cras et nibh convallis, suscipit nibh sed, sodales quam. Phasellus auctor, lectus ac sagittis fringilla, est metus elementum dui, non sagittis tellus tortor sodales odio. Vivamus congue erat eget dui condimentum, nec interdum nunc posuere
+        //-             h6.comment__author Angelina Jolie
+        //-         .bullets.white
+        //-             span(data-id='0').bullet
+        //-             span(data-id='1').bullet.bullet--active
+        //-             span(data-id='2').bullet
         section.new-products
             .wrapper
                 h6.section-heading.fit-border New Products

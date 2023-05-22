@@ -396,8 +396,6 @@
 
     & .wrapper {
       @include grid-1170;
-      @include flex-c;
-      align-items: center;
     }
 
     & .section-heading {
@@ -448,6 +446,19 @@
         &::before,
         &::after {
           content: "-";
+        }
+      }
+    }
+
+    & .slider {
+      @include flex-c;
+      align-items: center;
+
+      & .slide {
+        display: none;
+
+        &--active {
+          display: flex;
         }
       }
     }
