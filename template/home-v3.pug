@@ -12,7 +12,7 @@ html(lang='en')
         script(src="scripts/js/classes/products.js", defer)
 
         //- Home scripts
-        script(src="scripts/js/home.js", defer)
+        script(src="scripts/js/home-v3.js", defer)
 
         title Luxury Home page v3
 
@@ -208,34 +208,35 @@ html(lang='en')
                             li.links__link
                                 a(href="#") Blogs 
         section.hero-section
-            .slides
-                div(data-id="0").img-container.slides__slide
-                    // img(src="", alt="")
-                    .slide-content.slide-content-v2
-                        h2.slide-content__headline Fall/Winter
-                        p.slide-content__description Women’s Collection 2016
-                        a(href="#").btn.btn-primary.white View collection
-                div(data-id="1").img-container.slides__slide.slides__slide--active
-                    // img(src="", alt="")
-                    .slide-content
-                        h2.slide-content__headline Luxury
-                        p.slide-content__description Men’s Collection 2016
-                        a(href="#").btn.btn-primary.white View collection
-                div(data-id="2").img-container.slides__slide
-                    // img(src="", alt="")
-                    .slide-content.slide-content-v2.slide-content-v3
-                        h2.slide-content__headline Watches
-                        p.slide-content__description Men’s Collection 2016
-                        a(href="#").btn.btn-primary.white men’s collection 2016
-                .slides__controlers
-                    span.action.action-secondary.white#heroSlideLeftControler
+            .slider#heroSectionslider
+                .slider__slides#sliderSlides
+                    .img-container.slide
+                        // img(src="", alt="")
+                        .slide-content.slide-content-v2
+                            h2.slide-content__headline Fall/Winter
+                            p.slide-content__description Women’s Collection 2016
+                            a(href="#").btn.btn-primary.white View collection
+                    .img-container.slide.slide--active
+                        // img(src="", alt="")
+                        .slide-content
+                            h2.slide-content__headline Luxury
+                            p.slide-content__description Men’s Collection 2016
+                            a(href="#").btn.btn-primary.white View collection
+                    .img-container.slide
+                        // img(src="", alt="")
+                        .slide-content.slide-content-v2.slide-content-v3
+                            h2.slide-content__headline Watches
+                            p.slide-content__description Men’s Collection 2016
+                            a(href="#").btn.btn-primary.white men’s collection 2016
+                .slider__controler#sliderControlers
+                    span.action.action-secondary.white(data-btn="previous")
                         i.fa-solid.fa-caret-left
-                    span.action.action-secondary.white#heroSlideRightControler
+                    span.action.action-secondary.white(data-btn="next")
                         i.fa-solid.fa-caret-right
-                .bullets.white
-                    span(data-id='0').bullet
-                    span(data-id='1').bullet.bullet--active
-                    span(data-id='2').bullet
+                .bullets.white.slider__bullets#sliderBullets
+                    span.bullet(data-bullet="1")
+                    span.bullet.bullet--active(data-bullet="2")
+                    span.bullet(data-bullet="3")
         section.popular-categories
             .wrapper
                 a(href="#").category
