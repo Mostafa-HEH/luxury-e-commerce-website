@@ -52,21 +52,6 @@ const handleData = (data) => {
         products.customRender("sale-products");
       }
 
-      if (e.target.dataset.tab === "all-featured") {
-        tab.classList.add("tabs-changer__tab--active");
-        products.customRender("all-featured");
-      }
-
-      if (e.target.dataset.tab === "shoes-featured") {
-        tab.classList.add("tabs-changer__tab--active");
-        products.customRender("shoes-featured");
-      }
-
-      if (e.target.dataset.tab === "watches-featured") {
-        tab.classList.add("tabs-changer__tab--active");
-        products.customRender("watches-featured");
-      }
-
       topProducts.innerHTML = products.productsRender();
     });
   });
