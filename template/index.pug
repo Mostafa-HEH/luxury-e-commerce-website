@@ -106,11 +106,11 @@ html(lang='en')
                 .tabs-changer.bordered#topProductsTabs
                         span(data-tab="top").tabs-changer__tab.tabs-changer__tab--active top
                         span(data-tab="sale").tabs-changer__tab sale
-                .tab-slides
-                    span.action.action-secondary.black#leftControler
+                .tab-slides#topProductsDisplay
+                    span.action.action-secondary.black.arrow(data-direction="left")
                             i.fa-solid.fa-caret-left
-                    .slide-cards#topProducts(data-page="home-v1")
-                    span.action.action-secondary.black#rightControler
+                    .slide-cards#topProducts
+                    span.action.action-secondary.black.arrow(data-direction="right")
                         i.fa-solid.fa-caret-right
         section.from-blogs-section
             .wrapper

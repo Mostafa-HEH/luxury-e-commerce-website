@@ -223,3 +223,20 @@ offerSliderBullets?.forEach((bullet) => {
     offerSliderBullets[currentSlideHomev1Offer].classList.add("bullet--active");
   });
 });
+
+// Top products change slide
+const topProductsArrows = document.querySelectorAll(
+  "#topProductsDisplay .arrow"
+);
+
+topProductsArrows.forEach((arrow) =>
+  arrow.addEventListener("click", () => {
+    if (arrow.dataset.direction === "left") {
+      topProducts.scrollLeft = topProducts.scrollLeft - topProducts.offsetWidth;
+    } else if (arrow.dataset.direction === "right") {
+      topProducts.scrollLeft = topProducts.scrollLeft + topProducts.offsetWidth;
+    } else {
+      console.log("Click direction is something else not right or left");
+    }
+  })
+);

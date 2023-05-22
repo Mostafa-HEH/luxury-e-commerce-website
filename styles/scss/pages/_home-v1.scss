@@ -474,18 +474,21 @@
         gap: 30px;
         max-width: 1170px;
         width: 100%;
-        -ms-overflow-style: none; /* for Internet Explorer, Edge */
-        scrollbar-width: none; /* for Firefox */
-        overflow-y: scroll;
-
-        &::-webkit-scrollbar {
-          display: none; /* for Chrome, Safari, and Opera */
-        }
-
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        overflow-y: hidden;
         transition: all $speed-1;
         scroll-behavior: smooth;
 
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
         & .product-card {
+          scroll-snap-align: center;
+
           @media screen and (max-width: 500px) {
             width: 270px;
           }
