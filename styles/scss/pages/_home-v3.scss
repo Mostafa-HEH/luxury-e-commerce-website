@@ -462,6 +462,19 @@
         }
       }
     }
+
+    & .slider {
+      @include flex-c;
+      align-items: center;
+
+      & .slide {
+        display: none;
+
+        &--active {
+          display: flex;
+        }
+      }
+    }
   }
 
   & .from-blogs-section {

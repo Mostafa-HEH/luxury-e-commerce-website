@@ -3872,6 +3872,17 @@ footer.footer .copyrights .author:hover {
 .home-v3 .testimonials .comment__author::before, .home-v3 .testimonials .comment__author::after {
   content: "-";
 }
+.home-v3 .testimonials .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-v3 .testimonials .slider .slide {
+  display: none;
+}
+.home-v3 .testimonials .slider .slide--active {
+  display: flex;
+}
 .home-v3 .from-blogs-section {
   display: flex;
   flex-direction: column;

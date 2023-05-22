@@ -182,3 +182,38 @@ const handleDataError = (error) => {
 fetch("http://localhost:3000/products")
   .then(handleServerError)
   .then(handleData);
+
+// Testimonial Section slider
+
+// Slider slides
+const testimonialsSliderSlides = document.querySelectorAll(
+  "#testimonialsSectionslider #sliderSlides .slide"
+);
+
+// Slider Bullets
+const testimonialsSliderBullets = document.querySelectorAll(
+  "#testimonialsSectionslider #sliderBullets .bullet"
+);
+
+let currentSlideTestimonials = 1;
+
+// Slider click
+testimonialsSliderBullets?.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    testimonialsSliderSlides[currentSlideTestimonials].classList.remove(
+      "slide--active"
+    );
+    testimonialsSliderBullets[currentSlideTestimonials].classList.remove(
+      "bullet--active"
+    );
+
+    currentSlideTestimonials = parseInt(e.target.dataset.id) - 1;
+
+    testimonialsSliderSlides[currentSlideTestimonials].classList.add(
+      "slide--active"
+    );
+    testimonialsSliderBullets[currentSlideTestimonials].classList.add(
+      "bullet--active"
+    );
+  });
+});
