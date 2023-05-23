@@ -55,5 +55,33 @@ class BlogPost {
         </div>
     `;
     }
+
+    if (this.postType === "list") {
+      return `
+        <div class="blog-post-review list">
+            <div class="img-container blog-post-review__img"><img src="${image}" alt="${title}"></div>
+            <div class="blog-post-review__content">
+                <h3 class="title">${title}</h3>
+                <div class="details"> 
+                    <div class="details__data">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span>${
+                          monthNameShort[date.getMonth()]
+                        }  ${date.getDate()}, ${date.getFullYear()}</span>
+                    </div>
+                    <div class="details__data">
+                        <i class="fa-light fa-comment"></i>
+                        <span>1</span>
+                    </div>
+                </div>
+                <p class="preview">${short_description}</p>
+                <div class="details details__data read-more">
+                    <i class="fa-solid fa-caret-right"></i>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        `;
+    }
   }
 }
