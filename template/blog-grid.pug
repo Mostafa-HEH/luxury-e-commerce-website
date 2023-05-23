@@ -5,8 +5,14 @@ html(lang='en')
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
 
-                //- Slides Script
-        script(src="scripts/js/slides.js", defer) 
+        //- Blog post class Script
+        script(src="scripts/js/classes/blog-post.js", defer) 
+
+        //- Blog posts class Script
+        script(src="scripts/js/classes/blog-posts.js", defer) 
+
+        //- Blog grid Scripts
+        script(src="scripts/js/blog-grid.js", defer) 
 
         title Blog Grid
 
@@ -19,149 +25,149 @@ html(lang='en')
                 span.tag: a(href="#") blogs
             h5.page-header__title blog grid
         main.wrapper
-            .posts
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Luxury Fashion trending
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  30, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Paris Premium perfume
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  29, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 3
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Ladies Fashion vintage
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  28, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title women’s Beautiful
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  21, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Rose Printed Dress
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  20, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 3
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Fashion Look book
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  18, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Milano Fashion 
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  16, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Fall/Winter child 
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  15, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 3
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
-                .blog-post-review.grid
-                    .img-container.blog-post-review__img
-                        //- img(src="", alt="alt")
-                    .blog-post-review__content
-                        h3.title Jewellery collection
-                        p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
-                        .details 
-                            .details__data
-                                i.fa-regular.fa-calendar-days
-                                span Dec  12, 2016
-                            .details__data
-                                i.fa-light.fa-comment
-                                span 1
-                            .details__data.read-more
-                                i.fa-solid.fa-caret-right
-                                a(href="#") Read More
+            .posts#blogGridPosts
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Luxury Fashion trending
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  30, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Paris Premium perfume
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  29, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 3
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Ladies Fashion vintage
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  28, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title women’s Beautiful
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  21, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Rose Printed Dress
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  20, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 3
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Fashion Look book
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  18, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Milano Fashion 
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  16, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Fall/Winter child 
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  15, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 3
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
+                //- .blog-post-review.grid
+                //-     .img-container.blog-post-review__img
+                //-         //- img(src="", alt="alt")
+                //-     .blog-post-review__content
+                //-         h3.title Jewellery collection
+                //-         p.preview Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis.
+                //-         .details 
+                //-             .details__data
+                //-                 i.fa-regular.fa-calendar-days
+                //-                 span Dec  12, 2016
+                //-             .details__data
+                //-                 i.fa-light.fa-comment
+                //-                 span 1
+                //-             .details__data.read-more
+                //-                 i.fa-solid.fa-caret-right
+                //-                 a(href="#") Read More
     include includes/footer.pug
