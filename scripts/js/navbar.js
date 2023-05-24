@@ -24,7 +24,7 @@ const activeNavbar = () => {
     navbarV1?.classList.add("navbar__v1--animate");
   } else {
     if (navbarV1?.parentElement.classList.contains("home-v1"))
-      navbarV1.classList.remove("navbar__v1--active");
+      navbarV1?.classList.remove("navbar__v1--active");
     navbarV1?.classList.remove("navbar__v1--animate");
   }
 };

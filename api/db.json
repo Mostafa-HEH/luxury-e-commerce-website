@@ -848,20 +848,30 @@
       "products": [
         {
           "id": 1,
-          "title": "Spring and summershoes",
-          "thumbnail": "#",
-          "price": 20,
+          "title": "Dali Women's Jabardin Cargo Jeans",
+          "thumbnail": "/images/products/dali_0000.jpg",
+          "price": 480,
           "quantity": 5,
-          "total": 60,
-          "discountPercentage": 8.71,
-          "discountedPrice": 55
+          "total": 2400,
+          "discountPercentage": 0,
+          "discountedPrice": 0
+        },
+        {
+          "id": 2,
+          "title": "Dali Women's Jabardin Cargo Jeans",
+          "thumbnail": "/images/products/dali_0000.jpg",
+          "price": 480,
+          "quantity": 5,
+          "total": 2400,
+          "discountPercentage": 0,
+          "discountedPrice": 0
         }
       ],
-      "total": 2328,
-      "discountedTotal": 1941,
+      "total": 2400,
+      "discountedTotal": 0,
       "userId": 1,
       "totalProducts": 5,
-      "totalQuantity": 10,
+      "totalQuantity": 5,
       "shippingPrice": false
     }
   ],

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/fontawesome/all.css">
     <link rel="stylesheet" href="./styles/css/styles.css">
+    <script src="./scripts/js/carts.js" defer> </script>
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
     <title>Checkout</title>
@@ -115,34 +116,11 @@
                 <li class="links__link"><a href="#">Blogs</a></li>
               </ul>
           <ul class="actions">
-            <li class="actions__action cart"><a href="#"><i class="fa-light fa-bag-shopping"></i><span class="cart-number">1</span></a>
+            <li class="actions__action cart"><span><i class="fa-light fa-bag-shopping"></i><span class="cart-number" id="cartProductsNumber">1</span></span>
               <div class="mega-menu fullwidth">
-                <div class="mega-menu__products">
-                  <div class="product-card">
-                    <div class="img-container product-card__image"><img src="" alt="">
-                      <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-                    </div>
-                    <div class="product-card__content">
-                      <h3 class="name">HIGH HEEL SANDAL</h3>
-                      <div class="price">
-                        <div class="price__after">$29.00</div>
-                      </div>
-                    </div><span class="product-card__remove"><i class="fa-solid fa-xmark"></i></span>
-                  </div>
-                  <div class="product-card">
-                    <div class="img-container product-card__image"><img src="" alt="">
-                      <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
-                    </div>
-                    <div class="product-card__content">
-                      <h3 class="name">HIGH HEEL ANKLE BOOTS</h3>
-                      <div class="price">
-                        <div class="price__after">$119.00</div>
-                      </div>
-                    </div><span class="product-card__remove"><i class="fa-solid fa-xmark"></i></span>
-                  </div>
-                </div>
+                <div class="mega-menu__products" id="cartProducts"></div>
                 <div class="mega-menu__details">
-                  <div class="total">Total: <span class="total__price">$148.00</span></div>
+                  <div class="total">Total: <span class="total__price" id="cartTotal">$148.00</span></div>
                   <div class="action"><a class="btn btn-primary black" href="#">View cart</a><a class="btn btn-primary black" href="#">Checkout</a></div>
                 </div>
               </div>
