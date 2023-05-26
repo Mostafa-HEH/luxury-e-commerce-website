@@ -419,6 +419,27 @@ input[type=range]::-ms-track {
 .btn.btn-secondary.black::after {
   background-color: rgba(51, 51, 51, 0.1);
 }
+.btn.btn-social {
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+  gap: 11px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+.btn.btn-social.facebook {
+  background-color: #3b5998;
+}
+.btn.btn-social.facebook::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+.btn.btn-social.twitter {
+  background-color: #55acee;
+}
+.btn.btn-social.twitter::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
 .btn::after {
   content: "";
   width: 100%;
@@ -1089,7 +1110,7 @@ input[type=range]::-ms-track {
   line-height: 24px;
   padding-left: 24px;
   padding-right: 24px;
-  transition: border-color 150ms;
+  transition: border-color, background-color 150ms;
   color: #333333;
 }
 .input::placeholder {
@@ -1098,6 +1119,7 @@ input[type=range]::-ms-track {
 .input:focus {
   outline: unset;
   border-color: #333333;
+  background-color: rgba(51, 51, 51, 0.1);
 }
 
 .select {
@@ -1138,6 +1160,44 @@ input[type=range]::-ms-track {
 }
 .select:hover {
   border-color: #333333;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox__box {
+  height: 22px;
+  width: 22px;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox__box .mark {
+  opacity: 0;
+  font-size: 12px;
+  transition: opacity 150ms;
+}
+.checkbox__txt {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666666;
+}
+.checkbox input:checked + .checkbox__box .mark {
+  opacity: 1;
 }
 
 .sidebar {
@@ -6290,36 +6350,7 @@ footer.footer .copyrights .author:hover {
   flex-direction: column;
   gap: 10px;
 }
-.login .login__container .social-logins__btn {
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 11px;
-  color: #ffffff;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.login .login__container .social-logins__btn.facebook {
-  background-color: #3b5998;
-}
-.login .login__container .social-logins__btn.twitter {
-  background-color: #55acee;
-}
 .login .login__container .remember {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #666666;
   margin-bottom: 15px;
 }
 .login .login__container button {
@@ -6339,6 +6370,9 @@ footer.footer .copyrights .author:hover {
   margin-top: 17px;
   text-align: center;
   text-decoration: unset;
+}
+.login .login__container .forget:hover {
+  text-decoration: underline;
 }
 
 .err-404 {

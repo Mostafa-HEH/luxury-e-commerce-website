@@ -68,6 +68,32 @@
     }
   }
 
+  &.btn-social {
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    gap: 11px;
+    color: $color-white;
+    font-weight: $bold;
+    font-size: px-rem(13);
+
+    &.facebook {
+      background-color: #3b5998;
+
+      &::after {
+        background-color: rgba(51, 51, 51, 0.1);
+      }
+    }
+
+    &.twitter {
+      background-color: #55acee;
+
+      &::after {
+        background-color: rgba(51, 51, 51, 0.1);
+      }
+    }
+  }
+
   &::after {
     content: "";
     width: 100%;

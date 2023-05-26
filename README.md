@@ -32,6 +32,8 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Injecting api data to html.
 - Render fake data and update HTML & CSS pased on how data displays.
 - Initalize firebase back-end.
+- Init facebook developer login authentication.
+- Init twitter developer login authentication.
 
 #### Skills:
 
@@ -48,13 +50,17 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - JSDoc
 - regexr
 - firebase
+- facebook login auth.
+- twitter login auth.
+- email-password login auth.
 
 #### Other skills:
 
 - Converting PSD to code.
 - Useing firebase as a back-end.
+- login auth with (facebook, twitter, email-password)
 
-#### Used programs:
+#### Used programs & web apps:
 
 - Adobe Photoshop
 - Editor: VS Code

@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/fontawesome/all.css">
     <link rel="stylesheet" href="./styles/css/styles.css">
-    <script src="./scripts/js/carts.js" defer> </script>
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
-    <title>Login</title>
+    <script src="./scripts/js/pages/login.js" type="module"> </script>
   </head>
+  <title>Login</title>
   <body class="login">
         <nav class="navbar navbar__v1  navbar__v1--active" id="navbar"><a class="logo" href="#">Luxury</a>
               <ul class="links pages-links">
@@ -473,15 +473,16 @@
         <h6 class="login__head">Sign In</h6>
         <div class="login__container">
           <div class="social-logins"> 
-            <div class="social-logins__btn facebook"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
-            <div class="social-logins__btn twitter"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
+            <div class="btn btn-social facebook"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
+            <div class="btn btn-social twitter"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
           </div>
-          <input class="input" type="email" placeholder="Email address *">
-          <input class="input" type="password" placeholder="Password *">
-          <label class="remember">
-            <input type="checkbox">Remember me!
+          <input class="input" type="email" placeholder="Email address *" required>
+          <input class="input" type="password" placeholder="Password *" required>
+          <label class="checkbox remember">
+            <input type="checkbox">
+            <div class="checkbox__box"><i class="fa-solid fa-check mark"></i></div><span class="checkbox__txt">Remember me!</span>
           </label>
-          <button class="btn btn-primary black" type="submit">Sign in</button><a class="forget" href="#">Fogot your password? </a>
+          <button class="btn btn-primary black" type="submit">Sign in</button><a class="forget" href="#">Fogot your password?</a>
         </div>
       </form>
     </div>

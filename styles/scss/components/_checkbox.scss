@@ -1,0 +1,42 @@
+.checkbox {
+  @include flex-r;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__box {
+    height: 22px;
+    width: 22px;
+    box-sizing: border-box;
+    border: $border-gray-7;
+    @include flex-r;
+    justify-content: center;
+    align-items: center;
+
+    & .mark {
+      opacity: 0;
+      font-size: 12px;
+      transition: opacity $speed-1;
+    }
+  }
+
+  &__txt {
+    font-family: $lato;
+    font-weight: $regular;
+    font-size: px-rem(12);
+    text-transform: uppercase;
+    color: $color-gray-3;
+  }
+
+  & input:checked + .checkbox__box {
+    & .mark {
+      opacity: 1;
+    }
+  }
+}
