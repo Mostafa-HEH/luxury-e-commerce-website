@@ -31,6 +31,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Documenting scripts with JSDoc.
 - Injecting api data to html.
 - Render fake data and update HTML & CSS pased on how data displays.
+- Initalize firebase back-end.
 
 #### Skills:
 
@@ -46,10 +47,12 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Leaflet maps
 - JSDoc
 - regexr
+- firebase
 
 #### Other skills:
 
 - Converting PSD to code.
+- Useing firebase as a back-end.
 
 #### Used programs:
 
@@ -60,6 +63,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Icons: Font Awesome
 - Maps: Leaflet
 - API Platform: Postman
+- Back-End: Firebase
 
 #### Sources:
 
@@ -70,3 +74,4 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - [Leaflet maps](https://leafletjs.com/)
 - [JSDoc](https://jsdoc.app/index.html)
 - [regexr](https://regexr.com/)
+- [FireBase](https://console.firebase.google.com/)
