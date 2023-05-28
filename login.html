@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,10 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
-    <script src="./scripts/js/pages/login.js" defer> </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="./scripts/js/pages/login.js" defer></script>
   </head>
-  <title>Login</title>
   <body class="login">
         <nav class="navbar navbar__v1  navbar__v1--active" id="navbar"><a class="logo" href="#">Luxury</a>
               <ul class="links pages-links">
@@ -468,63 +470,15 @@
             </li>
           </ul>
         </nav>
-    <div class="wrapper">
-      <form class="login">
-        <h6 class="login__head">Sign In</h6>
-        <div class="login__container">
-          <div class="social-logins"> 
-            <div class="btn btn-social facebook"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
-            <div class="btn btn-social twitter"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
-          </div>
-          <input class="input" type="email" placeholder="Email address *" required>
-          <input class="input" type="password" placeholder="Password *" required>
-          <label class="checkbox remember">
-            <input type="checkbox">
-            <div class="checkbox__box"><i class="fa-solid fa-check mark"></i></div><span class="checkbox__txt">Remember me!</span>
-          </label>
-          <button class="btn btn-primary black" type="submit">Sign in</button><a class="forget" href="#">Fogot your password?</a>
-        </div>
-      </form>
+    <div class="wrapper" id="logInContainer"></div>
+    <div class="loading-container" id="loadingContainer">
+      <div class="loading">
+        <div class="loading__box"></div>
+        <div class="loading__box"></div>
+        <div class="loading__box"></div>
+        <div class="loading__box"></div>
+      </div>
     </div>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword, signOut  } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-          apiKey: "AIzaSyCFwyjdvYUzBwxiabukGiHzIQADTKzkwNI",
-          authDomain: "luxury-e-commerce.firebaseapp.com",
-          projectId: "luxury-e-commerce",
-          storageBucket: "luxury-e-commerce.appspot.com",
-          messagingSenderId: "49081782264",
-          appId: "1:49081782264:web:bac36c2107750940bd500d",
-          measurementId: "G-H2Y5JJS39Z"
-      };
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-       
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, "mostafaneamatalla94@gmail.com", "123mostafa")
-      .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          console.log("logged in")
-          
-      })
-      .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-      });
-      signOut(auth).then(() => {
-      // Sign-out successful.
-      console.log("logged out");
-      }).catch((error) => {
-      // An error happened.
-      });
-    </script>
   </body>
   <footer class="footer"> 
     <main>

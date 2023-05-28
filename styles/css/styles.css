@@ -6295,6 +6295,9 @@ footer.footer .copyrights .author:hover {
   }
 }
 
+.login {
+  position: relative;
+}
 .login > .wrapper {
   padding: 75px 25px;
   max-width: 1170px;
@@ -6306,6 +6309,27 @@ footer.footer .copyrights .author:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-height: 540px;
+}
+.login .logged-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  gap: 30px;
+  height: 300px;
+  max-width: 350px;
+}
+.login .logged-in__messege {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #333333;
+}
+.login .logged-in__messege .email {
+  color: #ffa290;
 }
 .login .login {
   max-width: 370px;
@@ -6353,14 +6377,6 @@ footer.footer .copyrights .author:hover {
 .login .login__container .remember {
   margin-bottom: 15px;
 }
-.login .login__container button {
-  width: unset;
-  border: unset;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 .login .login__container .forget {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -6373,6 +6389,31 @@ footer.footer .copyrights .author:hover {
 }
 .login .login__container .forget:hover {
   text-decoration: underline;
+}
+.login button {
+  width: unset;
+  border: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.login .loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 1995;
+  display: none;
+}
+.login .loading-container--active {
+  display: flex;
 }
 
 .err-404 {
