@@ -11,6 +11,13 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 
+// Facebook auth config
+var provider = new firebase.auth.FacebookAuthProvider();
+provider.addScope("email");
+provider.setCustomParameters({
+  display: "popup",
+});
+
 const logInContainer = document.getElementById("logInContainer");
 const loadingContainer = document.getElementById("loadingContainer");
 
@@ -54,7 +61,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
         <h6 class="login__head">Sign In</h6>
         <div class="login__container">
           <div class="social-logins"> 
-            <div class="btn btn-social facebook"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
+            <div class="btn btn-social facebook" id="facebookLogin"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
             <div class="btn btn-social twitter"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
           </div>
           <input class="input" type="email" name="email" placeholder="Email address *" required id="userEmail">
@@ -114,6 +121,35 @@ firebase.auth().onAuthStateChanged(async (user) => {
           loadingContainer.classList.remove("loading-container--active");
 
           console.log("Email or password is wrong");
+        });
+    });
+
+    // 4) login with facebook auth
+    document.getElementById("facebookLogin").addEventListener("click", () => {
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          /** @type {firebase.auth.OAuthCredential} */
+          var credential = result.credential;
+
+          // The signed-in user info.
+          var user = result.user;
+          // IdP data available in result.additionalUserInfo.profile.
+
+          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+          var accessToken = credential.accessToken;
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+
+          console.log(error);
         });
     });
   }
