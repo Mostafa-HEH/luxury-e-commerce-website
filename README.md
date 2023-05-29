@@ -34,6 +34,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - Initalize firebase back-end.
 - Init facebook developer login authentication.
 - Init twitter developer login authentication.
+- Init database into firebase.
 
 #### Skills:
 

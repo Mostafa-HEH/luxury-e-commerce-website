@@ -4421,9 +4421,6 @@ footer.footer .copyrights .author:hover {
 .category-grid .products .items .product-card {
   width: 100%;
 }
-.category-grid .products .items .product-card__image {
-  width: 100%;
-}
 .category-grid .products .pagination {
   display: flex;
   flex-direction: row;
@@ -4799,6 +4796,9 @@ footer.footer .copyrights .author:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+.category-list .products .items .product-card-list__content {
+  width: max-content;
 }
 .category-list .products .pagination {
   display: flex;

@@ -334,6 +334,10 @@
     & .items {
       @include flex-c;
       gap: 30px;
+
+      & .product-card-list__content {
+        width: max-content;
+      }
     }
 
     & .pagination {

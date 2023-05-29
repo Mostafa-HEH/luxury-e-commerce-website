@@ -7,11 +7,12 @@ html(lang='en')
         title Login
 
         include includes/head.pug
-        //- Initalize firebase
-        script(src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js")
 
-        //- Login auth
-        script(src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js")
+        //- Firebase (CDN)s
+        include firebase/cdn.pug
+
+        //- Firebase configration
+        script(src="./scripts/js/firebase/config.js", defer)
 
         //- Login scripts
         script(src="./scripts/js/pages/login.js", defer)

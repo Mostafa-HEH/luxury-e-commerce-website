@@ -1,6 +1,6 @@
 {
-  "users": [
-    {
+  "users": {
+    "TSIJ6QJMxdTaxH8T48zN9YW6DmY2": {
       "id": 1,
       "firstName": "Mostafa",
       "lastName": "Neamatalla",
@@ -30,8 +30,7 @@
       "companyName": "Luxury",
       "image": "/images/users/000001.jpg"
     }
-  ],
-
+  },
   "products": [
     {
       "id": 1,
