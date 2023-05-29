@@ -12,9 +12,10 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 
 // Facebook auth config
-var provider = new firebase.auth.FacebookAuthProvider();
-provider.addScope("email");
-provider.setCustomParameters({
+var facebookProvider = new firebase.auth.FacebookAuthProvider();
+var twitterProvider = new firebase.auth.TwitterAuthProvider();
+facebookProvider.addScope("email");
+facebookProvider.setCustomParameters({
   display: "popup",
 });
 
@@ -62,14 +63,14 @@ firebase.auth().onAuthStateChanged(async (user) => {
         <div class="login__container">
           <div class="social-logins"> 
             <div class="btn btn-social facebook" id="facebookLogin"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
-            <div class="btn btn-social twitter"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
+            <div class="btn btn-social twitter" id="twitterLogin"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
           </div>
           <input class="input" type="email" name="email" placeholder="Email address *" required id="userEmail">
           <input class="input" type="password" name="password" placeholder="Password *" required id="userPassword">
           <label class="checkbox remember">
-            <input type="checkbox" id="remmemberMeCheckbox" checked="${
-              user ? true : false
-            }">
+            <input type="checkbox" id="remmemberMeCheckbox" ${
+              user ? "checked" : ""
+            }>
             <div class="checkbox__box"><i class="fa-solid fa-check mark"></i></div><span class="checkbox__txt">Remember me!</span>
           </label>
           <button class="btn btn-primary black" type="submit">Sign in</button><a class="forget" href="#">Fogot your password?</a>
@@ -128,7 +129,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
     document.getElementById("facebookLogin").addEventListener("click", () => {
       firebase
         .auth()
-        .signInWithPopup(provider)
+        .signInWithPopup(facebookProvider)
         .then((result) => {
           /** @type {firebase.auth.OAuthCredential} */
           var credential = result.credential;
@@ -148,8 +149,37 @@ firebase.auth().onAuthStateChanged(async (user) => {
           var email = error.email;
           // The firebase.auth.AuthCredential type that was used.
           var credential = error.credential;
+        });
+    });
 
-          console.log(error);
+    // 5) login with twitter auth
+    document.getElementById("twitterLogin").addEventListener("click", () => {
+      firebase
+        .auth()
+        .signInWithPopup(twitterProvider)
+        .then((result) => {
+          /** @type {firebase.auth.OAuthCredential} */
+          var credential = result.credential;
+
+          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+          // You can use these server side with your app's credentials to access the Twitter API.
+          var token = credential.accessToken;
+          var secret = credential.secret;
+
+          // The signed-in user info.
+          var user = result.user;
+          // IdP data available in result.additionalUserInfo.profile.
+          console.log(user);
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          console.log(user);
         });
     });
   }
