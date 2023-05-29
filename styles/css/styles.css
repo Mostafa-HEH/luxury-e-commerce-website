@@ -6374,6 +6374,26 @@ footer.footer .copyrights .author:hover {
   flex-direction: column;
   gap: 10px;
 }
+.login .login__container .error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.1019607843);
+  padding: 15px;
+  display: none;
+}
+.login .login__container .error__messege {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: red;
+  text-align: center;
+  text-decoration: unset;
+}
+.login .login__container .error--active {
+  display: flex;
+}
 .login .login__container .remember {
   margin-bottom: 15px;
 }

@@ -74,6 +74,28 @@
         gap: 10px;
       }
 
+      & .error {
+        @include flex-r;
+        align-items: center;
+        background-color: #ff00001a;
+        padding: 15px;
+        display: none;
+
+        &__messege {
+          font-family: $lato;
+          font-weight: $regular;
+          font-size: px-rem(12);
+          text-transform: uppercase;
+          color: red;
+          text-align: center;
+          text-decoration: unset;
+        }
+
+        &--active {
+          display: flex;
+        }
+      }
+
       & .remember {
         margin-bottom: 15px;
       }

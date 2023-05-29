@@ -65,6 +65,9 @@ firebase.auth().onAuthStateChanged(async (user) => {
             <div class="btn btn-social facebook" id="facebookLogin"><i class="fa-brands fa-facebook-f"></i>Sign in with facebook</div>
             <div class="btn btn-social twitter" id="twitterLogin"> <i class="fa-brands fa-twitter"></i>Sign in with twitter</div>
           </div>
+          <div class="error" id="errorMassage">
+            <p class="error__messege">Email or Password is wrong</p>
+          </div>
           <input class="input" type="email" name="email" placeholder="Email address *" required id="userEmail">
           <input class="input" type="password" name="password" placeholder="Password *" required id="userPassword">
           <label class="checkbox remember">
@@ -115,11 +118,16 @@ firebase.auth().onAuthStateChanged(async (user) => {
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;
-          // ...
+          document
+            .getElementById("errorMassage")
+            .classList.remove("error--active");
         })
         .catch((error) => {
           // Remove loading component
           loadingContainer.classList.remove("loading-container--active");
+          document
+            .getElementById("errorMassage")
+            .classList.add("error--active");
 
           console.log("Email or password is wrong");
         });
