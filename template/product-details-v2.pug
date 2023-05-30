@@ -5,8 +5,17 @@ html(lang='en')
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
 
-        //- Render data Script
-        script(src="scripts/js/product-details.js", defer) 
+        //- Firebase (CDN)s
+        include firebase/cdn.pug
+
+        //- Firebase configration
+        script(src="./scripts/js/firebase/config.js", defer)
+
+        //- Helper functions for product
+        script(src="./scripts/js/helper/product.js", defer)
+
+        //- Page custom scripts
+        script(src="./scripts/js/pages/product-details.js", defer) 
 
         title Product Details v2
 
@@ -19,22 +28,22 @@ html(lang='en')
                 span.tag: a(href="#") women
             h5.page-header__title Product Details
         main.wrapper 
-            section.product-details#productDetailsV2
-                .images
-                    .images__subs 
-                        .img-container.img.img--active
-                            img(src="", alt="alt")
-                        .img-container.img
-                            img(src="", alt="alt")
-                        .img-container.img
-                            img(src="", alt="alt")
-                        .img-container.img
-                            img(src="", alt="alt")
-                        .img-container.img
-                            img(src="", alt="alt")
-                    .img-container.images__main
-                        img(src="", alt="alt")
-                .product-card-list
+            section.product-details#productDetailsContainerV2
+                //- .images
+                //-     .images__subs 
+                //-         .img-container.img.img--active
+                //-             img(src="", alt="alt")
+                //-         .img-container.img
+                //-             img(src="", alt="alt")
+                //-         .img-container.img
+                //-             img(src="", alt="alt")
+                //-         .img-container.img
+                //-             img(src="", alt="alt")
+                //-         .img-container.img
+                //-             img(src="", alt="alt")
+                //-     .img-container.images__main
+                //-         img(src="", alt="alt")
+                //- .product-card-list
                     .product-card-list__content
                         h3.name TECHNICAL SUIT
                         .rate

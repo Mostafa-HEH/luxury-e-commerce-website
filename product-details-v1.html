@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
-    <script src="scripts/js/product-details.js" defer> </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js" defer></script>
+    <script src="./scripts/js/firebase/config.js" defer></script>
+    <script src="./scripts/js/helper/product.js" defer></script>
+    <script src="./scripts/js/pages/product-details.js" defer> </script>
     <title>Product Details v1</title>
   </head>
   <body class="product-details-v1">
@@ -473,7 +478,7 @@
       <h5 class="page-header__title">Product Details</h5>
     </header>
     <main class="wrapper"> 
-      <section class="product-details" id="productDetailsV1"></section>
+      <section class="product-details" id="productDetailsContainerV1"></section>
     </main>
   </body>
   <footer class="footer"> 
