@@ -14,8 +14,14 @@ link(rel="stylesheet", href="./styles/fontawesome/all.css")
 //- Custom Styles
 link(rel="stylesheet", href="./styles/css/styles.css")
 
-//- Cart data
-//- script(src="./scripts/js/carts.js", defer) 
+//- Firebase (CDN)s
+include ../firebase/cdn.pug
+
+//- Firebase configration
+script(src="./scripts/js/firebase/config.js", defer)
+
+//- Navbar cart controls
+script(src="./scripts/js/layouts/navbar-cart.js", defer)
 
 //- Active navbar on scroll
 script(src="./scripts/js/navbar.js", defer)

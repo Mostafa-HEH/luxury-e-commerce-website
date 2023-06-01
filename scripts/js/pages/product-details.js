@@ -1,7 +1,3 @@
-// Firebase Database Init.
-const database = firebase.database();
-const dbRef = firebase.database().ref();
-
 // Read url parameters *Initalized with default settings
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -17,10 +13,10 @@ const productDetailsContainerV2 = document.getElementById(
 );
 
 // 1) Read only Firebase products data & displays it in the page pased on url parameters;
-dbRef
-  .child("products")
-  .child(productID)
-  .get()
+firebase
+  .database()
+  .ref("/products/" + productID)
+  .once("value")
   .then((snapshot) => {
     if (snapshot.exists()) {
       // 2) Choose between v1 or v2 product details page.

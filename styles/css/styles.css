@@ -350,6 +350,14 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .img-container {
   width: 100%;
   height: 100%;
@@ -4419,6 +4427,9 @@ footer.footer .copyrights .author:hover {
   }
 }
 .category-grid .products .items .product-card {
+  width: 100%;
+}
+.category-grid .products .items .product-card__image {
   width: 100%;
 }
 .category-grid .products .pagination {

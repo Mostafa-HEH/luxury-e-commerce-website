@@ -1,7 +1,3 @@
-// Firebase Database Init.
-const database = firebase.database();
-const dbRef = firebase.database().ref();
-
 // Read url parameters *Initalized with default settings
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -19,9 +15,10 @@ const gridProductsContainer = document.getElementById("gridProductsContainer");
 const listProductsContainer = document.getElementById("listProductsContainer");
 
 // 1) Read only Firebase products data & displays it in the page pased on url parameters;
-dbRef
-  .child("products")
-  .get()
+firebase
+  .database()
+  .ref("/products/")
+  .once("value")
   .then((snapshot) => {
     if (snapshot.exists()) {
       // 2) Choose between grid or list & render products pased on that.

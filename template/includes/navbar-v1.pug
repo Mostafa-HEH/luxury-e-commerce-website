@@ -9,12 +9,12 @@ mixin navbar-v1-active(isActive)
         a(href="#").logo Luxury
         +links
         ul.actions
-            li.actions__action.cart
+            li.actions__action.cart#cartHover
                 span
                     i.fa-light.fa-bag-shopping
                     span.cart-number#cartProductsNumber 1
                 .mega-menu.fullwidth
-                    .mega-menu__products#cartProducts
+                    .mega-menu__products#navbarCartProducts
                         //- .product-card
                         //-     .img-container.product-card__image
                         //-         img(src="", alt="")
@@ -33,38 +33,38 @@ mixin navbar-v1-active(isActive)
                         //-             .price__after $29.00
                         //-     span.product-card__remove: i.fa-solid.fa-xmark
                         //- .product-card
-                        //-     .img-container.product-card__image
-                        //-         img(src="", alt="")
-                        //-         .navigation
-                        //-             span.navigation__link
-                        //-                 i.fa-light.fa-magnifying-glass-plus
-                        //-             span.navigation__link
-                        //-                 i.fa-light.fa-bag-shopping
-                        //-             span.navigation__link
-                        //-                 i.fa-regular.fa-retweet
-                        //-             span.navigation__link
-                        //-                 i.fa-light.fa-heart
-                        //-     //- .product-card__tags
-                        //-     //-     .tag sale
-                        //-     .product-card__content
-                        //-         h3.name HIGH HEEL ANKLE BOOTS
-                        //-         //- .rate
-                        //-         //-     i.fa-solid.fa-star
-                        //-         //-     i.fa-solid.fa-star
-                        //-         //-     i.fa-solid.fa-star
-                        //-         //-     i.fa-solid.fa-star
-                        //-         //-     i.fa-solid.fa-star-half-stroke
-                        //-         .price
-                        //-             //- .price__before $49.90
-                        //-             .price__after $119.00
-                        //-     span.product-card__remove: i.fa-solid.fa-xmark
+                            .img-container.product-card__image
+                                img(src="", alt="")
+                                .navigation
+                                    span.navigation__link
+                                        i.fa-light.fa-magnifying-glass-plus
+                                    span.navigation__link
+                                        i.fa-light.fa-bag-shopping
+                                    span.navigation__link
+                                        i.fa-regular.fa-retweet
+                                    span.navigation__link
+                                        i.fa-light.fa-heart
+                            //- .product-card__tags
+                            //-     .tag sale
+                            .product-card__content
+                                h3.name HIGH HEEL ANKLE BOOTS
+                                //- .rate
+                                //-     i.fa-solid.fa-star
+                                //-     i.fa-solid.fa-star
+                                //-     i.fa-solid.fa-star
+                                //-     i.fa-solid.fa-star
+                                //-     i.fa-solid.fa-star-half-stroke
+                                .price
+                                    //- .price__before $49.90
+                                    .price__after $119.00
+                            span.product-card__remove: i.fa-solid.fa-xmark
                     .mega-menu__details
                         .total
                             | Total: 
-                            span.total__price#cartTotal $148.00
+                            span.total__price#navbarCartTotal 0
                         .action
-                            a(href="#").btn.btn-primary.black View cart
-                            a(href="#").btn.btn-primary.black Checkout
+                            a(href="./shopping-cart.html").btn.btn-primary.black View cart
+                            a(href="./checkout.html").btn.btn-primary.black Checkout
             li.actions__action
                 +searchIcon
             li.actions__action 
