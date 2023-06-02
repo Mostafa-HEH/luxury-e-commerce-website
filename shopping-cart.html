@@ -16,6 +16,7 @@
     <script src="./scripts/js/layouts/navbar-cart.js" defer></script>
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
+    <script src="./scripts/js/helper/product.js" defer></script>
     <title>Shopping Cart</title>
   </head>
   <body class="shopping-cart">
@@ -478,6 +479,25 @@
     </header>
     <main class="wrapper">
       <div class="cart-items">
+        <div class="items"> 
+          <ul class="items__bar">
+            <li>Product</li>
+            <li>Price</li>
+            <li>Quantity</li>
+            <li>Total</li>
+          </ul>
+          <ul class="items__item">
+            <li class="product"><span class="action action-secondary white"><i class="fa-solid fa-xmark"></i></span>
+              <div class="img-container img"><img src="" alt=""></div>
+              <div class="name">Technical suit</div>
+            </li>
+            <li class="price">$290.00</li>
+            <li class="quantity">
+              <input class="input" type="number" value="1">
+            </li>
+            <li class="total">$290.00</li>
+          </ul>
+        </div>
         <div class="buttons"> <a class="btn btn-secondary black" href="#">Continue Shopping</a><a class="btn btn-secondary black" href="#">Update Cart</a></div>
       </div>
       <div class="payment-data"> 

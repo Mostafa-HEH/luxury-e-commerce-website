@@ -16,34 +16,49 @@
   & .cart-items {
     @include flex-c;
     gap: 30px;
+    width: 100%;
 
     & .items {
-      border-collapse: collapse;
+      @include flex-c;
 
-      & tr {
-        border: $border-gray-7;
-        border-width: 1px 0;
+      &__item,
+      &__bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: center;
+        border-bottom: $border-gray-7;
 
-        &:first-child {
-          border-top: none;
+        @media screen and (max-width: 600px) {
+          gap: 16px 0;
         }
-        &:last-child {
-          border-bottom: none;
+
+        & li {
+          list-style: none;
+
+          @media screen and (max-width: 600px) {
+            &:first-child {
+              grid-column-start: 1;
+              grid-column-end: 5;
+              width: 100%;
+              justify-content: space-around;
+              text-align: center;
+              padding-left: 0;
+            }
+
+            &:nth-child(2) {
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+          }
         }
-      }
-
-      & td,
-      th {
-        padding: 20px 10px;
-      }
-
-      th {
-        padding: 11px 10px;
-        padding-top: 0;
       }
 
       &__bar {
-        & th {
+        padding: 11px 10px;
+        padding-top: 0;
+
+        & li {
           font-family: $lato;
           font-weight: $regular;
           font-size: px-rem(12);
@@ -58,11 +73,12 @@
       }
 
       &__item {
-        & td.product {
+        padding: 20px 10px;
+
+        & li.product {
           @include flex-r;
           align-items: center;
           gap: 20px;
-          min-width: 403px;
 
           & .action {
             width: 30px;
@@ -94,22 +110,57 @@
           }
         }
 
-        & td.price,
-        & td.total {
+        & li.price,
+        & li.total {
           font-family: $lato;
           font-weight: $bold;
           font-size: px-rem(13);
           line-height: 16px;
           color: $color-secondary;
           text-transform: uppercase;
-          min-width: 118px;
+        }
+      }
+
+      &__item,
+      &__bar {
+        @media screen and (max-width: 600px) {
+          gap: 16px 0;
         }
 
-        & td.quantity {
-          min-width: 118px;
+        & li {
+          &:nth-child(1) {
+            min-width: 400px;
+            @media screen and (max-width: 700px) {
+              min-width: auto;
+            }
 
-          & .input {
-            width: 89px;
+            @media screen and (max-width: 600px) {
+              grid-column-start: 1;
+              grid-column-end: 5;
+              width: 100%;
+              justify-content: space-around;
+              text-align: center;
+              padding-left: 0;
+            }
+          }
+
+          &:nth-child(2) {
+            @media screen and (max-width: 600px) {
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+          }
+
+          &:nth-child(3) {
+            max-width: 100px;
+
+            @media screen and (max-width: 600px) {
+              max-width: 70px;
+            }
+
+            & input {
+              width: 100%;
+            }
           }
         }
       }
@@ -136,10 +187,10 @@
   & .payment-data {
     @include flex-c;
     gap: 30px;
-    width: 370px;
+    min-width: 370px;
 
     @media screen and (max-width: 950px) {
-      width: 100%;
+      min-width: 100%;
     }
 
     & .total {
