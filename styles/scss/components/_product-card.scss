@@ -43,11 +43,14 @@
       &__link {
         cursor: pointer;
         position: relative;
+        z-index: 1;
 
         & i {
           font-size: 24px;
           color: $color-white;
           transition: color $speed-1;
+          position: relative;
+          z-index: -1;
 
           &.fa-retweet {
             transform: rotate(90deg);

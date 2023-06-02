@@ -25,10 +25,10 @@ firebase.auth().onAuthStateChanged((user) => {
       });
 
     // 2) Fill cart data on cart hover.
-    document.getElementById("cartHover").addEventListener("mouseenter", () => {
-      document.body.style.overflow = "hidden";
+    // 3) Fetch user cart pased on user id.
 
-      // 3) Fetch user cart pased on user id.
+    document.getElementById("cartHover").addEventListener("mouseenter", (e) => {
+      document.body.style.overflow = "hidden";
       firebase
         .database()
         .ref("/carts/" + userId + "/products/")

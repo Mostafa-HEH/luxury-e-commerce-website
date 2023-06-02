@@ -666,11 +666,14 @@ body::-webkit-scrollbar {
 .product-card__image .navigation__link {
   cursor: pointer;
   position: relative;
+  z-index: 1;
 }
 .product-card__image .navigation__link i {
   font-size: 24px;
   color: #ffffff;
   transition: color 150ms;
+  position: relative;
+  z-index: -1;
 }
 .product-card__image .navigation__link i.fa-retweet {
   transform: rotate(90deg);
