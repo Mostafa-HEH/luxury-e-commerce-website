@@ -297,7 +297,6 @@
     & .products-container {
       @include flex-r;
       justify-content: center;
-      align-items: flex-start;
       flex-wrap: wrap;
       gap: 38px 30px;
 

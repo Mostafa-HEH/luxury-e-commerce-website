@@ -161,6 +161,16 @@ firebase
             </div>`
         )
         .join("");
+
+      document
+        .querySelectorAll(
+          "#gridProductsContainer .product-card .product-to-cart"
+        )
+        .forEach((product) =>
+          product.addEventListener("click", (e) =>
+            addProductToCard(e.target.dataset.id)
+          )
+        );
     } else {
       console.log("No data available");
     }

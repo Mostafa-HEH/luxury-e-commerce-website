@@ -170,16 +170,6 @@ firebase
             addProductToCard(e.target.dataset.id)
           )
         );
-
-      document
-        .querySelectorAll(
-          "#listProductsContainer .product-card .product-to-cart"
-        )
-        .forEach((product) =>
-          product.addEventListener("click", (e) =>
-            addProductToCard(e.target.dataset.id)
-          )
-        );
     } else {
       console.log("No data available");
     }

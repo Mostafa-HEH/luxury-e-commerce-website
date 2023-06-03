@@ -6,13 +6,6 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 
 ---
 
-#### How to run the dummy server:
-
-- First you need to install json server package.<br/>
-  `npm install -g json-server`
-- Run the server.<br/>
-  `json-server --watch .\api\data.json`
-
 #### Work process:
 
 - Receive designs as PSD.
@@ -49,7 +42,7 @@ An E-Commerce website for practicing different skills as Front End Web Developer
 - json-server
 - Leaflet maps
 - JSDoc
-- regexr
+- regex
 - firebase
 - facebook login auth.
 - twitter login auth.
