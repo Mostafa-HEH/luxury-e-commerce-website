@@ -97,6 +97,12 @@
             height: 100px;
             border: $border-gray-7;
             background-color: $color-gray-9;
+
+            & img {
+              aspect-ratio: 3/2;
+              object-fit: contain;
+              mix-blend-mode: multiply;
+            }
           }
 
           & .name {

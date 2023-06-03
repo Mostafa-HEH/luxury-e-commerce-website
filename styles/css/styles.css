@@ -5978,6 +5978,11 @@ footer.footer .copyrights .author:hover {
   border: 1px solid #e5e5e5;
   background-color: #f2f2f2;
 }
+.shopping-cart .cart-items .items__item li.product .img img {
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .shopping-cart .cart-items .items__item li.product .name {
   font-family: "Lato", sans-serif;
   font-weight: 700;

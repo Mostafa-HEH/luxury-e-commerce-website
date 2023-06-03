@@ -4,9 +4,15 @@ html(lang='en')
     head
         //- Pages head tags (meta, fonts, icons, scripts, and custom styles)
         include includes/head.pug
+        //- Helper functions 
 
-        //- Helper functions for product
+        //- For product
         script(src="./scripts/js/helper/product.js", defer)
+        //- For firebase
+        script(src="./scripts/js/helper/firebase.js", defer) 
+
+        //- Shopping cart custom script
+        script(src="./scripts/js/pages/shopping-cart.js", defer)
 
         title Shopping Cart
 
@@ -20,21 +26,21 @@ html(lang='en')
             h5.page-header__title Your Shopping cart
         main.wrapper
             .cart-items
-                .items 
+                .items#shoppingCartItems
                     ul.items__bar
                         li Product
                         li Price
                         li Quantity
                         li Total
-                    ul.items__item
-                        li.product
-                            span.action.action-secondary.white: i.fa-solid.fa-xmark
-                            .img-container.img
-                                img(src="", alt="")
-                            .name Technical suit
-                        li.price $290.00
-                        li.quantity: input(type="number", value="1").input
-                        li.total $290.00
+                    //- ul.items__item
+                    //-     li.product
+                    //-         span.action.action-secondary.white: i.fa-solid.fa-xmark
+                    //-         .img-container.img
+                    //-             img(src="", alt="")
+                    //-         .name Technical suit
+                    //-     li.price $290.00
+                    //-     li.quantity: input(type="number", value="1").input
+                    //-     li.total $290.00
                 .buttons 
                     a(href="#").btn.btn-secondary.black Continue Shopping
                     a(href="#").btn.btn-secondary.black Update Cart
