@@ -13,12 +13,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js" defer></script>
     <script src="./scripts/js/firebase/config.js" defer></script>
+    <script src="./scripts/js/helper/product.js" defer></script>
+    <script src="./scripts/js/helper/firebase.js" defer> </script>
     <script src="./scripts/js/layouts/navbar-cart.js" defer></script>
     <script src="./scripts/js/navbar.js" defer></script>
     <script src="scripts/js/sidebar.js" defer> </script>
     <script src="scripts/js/classes/product.js" defer></script>
     <script src="scripts/js/classes/products.js" defer></script>
-    <script src="scripts/js/home-v1.js" defer></script>
+    <script src="./scripts/js/pages/home-v1.js" defer> </script>
     <title>Luxury Home page v1 </title>
   </head>
   <body class="home-v1">
@@ -538,23 +540,17 @@
         <div class="slider" id="offerSectionslider">
           <div class="slider__slides" id="sliderSlides">
             <div class="slide">
-              <div class="img-container slide__img">
-                <!-- img(src="#", alt="Slide One")-->
-              </div>
+              <div class="img-container slide__img"><img src="#" alt="Slide One"></div>
               <h4 class="slide__head">Slide One</h4>
               <p class="slide__desciption">Slide One Description</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
             <div class="slide slide--active">
-              <div class="img-container slide__img">
-                <!-- img(src="#", alt="Deal of the day")-->
-              </div>
+              <div class="img-container slide__img"><img src="#" alt="Deal of the day"></div>
               <h4 class="slide__head">Deal of the day</h4>
               <p class="slide__desciption">Clothing & Sccessories Sale Up To <strong>50%</strong> Off</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
             <div class="slide">
-              <div class="img-container slide__img">
-                <!-- img(src="#", alt="Slide Three")-->
-              </div>
+              <div class="img-container slide__img"><img src="#" alt="Slide Three"></div>
               <h4 class="slide__head">Slide Three</h4>
               <p class="slide__desciption">Slide Three Description</p><a class="btn btn-primary black" href="#">Shop now</a>
             </div>
@@ -567,7 +563,60 @@
       <div class="wrapper"> 
         <div class="tabs-changer bordered" id="topProductsTabs"><span class="tabs-changer__tab tabs-changer__tab--active" data-tab="top">top</span><span class="tabs-changer__tab" data-tab="sale">sale</span></div>
         <div class="tab-slides" id="topProductsDisplay"><span class="action action-secondary black arrow" data-direction="left"><i class="fa-solid fa-caret-left"></i></span>
-          <div class="slide-cards" id="topProducts"></div><span class="action action-secondary black arrow" data-direction="right"><i class="fa-solid fa-caret-right"></i></span>
+          <div class="slide-cards" id="topProducts">
+            <div class="product-card">
+              <div class="img-container product-card__image">
+                <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
+              </div>
+              <div class="product-card__tags"></div>
+              <div class="product-card__content">
+                <h3 class="name">Navy Blue suit</h3>
+                <div class="rate"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
+                <div class="price">
+                  <div class="price__after">$310.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="img-container product-card__image">
+                <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
+              </div>
+              <div class="product-card__tags"></div>
+              <div class="product-card__content">
+                <h3 class="name">Navy Blue suit</h3>
+                <div class="rate"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
+                <div class="price">
+                  <div class="price__after">$310.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="img-container product-card__image">
+                <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
+              </div>
+              <div class="product-card__tags"></div>
+              <div class="product-card__content">
+                <h3 class="name">Navy Blue suit</h3>
+                <div class="rate"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
+                <div class="price">
+                  <div class="price__after">$310.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="img-container product-card__image">
+                <div class="navigation"><span class="navigation__link"><i class="fa-light fa-magnifying-glass-plus"></i></span><span class="navigation__link"><i class="fa-light fa-bag-shopping"></i></span><span class="navigation__link"><i class="fa-regular fa-retweet"></i></span><span class="navigation__link"><i class="fa-light fa-heart"></i></span></div>
+              </div>
+              <div class="product-card__tags"></div>
+              <div class="product-card__content">
+                <h3 class="name">Navy Blue suit</h3>
+                <div class="rate"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-light fa-star"></i></div>
+                <div class="price">
+                  <div class="price__after">$310.00</div>
+                </div>
+              </div>
+            </div>
+          </div><span class="action action-secondary black arrow" data-direction="right"><i class="fa-solid fa-caret-right"></i></span>
         </div>
       </div>
     </section>
