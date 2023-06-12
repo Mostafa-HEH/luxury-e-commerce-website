@@ -6554,6 +6554,11 @@ footer.footer .copyrights .author:hover {
     font-size: 11rem;
   }
 }
+@media screen and (max-width: 350px) {
+  .err-404 .err-type {
+    font-size: 10rem;
+  }
+}
 .err-404 .err-massage {
   font-family: "Playfair Display", serif;
   font-weight: 700;
